@@ -119,7 +119,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(12, 181);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 22);
+            this.button1.Size = new System.Drawing.Size(736, 81);
             this.button1.TabIndex = 1;
             this.button1.Text = "DODAJ";
             this.button1.UseVisualStyleBackColor = true;

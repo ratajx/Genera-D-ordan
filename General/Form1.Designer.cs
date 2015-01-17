@@ -61,7 +61,7 @@
             this.kodPocztowyDataGridViewTextBoxColumn,
             this.miastoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bazyBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(90, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(534, 150);
             this.dataGridView1.TabIndex = 0;

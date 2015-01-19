@@ -7,13 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace General
 {
     public partial class Form1 : Form
     {
+        SqlConnection con;
+
+        public int policzRekordy(string nazwaTabeli)
+        {
+            string stmt = "SELECT COUNT (*) FROM "+nazwaTabeli;
+            int count = 0;
+
+            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+                    count = (int)cmdCount.ExecuteScalar();
+                }
+            }
+            return count;
+        }
+
+        public int policzRekordyPrawdaFalsz(string nazwaTabeli, bool logiczna)
+        {
+ 
+            string stmt = "SELECT COUNT (*) FROM "+nazwaTabeli+" WHERE Wuzyciu='" +logiczna+ "'";
+            int count = 0;
+
+            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+                    count = (int)cmdCount.ExecuteScalar();
+                }
+            }
+            return count;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -28,59 +62,18 @@ namespace General
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+
+
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            string updateString = @"
-     update Bazy
-     set Numer = 666
-     where Miasto = 'Poznań'";
-            
-            // 1. Instantiate a new command with command text only
-            SqlCommand cmd = new SqlCommand(updateString);
-
-            SqlConnection con=new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8");
-            // 2. Set the Connection property 
-            con.Open();
-            cmd.Connection = con;
-            
-            // 3. Call ExecuteNonQuery to send command
-            cmd.ExecuteNonQuery();
-
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            string updateString = @"
-    SELECT Zolnierz.Imię, Zolnierz.Nazwisko, Rangi.NazwaRangi
-    FROM Zolnierz
-    JOIN Rangi
-    ON Zolnierz.IDRangi=Rangi.IDRangi";
-
-            // 1. Instantiate a new command with command text only
-            SqlCommand cmd = new SqlCommand(updateString);
-
-            SqlConnection con = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8");
-            // 2. Set the Connection property 
-            con.Open();
-            cmd.Connection = con;
-            SqlDataReader rdr = null;
-            rdr = cmd.ExecuteReader();
-
-
-            while (rdr.Read())
-            {
-                Console.Write(rdr[0]);
-                Console.Write(" "+rdr[1]);
-                Console.WriteLine(" "+rdr[2]);
-            }
-
-
-
-
-
-
+            iloscZolnierzyLabel.Text = Convert.ToString(policzRekordy("Zolnierz"));
+            iloscZolnierzyUzytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("Zolnierz", false));
+            iloscZolnierzyNieuzytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("Zolnierz", true));
+            iloscPojazdowLabel.Text = Convert.ToString(policzRekordy("PojazdySpis"));
+            iloscPojazdowUzytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("PojazdySpis", false));
+            iloscPojazdowNiezytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("PojazdySpis", true));
         }
 
      

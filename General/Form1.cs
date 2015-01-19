@@ -31,10 +31,10 @@ namespace General
             return count;
         }
 
-        public int policzRekordyPrawdaFalsz(string nazwaTabeli, bool logiczna)
+        public int policzRekordyWarunek(string nazwaTabeli, string warunek)
         {
  
-            string stmt = "SELECT COUNT (*) FROM "+nazwaTabeli+" WHERE Wuzyciu='" +logiczna+ "'";
+            string stmt = "SELECT COUNT (*) FROM "+nazwaTabeli+ " " + warunek;
             int count = 0;
 
             using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
@@ -69,11 +69,21 @@ namespace General
         private void button3_Click(object sender, EventArgs e)
         {
             iloscZolnierzyLabel.Text = Convert.ToString(policzRekordy("Zolnierz"));
-            iloscZolnierzyUzytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("Zolnierz", false));
-            iloscZolnierzyNieuzytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("Zolnierz", true));
+            iloscZolnierzyUzytychLabel.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "WHERE Wuzyciu = 'false'"));
+            iloscZolnierzyNieuzytychLabel.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "WHERE Wuzyciu = 'true'"));
+            iloscZolnierzyZUprLabel.Text = Convert.ToString(policzRekordy("UprawnieniaTab"));
+            iloscSkaldowLabel.Text = Convert.ToString(policzRekordy("Sklad"));
             iloscPojazdowLabel.Text = Convert.ToString(policzRekordy("PojazdySpis"));
-            iloscPojazdowUzytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("PojazdySpis", false));
-            iloscPojazdowNiezytychLabel.Text = Convert.ToString(policzRekordyPrawdaFalsz("PojazdySpis", true));
+            iloscPojazdowUzytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "WHERE Wuzyciu = 'false'"));
+            iloscPojazdowNiezytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "WHERE Wuzyciu = 'true'"));
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            iloscZolnierzyLabel.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='"+ comboBox1.Text+"'"));
+            iloscZolnierzyUzytychLabel.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "' AND Zolnierz.Wuzyciu = 'false'"));
+            iloscZolnierzyNieuzytychLabel.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "' AND Zolnierz.Wuzyciu = 'true'"));
+            iloscZolnierzyZUprLabel.Text = Convert.ToString(policzRekordyWarunek("UprawnieniaTab", "JOIN Zolnierz ON Zolnierz.IDZolnierza = UprawnieniaTab.IDZolnierza JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text+ "'"));
         }
 
      

@@ -25,6 +25,7 @@ namespace General
                 using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                 {
                     thisConnection.Open();
+                    //hahahahahahhaha xD
                     count = (int)cmdCount.ExecuteScalar();
                     thisConnection.Close();
                 }

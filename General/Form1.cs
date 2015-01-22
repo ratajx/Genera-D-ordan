@@ -27,7 +27,6 @@ namespace General
                     thisConnection.Open();
                     count = (int)cmdCount.ExecuteScalar();
                     thisConnection.Close();
-                    thisConnection.Open();
                 }
                 return count;
             }

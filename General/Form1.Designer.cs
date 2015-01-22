@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bazyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB9BA4F7dzordanDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_9BA4F7_dzordanDataSet = new General.DB_9BA4F7_dzordanDataSet();
@@ -84,6 +84,7 @@
             this.zolnierzBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -412,8 +413,8 @@
             // iDZolnierzaDataGridViewTextBoxColumn
             // 
             this.iDZolnierzaDataGridViewTextBoxColumn.DataPropertyName = "IDZolnierza";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.iDZolnierzaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.iDZolnierzaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.iDZolnierzaDataGridViewTextBoxColumn.FillWeight = 20F;
             this.iDZolnierzaDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDZolnierzaDataGridViewTextBoxColumn.Name = "iDZolnierzaDataGridViewTextBoxColumn";
@@ -423,8 +424,8 @@
             // 
             // Ra
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Ra.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Ra.DefaultCellStyle = dataGridViewCellStyle2;
             this.Ra.HeaderText = "Ranga";
             this.Ra.Name = "Ra";
             this.Ra.ReadOnly = true;
@@ -432,8 +433,8 @@
             // imięDataGridViewTextBoxColumn
             // 
             this.imięDataGridViewTextBoxColumn.DataPropertyName = "Imię";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.imięDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.imięDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.imięDataGridViewTextBoxColumn.HeaderText = "Imię";
             this.imięDataGridViewTextBoxColumn.Name = "imięDataGridViewTextBoxColumn";
             this.imięDataGridViewTextBoxColumn.ReadOnly = true;
@@ -442,8 +443,8 @@
             // nazwiskoDataGridViewTextBoxColumn
             // 
             this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.nazwiskoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.nazwiskoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
             this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
             this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -452,8 +453,8 @@
             // dataUrodzeniaDataGridViewTextBoxColumn
             // 
             this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dataUrodzeniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dataUrodzeniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
             this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
             this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -461,8 +462,8 @@
             // grupaKrwiDataGridViewTextBoxColumn
             // 
             this.grupaKrwiDataGridViewTextBoxColumn.DataPropertyName = "GrupaKrwi";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.grupaKrwiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.grupaKrwiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.grupaKrwiDataGridViewTextBoxColumn.HeaderText = "Grupa Krwi";
             this.grupaKrwiDataGridViewTextBoxColumn.Name = "grupaKrwiDataGridViewTextBoxColumn";
             this.grupaKrwiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -471,8 +472,8 @@
             // płecDataGridViewTextBoxColumn
             // 
             this.płecDataGridViewTextBoxColumn.DataPropertyName = "Płec";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.płecDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.płecDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.płecDataGridViewTextBoxColumn.HeaderText = "Płeć";
             this.płecDataGridViewTextBoxColumn.Name = "płecDataGridViewTextBoxColumn";
             this.płecDataGridViewTextBoxColumn.ReadOnly = true;
@@ -481,8 +482,8 @@
             // wagaDataGridViewTextBoxColumn
             // 
             this.wagaDataGridViewTextBoxColumn.DataPropertyName = "Waga";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.wagaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.wagaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.wagaDataGridViewTextBoxColumn.HeaderText = "Waga";
             this.wagaDataGridViewTextBoxColumn.Name = "wagaDataGridViewTextBoxColumn";
             this.wagaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -491,8 +492,8 @@
             // wzrostDataGridViewTextBoxColumn
             // 
             this.wzrostDataGridViewTextBoxColumn.DataPropertyName = "Wzrost";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.wzrostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.wzrostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.wzrostDataGridViewTextBoxColumn.HeaderText = "Wzrost";
             this.wzrostDataGridViewTextBoxColumn.Name = "wzrostDataGridViewTextBoxColumn";
             this.wzrostDataGridViewTextBoxColumn.ReadOnly = true;
@@ -531,11 +532,21 @@
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(757, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "label8";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 414);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -556,6 +567,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -607,6 +619,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
+        private System.Windows.Forms.Label label8;
     }
 }
 

@@ -13,11 +13,11 @@ namespace General
 {
     public partial class Form1 : Form
     {
-        SqlConnection con;
+        
 
         public int policzRekordy(string nazwaTabeli)
         {
-            string stmt = "SELECT COUNT (*) FROM "+nazwaTabeli;
+            string stmt = "SELECT COUNT (*) FROM " + nazwaTabeli;
             int count = 0;
 
             using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
@@ -26,9 +26,10 @@ namespace General
                 {
                     thisConnection.Open();
                     count = (int)cmdCount.ExecuteScalar();
+                    thisConnection.Close();
                 }
+                return count;
             }
-            return count;
         }
 
         public int policzRekordyWarunek(string nazwaTabeli, string warunek)
@@ -43,6 +44,7 @@ namespace General
                 {
                     thisConnection.Open();
                     count = (int)cmdCount.ExecuteScalar();
+                    thisConnection.Close();
                 }
             }
             return count;

@@ -25,7 +25,6 @@ namespace General
                 using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                 {
                     thisConnection.Open();
-                    //hahahahahahhaha xD
                     count = (int)cmdCount.ExecuteScalar();
                     thisConnection.Close();
                 }
@@ -79,6 +78,7 @@ namespace General
             iloscPojazdowLabel.Text = Convert.ToString(policzRekordy("PojazdySpis"));
             iloscPojazdowUzytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "WHERE Wuzyciu = 'false'"));
             iloscPojazdowNiezytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "WHERE Wuzyciu = 'true'"));
+            iloscManewrowLabel.Text = Convert.ToString(policzRekordy("ManewryTab"));
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -87,6 +87,9 @@ namespace General
             iloscZolnierzyUzytychLabel.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "' AND Zolnierz.Wuzyciu = 'false'"));
             iloscZolnierzyNieuzytychLabel.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "' AND Zolnierz.Wuzyciu = 'true'"));
             iloscZolnierzyZUprLabel.Text = Convert.ToString(policzRekordyWarunek("UprawnieniaTab", "JOIN Zolnierz ON Zolnierz.IDZolnierza = UprawnieniaTab.IDZolnierza JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text+ "'"));
+            iloscPojazdowUzytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "JOIN Bazy ON PojazdySpis.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "' AND PojazdySpis.Wuzyciu = 'false'"));
+            iloscPojazdowNiezytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "JOIN Bazy ON PojazdySpis.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "' AND PojazdySpis.Wuzyciu = 'true'"));
+            iloscManewrowLabel.Text = Convert.ToString(policzRekordyWarunek("ManewryTab", "JOIN Bazy ON ManewryTab.IDBazy = Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'"));
         }
 
      

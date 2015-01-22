@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bazyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB9BA4F7dzordanDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_9BA4F7_dzordanDataSet = new General.DB_9BA4F7_dzordanDataSet();
@@ -39,13 +48,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.statsBox = new System.Windows.Forms.GroupBox();
+            this.iloscSkaldowLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.iloscZolnierzyNieuzytychLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.iloscPojazdowUzytychLabel = new System.Windows.Forms.Label();
+            this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyUzytychLabel = new System.Windows.Forms.Label();
             this.iloscPojazdowNiezytychLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.iloscPojazdowLabel = new System.Windows.Forms.Label();
@@ -54,18 +70,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDZolnierzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imięDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grupaKrwiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.płecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wagaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wzrostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDRangi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zolnierzBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.iloscSkaldowLabel = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -73,6 +91,9 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.statsBox.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bazyBindingSource
@@ -128,14 +149,12 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(945, 258);
             this.tabControl1.TabIndex = 3;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.statsBox);
@@ -147,13 +166,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(189, 59);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 23);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Pokaż dla bazy";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(6, 22);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(315, 23);
             this.button3.TabIndex = 3;
-            this.button3.Text = "pokaz łączne";
+            this.button3.Text = "Pokaz statystyki wojska";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -192,6 +221,33 @@
             this.statsBox.TabStop = false;
             this.statsBox.Text = "Statystyki";
             // 
+            // iloscSkaldowLabel
+            // 
+            this.iloscSkaldowLabel.AutoSize = true;
+            this.iloscSkaldowLabel.Location = new System.Drawing.Point(160, 69);
+            this.iloscSkaldowLabel.Name = "iloscSkaldowLabel";
+            this.iloscSkaldowLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscSkaldowLabel.TabIndex = 10;
+            this.iloscSkaldowLabel.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "-w użyciu:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "-dostępnych:";
+            // 
             // iloscZolnierzyNieuzytychLabel
             // 
             this.iloscZolnierzyNieuzytychLabel.AutoSize = true;
@@ -201,6 +257,15 @@
             this.iloscZolnierzyNieuzytychLabel.TabIndex = 9;
             this.iloscZolnierzyNieuzytychLabel.Text = "0";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Ilość składów";
+            // 
             // iloscPojazdowUzytychLabel
             // 
             this.iloscPojazdowUzytychLabel.AutoSize = true;
@@ -209,6 +274,15 @@
             this.iloscPojazdowUzytychLabel.Size = new System.Drawing.Size(13, 13);
             this.iloscPojazdowUzytychLabel.TabIndex = 8;
             this.iloscPojazdowUzytychLabel.Text = "0";
+            // 
+            // iloscZolnierzyZUprLabel
+            // 
+            this.iloscZolnierzyZUprLabel.AutoSize = true;
+            this.iloscZolnierzyZUprLabel.Location = new System.Drawing.Point(160, 56);
+            this.iloscZolnierzyZUprLabel.Name = "iloscZolnierzyZUprLabel";
+            this.iloscZolnierzyZUprLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscZolnierzyZUprLabel.TabIndex = 6;
+            this.iloscZolnierzyZUprLabel.Text = "0";
             // 
             // iloscZolnierzyUzytychLabel
             // 
@@ -228,10 +302,19 @@
             this.iloscPojazdowNiezytychLabel.TabIndex = 6;
             this.iloscPojazdowNiezytychLabel.Text = "0";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "-posiadających uprawnienia";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(266, 42);
+            this.label6.Location = new System.Drawing.Point(278, 42);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 5;
@@ -240,7 +323,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(266, 29);
+            this.label5.Location = new System.Drawing.Point(278, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 4;
@@ -292,13 +375,141 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(937, 232);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Żołnierze";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDZolnierzaDataGridViewTextBoxColumn,
+            this.Ra,
+            this.imięDataGridViewTextBoxColumn,
+            this.nazwiskoDataGridViewTextBoxColumn,
+            this.dataUrodzeniaDataGridViewTextBoxColumn,
+            this.grupaKrwiDataGridViewTextBoxColumn,
+            this.płecDataGridViewTextBoxColumn,
+            this.wagaDataGridViewTextBoxColumn,
+            this.wzrostDataGridViewTextBoxColumn,
+            this.IDRangi});
+            this.dataGridView1.DataSource = this.zolnierzBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 17);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(640, 165);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
+            // 
+            // iDZolnierzaDataGridViewTextBoxColumn
+            // 
+            this.iDZolnierzaDataGridViewTextBoxColumn.DataPropertyName = "IDZolnierza";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.iDZolnierzaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.iDZolnierzaDataGridViewTextBoxColumn.FillWeight = 20F;
+            this.iDZolnierzaDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDZolnierzaDataGridViewTextBoxColumn.Name = "iDZolnierzaDataGridViewTextBoxColumn";
+            this.iDZolnierzaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDZolnierzaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.iDZolnierzaDataGridViewTextBoxColumn.Width = 35;
+            // 
+            // Ra
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Ra.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Ra.HeaderText = "Ranga";
+            this.Ra.Name = "Ra";
+            this.Ra.ReadOnly = true;
+            // 
+            // imięDataGridViewTextBoxColumn
+            // 
+            this.imięDataGridViewTextBoxColumn.DataPropertyName = "Imię";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.imięDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            this.imięDataGridViewTextBoxColumn.HeaderText = "Imię";
+            this.imięDataGridViewTextBoxColumn.Name = "imięDataGridViewTextBoxColumn";
+            this.imięDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imięDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // nazwiskoDataGridViewTextBoxColumn
+            // 
+            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.nazwiskoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
+            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nazwiskoDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // dataUrodzeniaDataGridViewTextBoxColumn
+            // 
+            this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dataUrodzeniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // grupaKrwiDataGridViewTextBoxColumn
+            // 
+            this.grupaKrwiDataGridViewTextBoxColumn.DataPropertyName = "GrupaKrwi";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.grupaKrwiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.grupaKrwiDataGridViewTextBoxColumn.HeaderText = "Grupa Krwi";
+            this.grupaKrwiDataGridViewTextBoxColumn.Name = "grupaKrwiDataGridViewTextBoxColumn";
+            this.grupaKrwiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.grupaKrwiDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // płecDataGridViewTextBoxColumn
+            // 
+            this.płecDataGridViewTextBoxColumn.DataPropertyName = "Płec";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.płecDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.płecDataGridViewTextBoxColumn.HeaderText = "Płeć";
+            this.płecDataGridViewTextBoxColumn.Name = "płecDataGridViewTextBoxColumn";
+            this.płecDataGridViewTextBoxColumn.ReadOnly = true;
+            this.płecDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // wagaDataGridViewTextBoxColumn
+            // 
+            this.wagaDataGridViewTextBoxColumn.DataPropertyName = "Waga";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.wagaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            this.wagaDataGridViewTextBoxColumn.HeaderText = "Waga";
+            this.wagaDataGridViewTextBoxColumn.Name = "wagaDataGridViewTextBoxColumn";
+            this.wagaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.wagaDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // wzrostDataGridViewTextBoxColumn
+            // 
+            this.wzrostDataGridViewTextBoxColumn.DataPropertyName = "Wzrost";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.wzrostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            this.wzrostDataGridViewTextBoxColumn.HeaderText = "Wzrost";
+            this.wzrostDataGridViewTextBoxColumn.Name = "wzrostDataGridViewTextBoxColumn";
+            this.wzrostDataGridViewTextBoxColumn.ReadOnly = true;
+            this.wzrostDataGridViewTextBoxColumn.Width = 45;
+            // 
+            // IDRangi
+            // 
+            this.IDRangi.DataPropertyName = "IDRangi";
+            this.IDRangi.HeaderText = "IDRangi";
+            this.IDRangi.Name = "IDRangi";
+            this.IDRangi.ReadOnly = true;
+            this.IDRangi.Visible = false;
+            // 
+            // zolnierzBindingSource1
+            // 
+            this.zolnierzBindingSource1.DataMember = "Zolnierz";
+            this.zolnierzBindingSource1.DataSource = this.dB9BA4F7dzordanDataSetBindingSource;
             // 
             // tabPage3
             // 
@@ -307,7 +518,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(937, 232);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Pojazdy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
@@ -317,99 +528,8 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(937, 232);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "-w użyciu:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "-dostępnych:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "-posiadających uprawnienia";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(38, 195);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "label8";
-            // 
-            // iloscZolnierzyZUprLabel
-            // 
-            this.iloscZolnierzyZUprLabel.AutoSize = true;
-            this.iloscZolnierzyZUprLabel.Location = new System.Drawing.Point(160, 56);
-            this.iloscZolnierzyZUprLabel.Name = "iloscZolnierzyZUprLabel";
-            this.iloscZolnierzyZUprLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscZolnierzyZUprLabel.TabIndex = 6;
-            this.iloscZolnierzyZUprLabel.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "-ilość składów";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(139, 195);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(92, 195);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "label12";
-            // 
-            // iloscSkaldowLabel
-            // 
-            this.iloscSkaldowLabel.AutoSize = true;
-            this.iloscSkaldowLabel.Location = new System.Drawing.Point(160, 69);
-            this.iloscSkaldowLabel.Name = "iloscSkaldowLabel";
-            this.iloscSkaldowLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscSkaldowLabel.TabIndex = 10;
-            this.iloscSkaldowLabel.Text = "0";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(189, 59);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Pokaż dla bazy";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -432,6 +552,9 @@
             this.tabPage1.PerformLayout();
             this.statsBox.ResumeLayout(false);
             this.statsBox.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,13 +591,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label iloscSkaldowLabel;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label iloscZolnierzyZUprLabel;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource zolnierzBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZolnierzaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imięDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataUrodzeniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grupaKrwiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn płecDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
     }
 }
 

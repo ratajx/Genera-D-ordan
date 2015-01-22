@@ -780,7 +780,17 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
               <Mapping SourceColumn="Wzrost" DataSetColumn="Wzrost" />
               <Mapping SourceColumn="IDBazy" DataSetColumn="IDBazy" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="DB_9BA4F7_dzordanConnectionString (Settings)" DbObjectName="DB_9BA4F7_dzordan.dbo.Zolnierz" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, Waga, Wzrost, IDBazy FROM dbo.Zolnierz
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -790,7 +800,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
   <xs:element name="DB_9BA4F7_dzordanDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DB_9BA4F7_dzordanDataSet" msprop:Generator_UserDSName="DB_9BA4F7_dzordanDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Bazy" msprop:Generator_TableClassName="BazyDataTable" msprop:Generator_TableVarName="tableBazy" msprop:Generator_TablePropName="Bazy" msprop:Generator_RowDeletingName="BazyRowDeleting" msprop:Generator_RowChangingName="BazyRowChanging" msprop:Generator_RowEvHandlerName="BazyRowChangeEventHandler" msprop:Generator_RowDeletedName="BazyRowDeleted" msprop:Generator_UserTableName="Bazy" msprop:Generator_RowChangedName="BazyRowChanged" msprop:Generator_RowEvArgName="BazyRowChangeEvent" msprop:Generator_RowClassName="BazyRow">
+        <xs:element name="Bazy" msprop:Generator_TableClassName="BazyDataTable" msprop:Generator_TableVarName="tableBazy" msprop:Generator_RowChangedName="BazyRowChanged" msprop:Generator_TablePropName="Bazy" msprop:Generator_RowDeletingName="BazyRowDeleting" msprop:Generator_RowChangingName="BazyRowChanging" msprop:Generator_RowEvHandlerName="BazyRowChangeEventHandler" msprop:Generator_RowDeletedName="BazyRowDeleted" msprop:Generator_RowClassName="BazyRow" msprop:Generator_UserTableName="Bazy" msprop:Generator_RowEvArgName="BazyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDBazy" msprop:Generator_ColumnVarNameInTable="columnIDBazy" msprop:Generator_ColumnPropNameInRow="IDBazy" msprop:Generator_ColumnPropNameInTable="IDBazyColumn" msprop:Generator_UserColumnName="IDBazy" type="xs:int" />
@@ -819,7 +829,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ManewryKat" msprop:Generator_TableClassName="ManewryKatDataTable" msprop:Generator_TableVarName="tableManewryKat" msprop:Generator_TablePropName="ManewryKat" msprop:Generator_RowDeletingName="ManewryKatRowDeleting" msprop:Generator_RowChangingName="ManewryKatRowChanging" msprop:Generator_RowEvHandlerName="ManewryKatRowChangeEventHandler" msprop:Generator_RowDeletedName="ManewryKatRowDeleted" msprop:Generator_UserTableName="ManewryKat" msprop:Generator_RowChangedName="ManewryKatRowChanged" msprop:Generator_RowEvArgName="ManewryKatRowChangeEvent" msprop:Generator_RowClassName="ManewryKatRow">
+        <xs:element name="ManewryKat" msprop:Generator_TableClassName="ManewryKatDataTable" msprop:Generator_TableVarName="tableManewryKat" msprop:Generator_RowChangedName="ManewryKatRowChanged" msprop:Generator_TablePropName="ManewryKat" msprop:Generator_RowDeletingName="ManewryKatRowDeleting" msprop:Generator_RowChangingName="ManewryKatRowChanging" msprop:Generator_RowEvHandlerName="ManewryKatRowChangeEventHandler" msprop:Generator_RowDeletedName="ManewryKatRowDeleted" msprop:Generator_RowClassName="ManewryKatRow" msprop:Generator_UserTableName="ManewryKat" msprop:Generator_RowEvArgName="ManewryKatRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDManewryKat" msprop:Generator_ColumnVarNameInTable="columnIDManewryKat" msprop:Generator_ColumnPropNameInRow="IDManewryKat" msprop:Generator_ColumnPropNameInTable="IDManewryKatColumn" msprop:Generator_UserColumnName="IDManewryKat" type="xs:int" />
@@ -833,7 +843,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ManewryTab" msprop:Generator_TableClassName="ManewryTabDataTable" msprop:Generator_TableVarName="tableManewryTab" msprop:Generator_TablePropName="ManewryTab" msprop:Generator_RowDeletingName="ManewryTabRowDeleting" msprop:Generator_RowChangingName="ManewryTabRowChanging" msprop:Generator_RowEvHandlerName="ManewryTabRowChangeEventHandler" msprop:Generator_RowDeletedName="ManewryTabRowDeleted" msprop:Generator_UserTableName="ManewryTab" msprop:Generator_RowChangedName="ManewryTabRowChanged" msprop:Generator_RowEvArgName="ManewryTabRowChangeEvent" msprop:Generator_RowClassName="ManewryTabRow">
+        <xs:element name="ManewryTab" msprop:Generator_TableClassName="ManewryTabDataTable" msprop:Generator_TableVarName="tableManewryTab" msprop:Generator_RowChangedName="ManewryTabRowChanged" msprop:Generator_TablePropName="ManewryTab" msprop:Generator_RowDeletingName="ManewryTabRowDeleting" msprop:Generator_RowChangingName="ManewryTabRowChanging" msprop:Generator_RowEvHandlerName="ManewryTabRowChangeEventHandler" msprop:Generator_RowDeletedName="ManewryTabRowDeleted" msprop:Generator_RowClassName="ManewryTabRow" msprop:Generator_UserTableName="ManewryTab" msprop:Generator_RowEvArgName="ManewryTabRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDManewryTab" msprop:Generator_ColumnVarNameInTable="columnIDManewryTab" msprop:Generator_ColumnPropNameInRow="IDManewryTab" msprop:Generator_ColumnPropNameInTable="IDManewryTabColumn" msprop:Generator_UserColumnName="IDManewryTab" type="xs:int" />
@@ -856,7 +866,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PojazdyKat" msprop:Generator_TableClassName="PojazdyKatDataTable" msprop:Generator_TableVarName="tablePojazdyKat" msprop:Generator_TablePropName="PojazdyKat" msprop:Generator_RowDeletingName="PojazdyKatRowDeleting" msprop:Generator_RowChangingName="PojazdyKatRowChanging" msprop:Generator_RowEvHandlerName="PojazdyKatRowChangeEventHandler" msprop:Generator_RowDeletedName="PojazdyKatRowDeleted" msprop:Generator_UserTableName="PojazdyKat" msprop:Generator_RowChangedName="PojazdyKatRowChanged" msprop:Generator_RowEvArgName="PojazdyKatRowChangeEvent" msprop:Generator_RowClassName="PojazdyKatRow">
+        <xs:element name="PojazdyKat" msprop:Generator_TableClassName="PojazdyKatDataTable" msprop:Generator_TableVarName="tablePojazdyKat" msprop:Generator_RowChangedName="PojazdyKatRowChanged" msprop:Generator_TablePropName="PojazdyKat" msprop:Generator_RowDeletingName="PojazdyKatRowDeleting" msprop:Generator_RowChangingName="PojazdyKatRowChanging" msprop:Generator_RowEvHandlerName="PojazdyKatRowChangeEventHandler" msprop:Generator_RowDeletedName="PojazdyKatRowDeleted" msprop:Generator_RowClassName="PojazdyKatRow" msprop:Generator_UserTableName="PojazdyKat" msprop:Generator_RowEvArgName="PojazdyKatRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDKatPojazdu" msprop:Generator_ColumnVarNameInTable="columnIDKatPojazdu" msprop:Generator_ColumnPropNameInRow="IDKatPojazdu" msprop:Generator_ColumnPropNameInTable="IDKatPojazduColumn" msprop:Generator_UserColumnName="IDKatPojazdu" type="xs:int" />
@@ -870,7 +880,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PojazdySpis" msprop:Generator_TableClassName="PojazdySpisDataTable" msprop:Generator_TableVarName="tablePojazdySpis" msprop:Generator_TablePropName="PojazdySpis" msprop:Generator_RowDeletingName="PojazdySpisRowDeleting" msprop:Generator_RowChangingName="PojazdySpisRowChanging" msprop:Generator_RowEvHandlerName="PojazdySpisRowChangeEventHandler" msprop:Generator_RowDeletedName="PojazdySpisRowDeleted" msprop:Generator_UserTableName="PojazdySpis" msprop:Generator_RowChangedName="PojazdySpisRowChanged" msprop:Generator_RowEvArgName="PojazdySpisRowChangeEvent" msprop:Generator_RowClassName="PojazdySpisRow">
+        <xs:element name="PojazdySpis" msprop:Generator_TableClassName="PojazdySpisDataTable" msprop:Generator_TableVarName="tablePojazdySpis" msprop:Generator_RowChangedName="PojazdySpisRowChanged" msprop:Generator_TablePropName="PojazdySpis" msprop:Generator_RowDeletingName="PojazdySpisRowDeleting" msprop:Generator_RowChangingName="PojazdySpisRowChanging" msprop:Generator_RowEvHandlerName="PojazdySpisRowChangeEventHandler" msprop:Generator_RowDeletedName="PojazdySpisRowDeleted" msprop:Generator_RowClassName="PojazdySpisRow" msprop:Generator_UserTableName="PojazdySpis" msprop:Generator_RowEvArgName="PojazdySpisRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDPojazdu" msprop:Generator_ColumnVarNameInTable="columnIDPojazdu" msprop:Generator_ColumnPropNameInRow="IDPojazdu" msprop:Generator_ColumnPropNameInTable="IDPojazduColumn" msprop:Generator_UserColumnName="IDPojazdu" type="xs:int" />
@@ -892,7 +902,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PojazdyTyp" msprop:Generator_TableClassName="PojazdyTypDataTable" msprop:Generator_TableVarName="tablePojazdyTyp" msprop:Generator_TablePropName="PojazdyTyp" msprop:Generator_RowDeletingName="PojazdyTypRowDeleting" msprop:Generator_RowChangingName="PojazdyTypRowChanging" msprop:Generator_RowEvHandlerName="PojazdyTypRowChangeEventHandler" msprop:Generator_RowDeletedName="PojazdyTypRowDeleted" msprop:Generator_UserTableName="PojazdyTyp" msprop:Generator_RowChangedName="PojazdyTypRowChanged" msprop:Generator_RowEvArgName="PojazdyTypRowChangeEvent" msprop:Generator_RowClassName="PojazdyTypRow">
+        <xs:element name="PojazdyTyp" msprop:Generator_TableClassName="PojazdyTypDataTable" msprop:Generator_TableVarName="tablePojazdyTyp" msprop:Generator_RowChangedName="PojazdyTypRowChanged" msprop:Generator_TablePropName="PojazdyTyp" msprop:Generator_RowDeletingName="PojazdyTypRowDeleting" msprop:Generator_RowChangingName="PojazdyTypRowChanging" msprop:Generator_RowEvHandlerName="PojazdyTypRowChangeEventHandler" msprop:Generator_RowDeletedName="PojazdyTypRowDeleted" msprop:Generator_RowClassName="PojazdyTypRow" msprop:Generator_UserTableName="PojazdyTyp" msprop:Generator_RowEvArgName="PojazdyTypRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDTypPojazdu" msprop:Generator_ColumnVarNameInTable="columnIDTypPojazdu" msprop:Generator_ColumnPropNameInRow="IDTypPojazdu" msprop:Generator_ColumnPropNameInTable="IDTypPojazduColumn" msprop:Generator_UserColumnName="IDTypPojazdu" type="xs:int" />
@@ -909,7 +919,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Rangi" msprop:Generator_TableClassName="RangiDataTable" msprop:Generator_TableVarName="tableRangi" msprop:Generator_TablePropName="Rangi" msprop:Generator_RowDeletingName="RangiRowDeleting" msprop:Generator_RowChangingName="RangiRowChanging" msprop:Generator_RowEvHandlerName="RangiRowChangeEventHandler" msprop:Generator_RowDeletedName="RangiRowDeleted" msprop:Generator_UserTableName="Rangi" msprop:Generator_RowChangedName="RangiRowChanged" msprop:Generator_RowEvArgName="RangiRowChangeEvent" msprop:Generator_RowClassName="RangiRow">
+        <xs:element name="Rangi" msprop:Generator_TableClassName="RangiDataTable" msprop:Generator_TableVarName="tableRangi" msprop:Generator_RowChangedName="RangiRowChanged" msprop:Generator_TablePropName="Rangi" msprop:Generator_RowDeletingName="RangiRowDeleting" msprop:Generator_RowChangingName="RangiRowChanging" msprop:Generator_RowEvHandlerName="RangiRowChangeEventHandler" msprop:Generator_RowDeletedName="RangiRowDeleted" msprop:Generator_RowClassName="RangiRow" msprop:Generator_UserTableName="Rangi" msprop:Generator_RowEvArgName="RangiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDRangi" msprop:Generator_ColumnVarNameInTable="columnIDRangi" msprop:Generator_ColumnPropNameInRow="IDRangi" msprop:Generator_ColumnPropNameInTable="IDRangiColumn" msprop:Generator_UserColumnName="IDRangi" type="xs:int" />
@@ -923,7 +933,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Skład" msprop:Generator_TableClassName="SkładDataTable" msprop:Generator_TableVarName="tableSkład" msprop:Generator_TablePropName="Skład" msprop:Generator_RowDeletingName="SkładRowDeleting" msprop:Generator_RowChangingName="SkładRowChanging" msprop:Generator_RowEvHandlerName="SkładRowChangeEventHandler" msprop:Generator_RowDeletedName="SkładRowDeleted" msprop:Generator_UserTableName="Skład" msprop:Generator_RowChangedName="SkładRowChanged" msprop:Generator_RowEvArgName="SkładRowChangeEvent" msprop:Generator_RowClassName="SkładRow">
+        <xs:element name="Skład" msprop:Generator_TableClassName="SkładDataTable" msprop:Generator_TableVarName="tableSkład" msprop:Generator_RowChangedName="SkładRowChanged" msprop:Generator_TablePropName="Skład" msprop:Generator_RowDeletingName="SkładRowDeleting" msprop:Generator_RowChangingName="SkładRowChanging" msprop:Generator_RowEvHandlerName="SkładRowChangeEventHandler" msprop:Generator_RowDeletedName="SkładRowDeleted" msprop:Generator_RowClassName="SkładRow" msprop:Generator_UserTableName="Skład" msprop:Generator_RowEvArgName="SkładRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdSkladu" msprop:Generator_ColumnVarNameInTable="columnIdSkladu" msprop:Generator_ColumnPropNameInRow="IdSkladu" msprop:Generator_ColumnPropNameInTable="IdSkladuColumn" msprop:Generator_UserColumnName="IdSkladu" type="xs:int" />
@@ -944,7 +954,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Udzial" msprop:Generator_TableClassName="UdzialDataTable" msprop:Generator_TableVarName="tableUdzial" msprop:Generator_TablePropName="Udzial" msprop:Generator_RowDeletingName="UdzialRowDeleting" msprop:Generator_RowChangingName="UdzialRowChanging" msprop:Generator_RowEvHandlerName="UdzialRowChangeEventHandler" msprop:Generator_RowDeletedName="UdzialRowDeleted" msprop:Generator_UserTableName="Udzial" msprop:Generator_RowChangedName="UdzialRowChanged" msprop:Generator_RowEvArgName="UdzialRowChangeEvent" msprop:Generator_RowClassName="UdzialRow">
+        <xs:element name="Udzial" msprop:Generator_TableClassName="UdzialDataTable" msprop:Generator_TableVarName="tableUdzial" msprop:Generator_RowChangedName="UdzialRowChanged" msprop:Generator_TablePropName="Udzial" msprop:Generator_RowDeletingName="UdzialRowDeleting" msprop:Generator_RowChangingName="UdzialRowChanging" msprop:Generator_RowEvHandlerName="UdzialRowChangeEventHandler" msprop:Generator_RowDeletedName="UdzialRowDeleted" msprop:Generator_RowClassName="UdzialRow" msprop:Generator_UserTableName="Udzial" msprop:Generator_RowEvArgName="UdzialRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDUdzial" msprop:Generator_ColumnVarNameInTable="columnIDUdzial" msprop:Generator_ColumnPropNameInRow="IDUdzial" msprop:Generator_ColumnPropNameInTable="IDUdzialColumn" msprop:Generator_UserColumnName="IDUdzial" type="xs:int" />
@@ -965,7 +975,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UprawnieniaTab" msprop:Generator_TableClassName="UprawnieniaTabDataTable" msprop:Generator_TableVarName="tableUprawnieniaTab" msprop:Generator_TablePropName="UprawnieniaTab" msprop:Generator_RowDeletingName="UprawnieniaTabRowDeleting" msprop:Generator_RowChangingName="UprawnieniaTabRowChanging" msprop:Generator_RowEvHandlerName="UprawnieniaTabRowChangeEventHandler" msprop:Generator_RowDeletedName="UprawnieniaTabRowDeleted" msprop:Generator_UserTableName="UprawnieniaTab" msprop:Generator_RowChangedName="UprawnieniaTabRowChanged" msprop:Generator_RowEvArgName="UprawnieniaTabRowChangeEvent" msprop:Generator_RowClassName="UprawnieniaTabRow">
+        <xs:element name="UprawnieniaTab" msprop:Generator_TableClassName="UprawnieniaTabDataTable" msprop:Generator_TableVarName="tableUprawnieniaTab" msprop:Generator_RowChangedName="UprawnieniaTabRowChanged" msprop:Generator_TablePropName="UprawnieniaTab" msprop:Generator_RowDeletingName="UprawnieniaTabRowDeleting" msprop:Generator_RowChangingName="UprawnieniaTabRowChanging" msprop:Generator_RowEvHandlerName="UprawnieniaTabRowChangeEventHandler" msprop:Generator_RowDeletedName="UprawnieniaTabRowDeleted" msprop:Generator_RowClassName="UprawnieniaTabRow" msprop:Generator_UserTableName="UprawnieniaTab" msprop:Generator_RowEvArgName="UprawnieniaTabRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDUprawnieniaTab" msprop:Generator_ColumnVarNameInTable="columnIDUprawnieniaTab" msprop:Generator_ColumnPropNameInRow="IDUprawnieniaTab" msprop:Generator_ColumnPropNameInTable="IDUprawnieniaTabColumn" msprop:Generator_UserColumnName="IDUprawnieniaTab" type="xs:int" />
@@ -976,7 +986,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Załoga" msprop:Generator_TableClassName="ZałogaDataTable" msprop:Generator_TableVarName="tableZałoga" msprop:Generator_TablePropName="Załoga" msprop:Generator_RowDeletingName="ZałogaRowDeleting" msprop:Generator_RowChangingName="ZałogaRowChanging" msprop:Generator_RowEvHandlerName="ZałogaRowChangeEventHandler" msprop:Generator_RowDeletedName="ZałogaRowDeleted" msprop:Generator_UserTableName="Załoga" msprop:Generator_RowChangedName="ZałogaRowChanged" msprop:Generator_RowEvArgName="ZałogaRowChangeEvent" msprop:Generator_RowClassName="ZałogaRow">
+        <xs:element name="Załoga" msprop:Generator_TableClassName="ZałogaDataTable" msprop:Generator_TableVarName="tableZałoga" msprop:Generator_RowChangedName="ZałogaRowChanged" msprop:Generator_TablePropName="Załoga" msprop:Generator_RowDeletingName="ZałogaRowDeleting" msprop:Generator_RowChangingName="ZałogaRowChanging" msprop:Generator_RowEvHandlerName="ZałogaRowChangeEventHandler" msprop:Generator_RowDeletedName="ZałogaRowDeleted" msprop:Generator_RowClassName="ZałogaRow" msprop:Generator_UserTableName="Załoga" msprop:Generator_RowEvArgName="ZałogaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDZalogi" msprop:Generator_ColumnVarNameInTable="columnIDZalogi" msprop:Generator_ColumnPropNameInRow="IDZalogi" msprop:Generator_ColumnPropNameInTable="IDZalogiColumn" msprop:Generator_UserColumnName="IDZalogi" type="xs:int" />
@@ -997,7 +1007,7 @@ SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Zolnierz" msprop:Generator_TableClassName="ZolnierzDataTable" msprop:Generator_TableVarName="tableZolnierz" msprop:Generator_TablePropName="Zolnierz" msprop:Generator_RowDeletingName="ZolnierzRowDeleting" msprop:Generator_RowChangingName="ZolnierzRowChanging" msprop:Generator_RowEvHandlerName="ZolnierzRowChangeEventHandler" msprop:Generator_RowDeletedName="ZolnierzRowDeleted" msprop:Generator_UserTableName="Zolnierz" msprop:Generator_RowChangedName="ZolnierzRowChanged" msprop:Generator_RowEvArgName="ZolnierzRowChangeEvent" msprop:Generator_RowClassName="ZolnierzRow">
+        <xs:element name="Zolnierz" msprop:Generator_TableClassName="ZolnierzDataTable" msprop:Generator_TableVarName="tableZolnierz" msprop:Generator_RowChangedName="ZolnierzRowChanged" msprop:Generator_TablePropName="Zolnierz" msprop:Generator_RowDeletingName="ZolnierzRowDeleting" msprop:Generator_RowChangingName="ZolnierzRowChanging" msprop:Generator_RowEvHandlerName="ZolnierzRowChangeEventHandler" msprop:Generator_RowDeletedName="ZolnierzRowDeleted" msprop:Generator_RowClassName="ZolnierzRow" msprop:Generator_UserTableName="Zolnierz" msprop:Generator_RowEvArgName="ZolnierzRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDZolnierza" msprop:Generator_ColumnVarNameInTable="columnIDZolnierza" msprop:Generator_ColumnPropNameInRow="IDZolnierza" msprop:Generator_ColumnPropNameInTable="IDZolnierzaColumn" msprop:Generator_UserColumnName="IDZolnierza" type="xs:int" />

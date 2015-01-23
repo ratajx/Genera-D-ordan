@@ -48,7 +48,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -104,25 +103,25 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.iloscManewrowLabel = new System.Windows.Forms.Label();
-            this.iloscSkaldowLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.iloscPojazdowLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.iloscPojazdowNiezytychLabel = new System.Windows.Forms.Label();
-            this.iloscPojazdowUzytychLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iloscZolnierzyLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.iloscSkaldowLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.iloscZolnierzyNieuzytychLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.iloscZolnierzyUzytychLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.iloscPojazdowUzytychLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
+            this.iloscZolnierzyUzytychLabel = new System.Windows.Forms.Label();
+            this.iloscPojazdowNiezytychLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.iloscPojazdowLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.iloscZolnierzyLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -148,6 +147,8 @@
             this.statsBox.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).BeginInit();
@@ -204,14 +205,13 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(945, 258);
+            this.tabControl1.Size = new System.Drawing.Size(945, 347);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.comboBox1);
@@ -220,18 +220,9 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(937, 232);
+            this.tabPage1.Size = new System.Drawing.Size(937, 321);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(667, 306);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "0";
             // 
             // button4
             // 
@@ -269,25 +260,9 @@
             this.statsBox.Controls.Add(this.groupBox3);
             this.statsBox.Controls.Add(this.groupBox2);
             this.statsBox.Controls.Add(this.groupBox1);
-            this.statsBox.Controls.Add(this.iloscSkaldowLabel);
-            this.statsBox.Controls.Add(this.label2);
-            this.statsBox.Controls.Add(this.label4);
-            this.statsBox.Controls.Add(this.iloscZolnierzyNieuzytychLabel);
-            this.statsBox.Controls.Add(this.label10);
-            this.statsBox.Controls.Add(this.iloscPojazdowUzytychLabel);
-            this.statsBox.Controls.Add(this.iloscZolnierzyZUprLabel);
-            this.statsBox.Controls.Add(this.iloscZolnierzyUzytychLabel);
-            this.statsBox.Controls.Add(this.iloscPojazdowNiezytychLabel);
-            this.statsBox.Controls.Add(this.label7);
-            this.statsBox.Controls.Add(this.label6);
-            this.statsBox.Controls.Add(this.label5);
-            this.statsBox.Controls.Add(this.iloscPojazdowLabel);
-            this.statsBox.Controls.Add(this.label3);
-            this.statsBox.Controls.Add(this.iloscZolnierzyLabel);
-            this.statsBox.Controls.Add(this.label1);
             this.statsBox.Location = new System.Drawing.Point(327, 6);
             this.statsBox.Name = "statsBox";
-            this.statsBox.Size = new System.Drawing.Size(604, 202);
+            this.statsBox.Size = new System.Drawing.Size(604, 297);
             this.statsBox.TabIndex = 1;
             this.statsBox.TabStop = false;
             this.statsBox.Text = "Statystyki";
@@ -342,7 +317,7 @@
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Location = new System.Drawing.Point(267, 19);
+            this.groupBox4.Location = new System.Drawing.Point(267, 24);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(331, 255);
             this.groupBox4.TabIndex = 11;
@@ -352,27 +327,30 @@
             // label58
             // 
             this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label58.Location = new System.Drawing.Point(299, 134);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(13, 13);
+            this.label58.Size = new System.Drawing.Size(14, 13);
             this.label58.TabIndex = 48;
             this.label58.Text = "0";
             // 
             // label57
             // 
             this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label57.Location = new System.Drawing.Point(299, 121);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(13, 13);
+            this.label57.Size = new System.Drawing.Size(14, 13);
             this.label57.TabIndex = 47;
             this.label57.Text = "0";
             // 
             // label56
             // 
             this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label56.Location = new System.Drawing.Point(299, 108);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(13, 13);
+            this.label56.Size = new System.Drawing.Size(14, 13);
             this.label56.TabIndex = 46;
             this.label56.Text = "0";
             // 
@@ -406,18 +384,20 @@
             // label54
             // 
             this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label54.Location = new System.Drawing.Point(299, 82);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(13, 13);
+            this.label54.Size = new System.Drawing.Size(14, 13);
             this.label54.TabIndex = 41;
             this.label54.Text = "0";
             // 
             // label55
             // 
             this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label55.Location = new System.Drawing.Point(299, 95);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(13, 13);
+            this.label55.Size = new System.Drawing.Size(14, 13);
             this.label55.TabIndex = 40;
             this.label55.Text = "0";
             // 
@@ -586,45 +566,50 @@
             // label32
             // 
             this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label32.Location = new System.Drawing.Point(188, 134);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(88, 13);
+            this.label32.Size = new System.Drawing.Size(104, 13);
             this.label32.TabIndex = 21;
             this.label32.Text = "Marszałek Polski";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label31.Location = new System.Drawing.Point(188, 121);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(46, 13);
+            this.label31.Size = new System.Drawing.Size(53, 13);
             this.label31.TabIndex = 20;
             this.label31.Text = "Generał";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label30.Location = new System.Drawing.Point(188, 108);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(72, 13);
+            this.label30.Size = new System.Drawing.Size(85, 13);
             this.label30.TabIndex = 19;
             this.label30.Text = "Generał broni";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label29.Location = new System.Drawing.Point(188, 95);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(79, 13);
+            this.label29.Size = new System.Drawing.Size(94, 13);
             this.label29.TabIndex = 18;
             this.label29.Text = "Generał dywizji";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label28.Location = new System.Drawing.Point(188, 82);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(86, 13);
+            this.label28.Size = new System.Drawing.Size(101, 13);
             this.label28.TabIndex = 17;
             this.label28.Text = "Generał brygady";
             // 
@@ -785,9 +770,11 @@
             // 
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.iloscManewrowLabel);
-            this.groupBox3.Location = new System.Drawing.Point(6, 178);
+            this.groupBox3.Controls.Add(this.iloscSkaldowLabel);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Location = new System.Drawing.Point(6, 203);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(246, 100);
+            this.groupBox3.Size = new System.Drawing.Size(246, 76);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manewry";
@@ -801,176 +788,190 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Ilość aktualnych manewrów:";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Ilość składów";
-            // 
             // iloscManewrowLabel
             // 
             this.iloscManewrowLabel.AutoSize = true;
-            this.iloscManewrowLabel.Location = new System.Drawing.Point(153, 16);
+            this.iloscManewrowLabel.Location = new System.Drawing.Point(180, 16);
             this.iloscManewrowLabel.Name = "iloscManewrowLabel";
             this.iloscManewrowLabel.Size = new System.Drawing.Size(13, 13);
             this.iloscManewrowLabel.TabIndex = 9;
             this.iloscManewrowLabel.Text = "0";
             // 
-            // iloscSkaldowLabel
-            // 
-            this.iloscSkaldowLabel.AutoSize = true;
-            this.iloscSkaldowLabel.Location = new System.Drawing.Point(160, 69);
-            this.iloscSkaldowLabel.Name = "iloscSkaldowLabel";
-            this.iloscSkaldowLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscSkaldowLabel.TabIndex = 10;
-            this.iloscSkaldowLabel.Text = "0";
-            // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(6, 101);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.iloscPojazdowUzytychLabel);
+            this.groupBox2.Controls.Add(this.iloscPojazdowLabel);
+            this.groupBox2.Controls.Add(this.iloscPojazdowNiezytychLabel);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(6, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(246, 71);
+            this.groupBox2.Size = new System.Drawing.Size(246, 88);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pojazdy";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(278, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "-dostępnych:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ilość pojazdów:";
-            // 
-            // iloscPojazdowLabel
-            // 
-            this.iloscPojazdowLabel.AutoSize = true;
-            this.iloscPojazdowLabel.Location = new System.Drawing.Point(371, 16);
-            this.iloscPojazdowLabel.Name = "iloscPojazdowLabel";
-            this.iloscPojazdowLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscPojazdowLabel.TabIndex = 3;
-            this.iloscPojazdowLabel.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(278, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "-w użyciu:";
-            // 
-            // iloscPojazdowNiezytychLabel
-            // 
-            this.iloscPojazdowNiezytychLabel.AutoSize = true;
-            this.iloscPojazdowNiezytychLabel.Location = new System.Drawing.Point(371, 42);
-            this.iloscPojazdowNiezytychLabel.Name = "iloscPojazdowNiezytychLabel";
-            this.iloscPojazdowNiezytychLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscPojazdowNiezytychLabel.TabIndex = 6;
-            this.iloscPojazdowNiezytychLabel.Text = "0";
-            // 
-            // iloscPojazdowUzytychLabel
-            // 
-            this.iloscPojazdowUzytychLabel.AutoSize = true;
-            this.iloscPojazdowUzytychLabel.Location = new System.Drawing.Point(371, 29);
-            this.iloscPojazdowUzytychLabel.Name = "iloscPojazdowUzytychLabel";
-            this.iloscPojazdowUzytychLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscPojazdowUzytychLabel.TabIndex = 8;
-            this.iloscPojazdowUzytychLabel.Text = "0";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(6, 19);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.iloscZolnierzyLabel);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.iloscZolnierzyUzytychLabel);
+            this.groupBox1.Controls.Add(this.iloscZolnierzyNieuzytychLabel);
+            this.groupBox1.Controls.Add(this.iloscZolnierzyZUprLabel);
+            this.groupBox1.Location = new System.Drawing.Point(6, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(246, 76);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Żołnierze";
             // 
-            // label1
+            // iloscSkaldowLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ilość żołnierzy:";
-            // 
-            // iloscZolnierzyLabel
-            // 
-            this.iloscZolnierzyLabel.AutoSize = true;
-            this.iloscZolnierzyLabel.Location = new System.Drawing.Point(160, 16);
-            this.iloscZolnierzyLabel.Name = "iloscZolnierzyLabel";
-            this.iloscZolnierzyLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscZolnierzyLabel.TabIndex = 1;
-            this.iloscZolnierzyLabel.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "-dostępnych:";
+            this.iloscSkaldowLabel.AutoSize = true;
+            this.iloscSkaldowLabel.Location = new System.Drawing.Point(180, 29);
+            this.iloscSkaldowLabel.Name = "iloscSkaldowLabel";
+            this.iloscSkaldowLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscSkaldowLabel.TabIndex = 10;
+            this.iloscSkaldowLabel.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 42);
+            this.label2.Location = new System.Drawing.Point(26, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "-na manewrach:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "-dostępnych:";
+            // 
             // iloscZolnierzyNieuzytychLabel
             // 
             this.iloscZolnierzyNieuzytychLabel.AutoSize = true;
-            this.iloscZolnierzyNieuzytychLabel.Location = new System.Drawing.Point(153, 42);
+            this.iloscZolnierzyNieuzytychLabel.Location = new System.Drawing.Point(180, 39);
             this.iloscZolnierzyNieuzytychLabel.Name = "iloscZolnierzyNieuzytychLabel";
             this.iloscZolnierzyNieuzytychLabel.Size = new System.Drawing.Size(13, 13);
             this.iloscZolnierzyNieuzytychLabel.TabIndex = 9;
             this.iloscZolnierzyNieuzytychLabel.Text = "0";
             // 
-            // label7
+            // label10
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "-posiadających uprawnienia";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 29);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Ilość składów";
+            // 
+            // iloscPojazdowUzytychLabel
+            // 
+            this.iloscPojazdowUzytychLabel.AutoSize = true;
+            this.iloscPojazdowUzytychLabel.Location = new System.Drawing.Point(180, 31);
+            this.iloscPojazdowUzytychLabel.Name = "iloscPojazdowUzytychLabel";
+            this.iloscPojazdowUzytychLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscPojazdowUzytychLabel.TabIndex = 8;
+            this.iloscPojazdowUzytychLabel.Text = "0";
+            // 
+            // iloscZolnierzyZUprLabel
+            // 
+            this.iloscZolnierzyZUprLabel.AutoSize = true;
+            this.iloscZolnierzyZUprLabel.Location = new System.Drawing.Point(180, 53);
+            this.iloscZolnierzyZUprLabel.Name = "iloscZolnierzyZUprLabel";
+            this.iloscZolnierzyZUprLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscZolnierzyZUprLabel.TabIndex = 6;
+            this.iloscZolnierzyZUprLabel.Text = "0";
             // 
             // iloscZolnierzyUzytychLabel
             // 
             this.iloscZolnierzyUzytychLabel.AutoSize = true;
-            this.iloscZolnierzyUzytychLabel.Location = new System.Drawing.Point(153, 29);
+            this.iloscZolnierzyUzytychLabel.Location = new System.Drawing.Point(180, 26);
             this.iloscZolnierzyUzytychLabel.Name = "iloscZolnierzyUzytychLabel";
             this.iloscZolnierzyUzytychLabel.Size = new System.Drawing.Size(13, 13);
             this.iloscZolnierzyUzytychLabel.TabIndex = 7;
             this.iloscZolnierzyUzytychLabel.Text = "0";
             // 
-            // iloscZolnierzyZUprLabel
+            // iloscPojazdowNiezytychLabel
             // 
-            this.iloscZolnierzyZUprLabel.AutoSize = true;
-            this.iloscZolnierzyZUprLabel.Location = new System.Drawing.Point(153, 56);
-            this.iloscZolnierzyZUprLabel.Name = "iloscZolnierzyZUprLabel";
-            this.iloscZolnierzyZUprLabel.Size = new System.Drawing.Size(13, 13);
-            this.iloscZolnierzyZUprLabel.TabIndex = 6;
-            this.iloscZolnierzyZUprLabel.Text = "0";
+            this.iloscPojazdowNiezytychLabel.AutoSize = true;
+            this.iloscPojazdowNiezytychLabel.Location = new System.Drawing.Point(180, 44);
+            this.iloscPojazdowNiezytychLabel.Name = "iloscPojazdowNiezytychLabel";
+            this.iloscPojazdowNiezytychLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscPojazdowNiezytychLabel.TabIndex = 6;
+            this.iloscPojazdowNiezytychLabel.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 53);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "-posiadających uprawnienia";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "-w użyciu:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "-dostępnych:";
+            // 
+            // iloscPojazdowLabel
+            // 
+            this.iloscPojazdowLabel.AutoSize = true;
+            this.iloscPojazdowLabel.Location = new System.Drawing.Point(180, 18);
+            this.iloscPojazdowLabel.Name = "iloscPojazdowLabel";
+            this.iloscPojazdowLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscPojazdowLabel.TabIndex = 3;
+            this.iloscPojazdowLabel.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ilość pojazdów:";
+            // 
+            // iloscZolnierzyLabel
+            // 
+            this.iloscZolnierzyLabel.AutoSize = true;
+            this.iloscZolnierzyLabel.Location = new System.Drawing.Point(180, 13);
+            this.iloscZolnierzyLabel.Name = "iloscZolnierzyLabel";
+            this.iloscZolnierzyLabel.Size = new System.Drawing.Size(13, 13);
+            this.iloscZolnierzyLabel.TabIndex = 1;
+            this.iloscZolnierzyLabel.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ilość żołnierzy:";
             // 
             // menuStrip1
             // 
@@ -1158,11 +1159,14 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.statsBox.ResumeLayout(false);
-            this.statsBox.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).EndInit();
@@ -1259,7 +1263,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;

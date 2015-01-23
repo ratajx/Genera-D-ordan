@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bazyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB9BA4F7dzordanDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_9BA4F7_dzordanDataSet = new General.DB_9BA4F7_dzordanDataSet();
@@ -46,8 +37,6 @@
             this.zolnierzTableAdapter = new General.DB_9BA4F7_dzordanDataSetTableAdapters.ZolnierzTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -125,20 +114,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDZolnierzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imięDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grupaKrwiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.płecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wagaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wzrostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDRangi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zolnierzBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -152,7 +129,6 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bazyBindingSource
@@ -194,14 +170,10 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(945, 347);
             this.tabControl1.TabIndex = 3;
-            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.comboBox1);
@@ -213,24 +185,6 @@
             this.tabPage1.Size = new System.Drawing.Size(937, 321);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(208, 260);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 25);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(84, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 78);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -261,6 +215,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(177, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // statsBox
             // 
@@ -999,133 +954,18 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Żołnierze";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
+             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDZolnierzaDataGridViewTextBoxColumn,
-            this.Ra,
-            this.imięDataGridViewTextBoxColumn,
-            this.nazwiskoDataGridViewTextBoxColumn,
-            this.dataUrodzeniaDataGridViewTextBoxColumn,
-            this.grupaKrwiDataGridViewTextBoxColumn,
-            this.płecDataGridViewTextBoxColumn,
-            this.wagaDataGridViewTextBoxColumn,
-            this.wzrostDataGridViewTextBoxColumn,
-            this.IDRangi});
-            this.dataGridView1.DataSource = this.zolnierzBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 17);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 36);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(640, 165);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
-            // 
-            // iDZolnierzaDataGridViewTextBoxColumn
-            // 
-            this.iDZolnierzaDataGridViewTextBoxColumn.DataPropertyName = "IDZolnierza";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.iDZolnierzaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.iDZolnierzaDataGridViewTextBoxColumn.FillWeight = 20F;
-            this.iDZolnierzaDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDZolnierzaDataGridViewTextBoxColumn.Name = "iDZolnierzaDataGridViewTextBoxColumn";
-            this.iDZolnierzaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDZolnierzaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.iDZolnierzaDataGridViewTextBoxColumn.Width = 35;
-            // 
-            // Ra
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Ra.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Ra.HeaderText = "Ranga";
-            this.Ra.Name = "Ra";
-            this.Ra.ReadOnly = true;
-            // 
-            // imięDataGridViewTextBoxColumn
-            // 
-            this.imięDataGridViewTextBoxColumn.DataPropertyName = "Imię";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.imięDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.imięDataGridViewTextBoxColumn.HeaderText = "Imię";
-            this.imięDataGridViewTextBoxColumn.Name = "imięDataGridViewTextBoxColumn";
-            this.imięDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imięDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // nazwiskoDataGridViewTextBoxColumn
-            // 
-            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.nazwiskoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
-            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
-            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nazwiskoDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // dataUrodzeniaDataGridViewTextBoxColumn
-            // 
-            this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dataUrodzeniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // grupaKrwiDataGridViewTextBoxColumn
-            // 
-            this.grupaKrwiDataGridViewTextBoxColumn.DataPropertyName = "GrupaKrwi";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.grupaKrwiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.grupaKrwiDataGridViewTextBoxColumn.HeaderText = "Grupa Krwi";
-            this.grupaKrwiDataGridViewTextBoxColumn.Name = "grupaKrwiDataGridViewTextBoxColumn";
-            this.grupaKrwiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.grupaKrwiDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // płecDataGridViewTextBoxColumn
-            // 
-            this.płecDataGridViewTextBoxColumn.DataPropertyName = "Płec";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.płecDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.płecDataGridViewTextBoxColumn.HeaderText = "Płeć";
-            this.płecDataGridViewTextBoxColumn.Name = "płecDataGridViewTextBoxColumn";
-            this.płecDataGridViewTextBoxColumn.ReadOnly = true;
-            this.płecDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // wagaDataGridViewTextBoxColumn
-            // 
-            this.wagaDataGridViewTextBoxColumn.DataPropertyName = "Waga";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.wagaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.wagaDataGridViewTextBoxColumn.HeaderText = "Waga";
-            this.wagaDataGridViewTextBoxColumn.Name = "wagaDataGridViewTextBoxColumn";
-            this.wagaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.wagaDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // wzrostDataGridViewTextBoxColumn
-            // 
-            this.wzrostDataGridViewTextBoxColumn.DataPropertyName = "Wzrost";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.wzrostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.wzrostDataGridViewTextBoxColumn.HeaderText = "Wzrost";
-            this.wzrostDataGridViewTextBoxColumn.Name = "wzrostDataGridViewTextBoxColumn";
-            this.wzrostDataGridViewTextBoxColumn.ReadOnly = true;
-            this.wzrostDataGridViewTextBoxColumn.Width = 45;
-            // 
-            // IDRangi
-            // 
-            this.IDRangi.DataPropertyName = "IDRangi";
-            this.IDRangi.HeaderText = "IDRangi";
-            this.IDRangi.Name = "IDRangi";
-            this.IDRangi.ReadOnly = true;
-            this.IDRangi.Visible = false;
-            // 
-            // zolnierzBindingSource1
-            // 
-            this.zolnierzBindingSource1.DataMember = "Zolnierz";
-            this.zolnierzBindingSource1.DataSource = this.dB9BA4F7dzordanDataSetBindingSource;
             // 
             // tabPage3
             // 
@@ -1146,15 +986,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(253, 144);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 45);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1184,7 +1015,6 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1279,25 +1109,7 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
-        //private System.Windows.Forms.Label label10;
-        //private System.Windows.Forms.Label iloscZolnierzyZUprLabel;
-        //private System.Windows.Forms.Label label7;
-        //private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource zolnierzBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDZolnierzaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imięDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataUrodzeniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grupaKrwiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn płecDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-      //  private System.Windows.Forms.Button button1;
+  
     }
 }

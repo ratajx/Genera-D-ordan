@@ -57,7 +57,7 @@ namespace General
             string stmt1 = "SELECT NazwaRangi FROM Rangi";
             SqlDataReader rdr = null;
             int i=0,count = 0;
-
+            tabRang = null;
 
             using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
             {
@@ -88,12 +88,42 @@ namespace General
         {
             downloadRang();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                dataGridView1.Rows[i].Cells[1].Value = tabRang[Convert.ToInt16(dataGridView1.Rows[i].Cells[9].Value) - 1];
+                dataGridView1.Rows[i].Cells[0].Value = tabRang[Convert.ToInt16(dataGridView1.Rows[i].Cells[4].Value) - 1];
         }
 
+        void wyswietlZolnierzy()
+        {
+            // database accessible to your system.
+            String connectionString =
+                "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
+            string query =
+            "SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia,GrupaKrwi, Płec, Waga, Wzrost, Zolnierz.IDBazy From Zolnierz JOIN Bazy ON Zolnierz.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+            // Create a new data adapter based on the specified query.
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+
+            // Create a command builder to generate SQL update, insert, and 
+            // delete commands based on selectCommand. These are used to 
+            // update the database.
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            // Populate a new data table and bind it to the BindingSource.
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            dataGridView1.DataSource = table;
+
+            // Resize the DataGridView columns to fit the newly loaded content.
+            dataGridView1.AutoResizeColumns(
+                DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns["Ra"].DisplayIndex = 1;
+        }
         public Form1()
         {
             InitializeComponent();
+            dataGridView1.Columns.Add("Ra", "Ranga");
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -133,11 +163,14 @@ namespace General
         {
             ranga();
         }
-
-        private void tabControl1_Click(object sender, EventArgs e)
+      
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            wyswietlZolnierzy();
             ranga();
         }
+
+
 
      
     }

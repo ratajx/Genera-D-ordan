@@ -136,6 +136,7 @@
             this.zolnierzBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.HEHE = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -196,6 +197,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.HEHE);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.comboBox1);
@@ -1123,6 +1125,15 @@
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // HEHE
+            // 
+            this.HEHE.Location = new System.Drawing.Point(35, 107);
+            this.HEHE.Name = "HEHE";
+            this.HEHE.Size = new System.Drawing.Size(148, 57);
+            this.HEHE.TabIndex = 11;
+            this.HEHE.Text = "button1";
+            this.HEHE.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1262,5 +1273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
+        private System.Windows.Forms.Button HEHE;
     }
 }

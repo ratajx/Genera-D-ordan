@@ -136,7 +136,8 @@
             this.zolnierzBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.HEHEFDDS = new System.Windows.Forms.Button();
+            this.HEHE = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -197,6 +198,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.HEHE);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.comboBox1);
@@ -1125,7 +1128,16 @@
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // HEHEFDDS
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(193, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 58);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "but";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // HEHE
             // 
             this.HEHEFDDS.Location = new System.Drawing.Point(109, 16);
             this.HEHEFDDS.Name = "HEHEFDDS";
@@ -1133,6 +1145,15 @@
             this.HEHEFDDS.TabIndex = 15;
             this.HEHEFDDS.Text = "button1";
             this.HEHEFDDS.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(193, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 58);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "but";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1273,6 +1294,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
-        private System.Windows.Forms.Button HEHEFDDS;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button HEHE;
+        private System.Windows.Forms.Button button1;
     }
 }

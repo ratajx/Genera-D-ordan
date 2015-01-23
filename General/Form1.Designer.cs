@@ -116,6 +116,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -129,6 +131,8 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+//            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bazyBindingSource
@@ -954,7 +958,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Żołnierze";
             this.tabPage2.UseVisualStyleBackColor = true;
-             // 
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -987,15 +991,32 @@
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 392);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(950, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 414);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Generał Dżordan";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).EndInit();
@@ -1015,7 +1036,11 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+//            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1110,6 +1135,19 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.DataGridView dataGridView1;
-  
+        private System.Windows.Forms.BindingSource zolnierzBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZolnierzaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imięDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataUrodzeniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grupaKrwiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn płecDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+      //  private System.Windows.Forms.Button button1;
     }
 }

@@ -46,6 +46,8 @@
             this.zolnierzTableAdapter = new General.DB_9BA4F7_dzordanDataSetTableAdapters.ZolnierzTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.HEHE = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -136,8 +138,6 @@
             this.zolnierzBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.HEHE = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -198,7 +198,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.HEHE);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button4);
@@ -212,6 +211,24 @@
             this.tabPage1.Size = new System.Drawing.Size(937, 321);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(35, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 58);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "but";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // HEHE
+            // 
+            this.HEHE.Location = new System.Drawing.Point(35, 107);
+            this.HEHE.Name = "HEHE";
+            this.HEHE.Size = new System.Drawing.Size(148, 57);
+            this.HEHE.TabIndex = 11;
+            this.HEHE.Text = "button1";
+            this.HEHE.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -1127,33 +1144,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(193, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 58);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "but";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // HEHE
-            // 
-            this.HEHE.Location = new System.Drawing.Point(35, 107);
-            this.HEHE.Name = "HEHE";
-            this.HEHE.Size = new System.Drawing.Size(148, 57);
-            this.HEHE.TabIndex = 11;
-            this.HEHE.Text = "button1";
-            this.HEHE.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(193, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 58);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "but";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

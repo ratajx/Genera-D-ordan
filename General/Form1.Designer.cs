@@ -1296,6 +1296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button HEHE;
-        private System.Windows.Forms.Button button1;
+      //  private System.Windows.Forms.Button button1;
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bazyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB9BA4F7dzordanDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_9BA4F7_dzordanDataSet = new General.DB_9BA4F7_dzordanDataSet();
@@ -46,10 +46,6 @@
             this.zolnierzTableAdapter = new General.DB_9BA4F7_dzordanDataSetTableAdapters.ZolnierzTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -140,7 +136,6 @@
             this.zolnierzBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -201,11 +196,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.button6);
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.comboBox1);
@@ -217,42 +207,6 @@
             this.tabPage1.Size = new System.Drawing.Size(937, 321);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(189, 289);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(82, 22);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(87, 102);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(110, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 49);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -1050,8 +1004,8 @@
             // iDZolnierzaDataGridViewTextBoxColumn
             // 
             this.iDZolnierzaDataGridViewTextBoxColumn.DataPropertyName = "IDZolnierza";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.iDZolnierzaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.iDZolnierzaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.iDZolnierzaDataGridViewTextBoxColumn.FillWeight = 20F;
             this.iDZolnierzaDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDZolnierzaDataGridViewTextBoxColumn.Name = "iDZolnierzaDataGridViewTextBoxColumn";
@@ -1061,8 +1015,8 @@
             // 
             // Ra
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Ra.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Ra.DefaultCellStyle = dataGridViewCellStyle11;
             this.Ra.HeaderText = "Ranga";
             this.Ra.Name = "Ra";
             this.Ra.ReadOnly = true;
@@ -1070,8 +1024,8 @@
             // imięDataGridViewTextBoxColumn
             // 
             this.imięDataGridViewTextBoxColumn.DataPropertyName = "Imię";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.imięDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.imięDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.imięDataGridViewTextBoxColumn.HeaderText = "Imię";
             this.imięDataGridViewTextBoxColumn.Name = "imięDataGridViewTextBoxColumn";
             this.imięDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1080,8 +1034,8 @@
             // nazwiskoDataGridViewTextBoxColumn
             // 
             this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.nazwiskoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.nazwiskoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
             this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
             this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1090,8 +1044,8 @@
             // dataUrodzeniaDataGridViewTextBoxColumn
             // 
             this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dataUrodzeniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dataUrodzeniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
             this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
             this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1099,8 +1053,8 @@
             // grupaKrwiDataGridViewTextBoxColumn
             // 
             this.grupaKrwiDataGridViewTextBoxColumn.DataPropertyName = "GrupaKrwi";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.grupaKrwiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.grupaKrwiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.grupaKrwiDataGridViewTextBoxColumn.HeaderText = "Grupa Krwi";
             this.grupaKrwiDataGridViewTextBoxColumn.Name = "grupaKrwiDataGridViewTextBoxColumn";
             this.grupaKrwiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1109,8 +1063,8 @@
             // płecDataGridViewTextBoxColumn
             // 
             this.płecDataGridViewTextBoxColumn.DataPropertyName = "Płec";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.płecDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.płecDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.płecDataGridViewTextBoxColumn.HeaderText = "Płeć";
             this.płecDataGridViewTextBoxColumn.Name = "płecDataGridViewTextBoxColumn";
             this.płecDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1119,8 +1073,8 @@
             // wagaDataGridViewTextBoxColumn
             // 
             this.wagaDataGridViewTextBoxColumn.DataPropertyName = "Waga";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.wagaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.wagaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.wagaDataGridViewTextBoxColumn.HeaderText = "Waga";
             this.wagaDataGridViewTextBoxColumn.Name = "wagaDataGridViewTextBoxColumn";
             this.wagaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1129,8 +1083,8 @@
             // wzrostDataGridViewTextBoxColumn
             // 
             this.wzrostDataGridViewTextBoxColumn.DataPropertyName = "Wzrost";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.wzrostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.wzrostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
             this.wzrostDataGridViewTextBoxColumn.HeaderText = "Wzrost";
             this.wzrostDataGridViewTextBoxColumn.Name = "wzrostDataGridViewTextBoxColumn";
             this.wzrostDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1168,16 +1122,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(224, 151);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1318,10 +1262,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

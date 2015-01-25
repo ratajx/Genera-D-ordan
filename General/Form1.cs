@@ -95,28 +95,21 @@ namespace General
 
         void wyswietlZolnierzy()
         {
-            // database accessible to your system.
             String connectionString =
                 "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
             string query =
             "SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia,GrupaKrwi, Płec, Waga, Wzrost, Zolnierz.IDBazy From Zolnierz JOIN Bazy ON Zolnierz.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
-            // Create a new data adapter based on the specified query.
+           
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
 
-            // Create a command builder to generate SQL update, insert, and 
-            // delete commands based on selectCommand. These are used to 
-            // update the database.
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
-            // Populate a new data table and bind it to the BindingSource.
             DataTable table = new DataTable();
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             dataGridView1.DataSource = table;
 
-            // Resize the DataGridView columns to fit the newly loaded content.
-            dataGridView1.AutoResizeColumns(
-                DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns["Ra"].DisplayIndex = 1;
@@ -126,6 +119,27 @@ namespace General
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.AutoResizeColumns();
         }
+
+        void wyswietlPojazdy()
+        {
+            String connectionString =
+               "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
+
+            string query =
+                "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny, RokProdukcji,PojazdySpis.IDBazy FROM PojazdySpis JOIN Bazy ON PojazdySpis.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            dataGridView2.DataSource = table;
+
+            dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+        
         public Form1()
         {
             InitializeComponent();
@@ -134,17 +148,11 @@ namespace General
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Zolnierz' table. You can move, or remove it, as needed.
-            this.zolnierzTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet.Zolnierz);
-            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Bazy' table. You can move, or remove it, as needed.
+           // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Bazy' table. You can move, or remove it, as needed.
             this.bazyTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet.Bazy);
 
         }
-
-      
-
-
-
+  
         private void button3_Click(object sender, EventArgs e)
         {
             iloscZolnierzyLabel.Text = Convert.ToString(policzRekordy("Zolnierz"));
@@ -223,6 +231,8 @@ namespace General
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label9.Text = "Baza " + comboBox1.Text;
+            label59.Text = "Baza " + comboBox1.Text;
+            label60.Text = "Baza " + comboBox1.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -233,6 +243,12 @@ namespace General
             ranga();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.Columns.Count == 0)
+                dataGridView2.Columns.Add("Ra", "Ranga");
+            wyswietlPojazdy();
+        }
      
 
      

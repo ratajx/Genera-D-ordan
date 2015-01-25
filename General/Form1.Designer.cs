@@ -33,8 +33,6 @@
             this.dB9BA4F7dzordanDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_9BA4F7_dzordanDataSet = new General.DB_9BA4F7_dzordanDataSet();
             this.bazyTableAdapter = new General.DB_9BA4F7_dzordanDataSetTableAdapters.BazyTableAdapter();
-            this.zolnierzBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zolnierzTableAdapter = new General.DB_9BA4F7_dzordanDataSetTableAdapters.ZolnierzTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
@@ -111,21 +109,28 @@
             this.iloscZolnierzyUzytychLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyNieuzytychLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label59 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label60 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.statsBox.SuspendLayout();
@@ -135,6 +140,10 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,15 +166,6 @@
             // 
             this.bazyTableAdapter.ClearBeforeFill = true;
             // 
-            // zolnierzBindingSource
-            // 
-            this.zolnierzBindingSource.DataMember = "Zolnierz";
-            this.zolnierzBindingSource.DataSource = this.dB9BA4F7dzordanDataSetBindingSource;
-            // 
-            // zolnierzTableAdapter
-            // 
-            this.zolnierzTableAdapter.ClearBeforeFill = true;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -185,7 +185,6 @@
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.statsBox);
-            this.tabPage1.Controls.Add(this.menuStrip1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -943,16 +942,9 @@
             this.iloscZolnierzyZUprLabel.TabIndex = 6;
             this.iloscZolnierzyZUprLabel.Text = "0";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(931, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label9);
@@ -965,6 +957,53 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Żołnierze";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(16, 277);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(107, 40);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Wyświetl żołnierzy wszystkich baz";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(143, 278);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(88, 40);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Usuń żołnierza";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(143, 225);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 40);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Dodaj żołnierza";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(11, 8);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(188, 29);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Baza Jaworzno";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 225);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 40);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Wyświetl żołnierzy";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -980,6 +1019,12 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button10);
+            this.tabPage3.Controls.Add(this.button9);
+            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.label59);
+            this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -988,8 +1033,41 @@
             this.tabPage3.Text = "Pojazdy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(16, 225);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(107, 40);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Wyświetl pojazdy";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label59.Location = new System.Drawing.Point(11, 8);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(188, 29);
+            this.label59.TabIndex = 1;
+            this.label59.Text = "Baza Jaworzno";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(16, 40);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(632, 165);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.Controls.Add(this.label60);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -997,6 +1075,24 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(16, 40);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(520, 165);
+            this.dataGridView3.TabIndex = 1;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label60.Location = new System.Drawing.Point(11, 8);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(188, 29);
+            this.label60.TabIndex = 0;
+            this.label60.Text = "Baza Jaworzno";
             // 
             // statusStrip1
             // 
@@ -1014,42 +1110,32 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // button1
+            // button8
             // 
-            this.button1.Location = new System.Drawing.Point(16, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Pokaż żołnierzy";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button8.Location = new System.Drawing.Point(16, 277);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(107, 40);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Wyświetl pojazdy wszystkich baz";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // button9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Baza Jaworzno";
+            this.button9.Location = new System.Drawing.Point(143, 225);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(88, 40);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Dodaj pojazd";
+            this.button9.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button10
             // 
-            this.button2.Location = new System.Drawing.Point(139, 239);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 41);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Dodaj żołnierza";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(261, 240);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(88, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Usuń żołnierza";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button10.Location = new System.Drawing.Point(143, 278);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(88, 40);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Usuń pojazd";
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1058,17 +1144,14 @@
             this.ClientSize = new System.Drawing.Size(950, 414);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Generał Dżordan";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.statsBox.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1081,6 +1164,12 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1096,13 +1185,10 @@
         private DB_9BA4F7_dzordanDataSetTableAdapters.BazyTableAdapter bazyTableAdapter;
         //private System.Windows.Forms.BindingSource zolnierzBindingSource;
         //private DB_9BA4F7_dzordanDataSetTableAdapters.ZolnierzTableAdapter zolnierzTableAdapter;
-        private System.Windows.Forms.BindingSource zolnierzBindingSource;
-        private DB_9BA4F7_dzordanDataSetTableAdapters.ZolnierzTableAdapter zolnierzTableAdapter;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox statsBox;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -1196,6 +1282,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
       //  private System.Windows.Forms.Button button1;
     }
 }

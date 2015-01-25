@@ -120,12 +120,15 @@ namespace General
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns["Ra"].DisplayIndex = 1;
+            dataGridView1.Columns[1].HeaderText = "ID";
+            dataGridView1.Columns[5].HeaderText = "Data urodzenia";
+            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.AutoResizeColumns();
         }
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.Columns.Add("Ra", "Ranga");
-            
             toolStripStatusLabel1.Text = "Status: OK.";
         }
 
@@ -219,6 +222,13 @@ namespace General
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label9.Text = "Baza " + comboBox1.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.Columns.Count==0)
+                dataGridView1.Columns.Add("Ra", "Ranga");
             wyswietlZolnierzy();
             ranga();
         }

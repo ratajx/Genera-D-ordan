@@ -350,5 +350,11 @@ namespace General
             baza();
             dataGridView1.Width += dataGridView1.Columns["Ba"].Width+10;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            addSol form = new addSol();
+            form.Show();
+        }
     }
 }

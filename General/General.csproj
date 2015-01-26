@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addSol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addSol.Designer.cs">
+      <DependentUpon>addSol.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB_9BA4F7_dzordanDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addSol.resx">
+      <DependentUpon>addSol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

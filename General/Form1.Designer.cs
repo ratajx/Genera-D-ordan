@@ -110,7 +110,6 @@
             this.iloscZolnierzyNieuzytychLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label61 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -945,7 +944,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label61);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button2);
@@ -959,15 +957,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Żołnierze";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(329, 230);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(41, 13);
-            this.label61.TabIndex = 6;
-            this.label61.Text = "label61";
             // 
             // button6
             // 
@@ -996,6 +985,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Dodaj żołnierza";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label9
             // 
@@ -1278,17 +1268,6 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource zolnierzBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDZolnierzaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imięDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataUrodzeniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grupaKrwiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn płecDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wagaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wzrostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDRangi;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label label9;
@@ -1304,7 +1283,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label61;
       //  private System.Windows.Forms.Button button1;
     }
 }

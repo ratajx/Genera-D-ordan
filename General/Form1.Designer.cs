@@ -110,6 +110,7 @@
             this.iloscZolnierzyNieuzytychLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label61 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -117,6 +118,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label59 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -125,9 +129,6 @@
             this.label60 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -944,6 +945,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label61);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button2);
@@ -958,6 +960,15 @@
             this.tabPage2.Text = "Żołnierze";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(329, 230);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(41, 13);
+            this.label61.TabIndex = 6;
+            this.label61.Text = "label61";
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(16, 277);
@@ -966,6 +977,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Wyświetl żołnierzy wszystkich baz";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -1013,7 +1025,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(16, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(713, 165);
+            this.dataGridView1.Size = new System.Drawing.Size(735, 165);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
@@ -1032,6 +1044,33 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pojazdy";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(143, 278);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(88, 40);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Usuń pojazd";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(143, 225);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(88, 40);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Dodaj pojazd";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(16, 277);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(107, 40);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Wyświetl pojazdy wszystkich baz";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -1061,8 +1100,9 @@
             this.dataGridView2.Location = new System.Drawing.Point(16, 40);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(632, 165);
+            this.dataGridView2.Size = new System.Drawing.Size(529, 165);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // tabPage4
             // 
@@ -1109,33 +1149,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(16, 277);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(107, 40);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Wyświetl pojazdy wszystkich baz";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(143, 225);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(88, 40);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Dodaj pojazd";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(143, 278);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(88, 40);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Usuń pojazd";
-            this.button10.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1291,6 +1304,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label61;
       //  private System.Windows.Forms.Button button1;
     }
 }

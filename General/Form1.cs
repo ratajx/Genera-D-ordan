@@ -11,11 +11,23 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Windows;
 
+
 namespace General
 {
     public partial class Form1 : Form
     {
+        public class CustomDataGridView : DataGridView
+        {
+            public CustomDataGridView()
+            {
+                DoubleBuffered = true;
+            }
+        }
+
+
+
         string[] tabRang;
+        string[] tabBaz;
 
         public int policzRekordy(string nazwaTabeli)
         {
@@ -80,26 +92,87 @@ namespace General
                     }
                     thisConnection.Close();
                 }
-            }
-
-           
+            }          
 
         }
-       
+
+        void downloadBaz()
+        {
+            string stmt = "SELECT COUNT (*) FROM Bazy";
+            string stmt1 = "SELECT Miasto FROM Bazy";
+            SqlDataReader rdr = null;
+            int i = 0, count = 0;
+            tabBaz = null;
+
+            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+
+                    count = (int)cmdCount.ExecuteScalar();
+                    cmdCount.CommandText = stmt1;
+
+                    rdr = cmdCount.ExecuteReader();
+
+                    tabBaz = new string[count];
+                    while (rdr.Read())
+                    {
+                        tabBaz[i] = (string)rdr["Miasto"];
+                        i++;
+                    }
+                    thisConnection.Close();
+                }
+            }
+        }
+
         void ranga()
         {
             downloadRang();
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                dataGridView1.Rows[i].Cells[0].Value = tabRang[Convert.ToInt16(dataGridView1.Rows[i].Cells[4].Value) - 1];
+           foreach (DataGridViewColumn c in dataGridView1.Columns)
+           {
+                c.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+           }
+           foreach (DataGridViewRow row in dataGridView1.Rows)
+           {
+             row.Cells[0].Value = tabRang[(int)(row.Cells[4].Value) - 1];
+           }
+
+           foreach (DataGridViewColumn c in dataGridView1.Columns)
+           {
+               c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+           }
+
         }
 
-        void wyswietlZolnierzy()
+        void baza()
+        {
+            downloadBaz();
+
+            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            {
+                c.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            }
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells["Ba"].Value = tabBaz[(int)(row.Cells["IDBazy"].Value) - 1];
+            }
+            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            {
+                c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+        }
+
+        void wyswietlZolnierzy(bool baza)
         {
             String connectionString =
                 "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
-            string query =
-            "SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia,GrupaKrwi, Płec, Waga, Wzrost, Zolnierz.IDBazy From Zolnierz JOIN Bazy ON Zolnierz.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
-           
+            string query;
+            if (baza)
+                query = "SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia,GrupaKrwi, Płec, Waga, Wzrost, Zolnierz.IDBazy From Zolnierz JOIN Bazy ON Zolnierz.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+            else
+                query = "SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia,GrupaKrwi, Płec, Waga, Wzrost, Zolnierz.IDBazy From Zolnierz";
+
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
 
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -109,15 +182,12 @@ namespace General
             dataAdapter.Fill(table);
             dataGridView1.DataSource = table;
 
-            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns["Ra"].DisplayIndex = 1;
             dataGridView1.Columns[1].HeaderText = "ID";
             dataGridView1.Columns[5].HeaderText = "Data urodzenia";
-            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.AutoResizeColumns();
+            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";            
         }
 
         void wyswietlPojazdy()
@@ -226,6 +296,8 @@ namespace General
         private void dataGridView1_Sorted(object sender, EventArgs e)
         {
             ranga();
+            if (label9.Text == "Wszystkie bazy")
+                baza();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -233,24 +305,60 @@ namespace General
             label9.Text = "Baza " + comboBox1.Text;
             label59.Text = "Baza " + comboBox1.Text;
             label60.Text = "Baza " + comboBox1.Text;
+            dataGridView1.Columns.Clear();
+            dataGridView2.Columns.Clear();
+            dataGridView3.Columns.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.Columns.Count==0)
+            if (label9.Text != "Wszystkie bazy")
+            {
+                dataGridView1.Columns.Clear();
                 dataGridView1.Columns.Add("Ra", "Ranga");
-            wyswietlZolnierzy();
-            ranga();
+                wyswietlZolnierzy(true);
+                ranga();
+                dataGridView1.Width = 737;
+            }
+            else
+                MessageBox.Show("Wybierz bazę z panelu głównego");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             if (dataGridView2.Columns.Count == 0)
-                dataGridView2.Columns.Add("Ra", "Ranga");
+            {
+                DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+                buttonColumn.HeaderText = "Szczegóły";
+                buttonColumn.Name = "szcz";
+                buttonColumn.Text = "Wyświetl";
+                buttonColumn.UseColumnTextForButtonValue = true;
+                dataGridView2.Columns.Add(buttonColumn);
+                
+            }
             wyswietlPojazdy();
+            dataGridView2.Columns[0].DisplayIndex = 5;
+            dataGridView2.Columns[5].Visible = false;
+                       
         }
-     
 
-     
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pojazd_sz pojazd = new pojazd_sz(dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString());
+            pojazd.Text = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
+            pojazd.Show();            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            label9.Text = "Wszystkie bazy";
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("Ra", "Ranga");
+            wyswietlZolnierzy(false);
+            ranga();
+            dataGridView1.Columns.Add("Ba", "Baza");
+            baza();
+            dataGridView1.Width += dataGridView1.Columns["Ba"].Width+10;
+        }
     }
 }

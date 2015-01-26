@@ -16,16 +16,6 @@ namespace General
 {
     public partial class Form1 : Form
     {
-        public class CustomDataGridView : DataGridView
-        {
-            public CustomDataGridView()
-            {
-                DoubleBuffered = true;
-            }
-        }
-
-
-
         string[] tabRang;
         string[] tabBaz;
 

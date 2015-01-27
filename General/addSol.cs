@@ -45,6 +45,16 @@ namespace General
             this.Close();
         }
 
+        private void addSol_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Bazy' table. You can move, or remove it, as needed.
+            this.bazyTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet.Bazy);
+            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Rangi' table. You can move, or remove it, as needed.
+            this.rangiTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet.Rangi);
+
+        }
+
+
         
     }
 }

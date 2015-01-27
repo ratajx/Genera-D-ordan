@@ -35,9 +35,7 @@
             this.bazyTableAdapter = new General.DB_9BA4F7_dzordanDataSetTableAdapters.BazyTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label61 = new System.Windows.Forms.Label();
             this.statsBox = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label58 = new System.Windows.Forms.Label();
@@ -109,6 +107,9 @@
             this.iloscZolnierzyUzytychLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyNieuzytychLabel = new System.Windows.Forms.Label();
             this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -124,7 +125,14 @@
             this.label59 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.iDManewryTabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDManewryKatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDBazyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataOdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manewryTabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label60 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -144,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,10 +190,11 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.label61);
             this.tabPage1.Controls.Add(this.statsBox);
+            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -192,36 +202,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
             // 
-            // button4
+            // label61
             // 
-            this.button4.Location = new System.Drawing.Point(189, 59);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Pokaż statystyki bazy";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(315, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Pokaz statystyki wojska";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.bazyBindingSource;
-            this.comboBox1.DisplayMember = "Miasto";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(61, 69);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(21, 13);
+            this.label61.TabIndex = 11;
+            this.label61.Text = "lub";
             // 
             // statsBox
             // 
@@ -229,7 +217,7 @@
             this.statsBox.Controls.Add(this.groupBox3);
             this.statsBox.Controls.Add(this.groupBox2);
             this.statsBox.Controls.Add(this.groupBox1);
-            this.statsBox.Location = new System.Drawing.Point(327, 6);
+            this.statsBox.Location = new System.Drawing.Point(144, 6);
             this.statsBox.Name = "statsBox";
             this.statsBox.Size = new System.Drawing.Size(604, 297);
             this.statsBox.TabIndex = 1;
@@ -942,6 +930,37 @@
             this.iloscZolnierzyZUprLabel.TabIndex = 6;
             this.iloscZolnierzyZUprLabel.Text = "0";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(5, 92);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(133, 24);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Pokaż dla wybranej bazy";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.bazyBindingSource;
+            this.comboBox1.DisplayMember = "Miasto";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(5, 120);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(133, 21);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(6, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 49);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Pokaz ogólne";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button6);
@@ -1052,6 +1071,7 @@
             this.button9.TabIndex = 4;
             this.button9.Text = "Dodaj pojazd";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -1096,6 +1116,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button11);
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Controls.Add(this.label60);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -1106,13 +1127,74 @@
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(16, 211);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 39);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Wyświetl manewry";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDManewryTabDataGridViewTextBoxColumn,
+            this.iDManewryKatDataGridViewTextBoxColumn,
+            this.iDBazyDataGridViewTextBoxColumn,
+            this.dataOdDataGridViewTextBoxColumn,
+            this.dataDoDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.manewryTabBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(16, 40);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(520, 165);
             this.dataGridView3.TabIndex = 1;
+            // 
+            // iDManewryTabDataGridViewTextBoxColumn
+            // 
+            this.iDManewryTabDataGridViewTextBoxColumn.DataPropertyName = "IDManewryTab";
+            this.iDManewryTabDataGridViewTextBoxColumn.HeaderText = "IDManewryTab";
+            this.iDManewryTabDataGridViewTextBoxColumn.Name = "iDManewryTabDataGridViewTextBoxColumn";
+            this.iDManewryTabDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDManewryKatDataGridViewTextBoxColumn
+            // 
+            this.iDManewryKatDataGridViewTextBoxColumn.DataPropertyName = "IDManewryKat";
+            this.iDManewryKatDataGridViewTextBoxColumn.HeaderText = "IDManewryKat";
+            this.iDManewryKatDataGridViewTextBoxColumn.Name = "iDManewryKatDataGridViewTextBoxColumn";
+            this.iDManewryKatDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDBazyDataGridViewTextBoxColumn
+            // 
+            this.iDBazyDataGridViewTextBoxColumn.DataPropertyName = "IDBazy";
+            this.iDBazyDataGridViewTextBoxColumn.HeaderText = "IDBazy";
+            this.iDBazyDataGridViewTextBoxColumn.Name = "iDBazyDataGridViewTextBoxColumn";
+            this.iDBazyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataOdDataGridViewTextBoxColumn
+            // 
+            this.dataOdDataGridViewTextBoxColumn.DataPropertyName = "DataOd";
+            this.dataOdDataGridViewTextBoxColumn.HeaderText = "DataOd";
+            this.dataOdDataGridViewTextBoxColumn.Name = "dataOdDataGridViewTextBoxColumn";
+            this.dataOdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataDoDataGridViewTextBoxColumn
+            // 
+            this.dataDoDataGridViewTextBoxColumn.DataPropertyName = "DataDo";
+            this.dataDoDataGridViewTextBoxColumn.HeaderText = "DataDo";
+            this.dataDoDataGridViewTextBoxColumn.Name = "dataDoDataGridViewTextBoxColumn";
+            this.dataDoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // manewryTabBindingSource
+            // 
+            this.manewryTabBindingSource.DataMember = "ManewryTab";
+            this.manewryTabBindingSource.DataSource = this.dB9BA4F7dzordanDataSetBindingSource;
             // 
             // label60
             // 
@@ -1128,7 +1210,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 392);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 371);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(950, 22);
             this.statusStrip1.TabIndex = 4;
@@ -1144,7 +1226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 414);
+            this.ClientSize = new System.Drawing.Size(950, 393);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
@@ -1155,6 +1237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.statsBox.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1173,6 +1256,7 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1283,6 +1367,14 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDManewryTabDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDManewryKatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDBazyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataOdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource manewryTabBindingSource;
       //  private System.Windows.Forms.Button button1;
     }
 }

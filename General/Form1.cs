@@ -356,5 +356,16 @@ namespace General
             addSol form = new addSol();
             form.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            addVeh form = new addVeh();
+            form.Show();
+        }
     }
 }

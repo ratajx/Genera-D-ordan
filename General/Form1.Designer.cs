@@ -136,6 +136,7 @@
             this.label60 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -1116,6 +1117,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button12);
             this.tabPage4.Controls.Add(this.button11);
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Controls.Add(this.label60);
@@ -1221,6 +1223,16 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(97, 211);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(86, 39);
+            this.button12.TabIndex = 3;
+            this.button12.Text = "Utwórz manewry";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // Form1
             // 
@@ -1375,6 +1387,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataOdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource manewryTabBindingSource;
+        private System.Windows.Forms.Button button12;
       //  private System.Windows.Forms.Button button1;
     }
 }

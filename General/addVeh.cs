@@ -35,6 +35,8 @@ namespace General
 
         private void addVeh_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.PojazdyTyp' table. You can move, or remove it, as needed.
+            this.pojazdyTypTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet.PojazdyTyp);
             // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Bazy' table. You can move, or remove it, as needed.
             this.bazyTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet.Bazy);
             // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.PojazdySpis' table. You can move, or remove it, as needed.

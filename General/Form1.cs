@@ -367,5 +367,11 @@ namespace General
             addVeh form = new addVeh();
             form.Show();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            addMan form = new addMan();
+            form.Show();
+        }
     }
 }

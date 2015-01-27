@@ -27,15 +27,15 @@ namespace General
             string query ="SELECT Nazwa FROM PojazdyKat JOIN PojazdyTyp ON PojazdyKat.IDKatPojazdu=PojazdyTyp.IDKatPojazdu WHERE PojazdyTyp.NazwaPojazdu='"+nazwa+"'";// WHERE PojazdyTyp.NazwaPojazdu='" + nazwa + "'";
 
 
-            label1.Text = "Typ pojazdu: " + pokaz(query, thisConnection,"Nazwa");
+            label1.Text = pokaz(query, thisConnection,"Nazwa");
             label1.MaximumSize = new Size(150, 0);
             label1.AutoSize = true;
           
             query ="SELECT Masa FROM PojazdyTyp WHERE NazwaPojazdu='" + nazwa + "'";
-            label2.Text = "Masa pojazdu: " + pokaz(query, thisConnection,"Masa");
+            label2.Text = pokaz(query, thisConnection,"Masa") +"kg";
            
             query = "SELECT Ładowność FROM PojazdyTyp WHERE NazwaPojazdu='" + nazwa + "'";
-            label3.Text = "Ładowność: " + pokaz(query, thisConnection,"Ładowność");
+            label3.Text = pokaz(query, thisConnection, "Ładowność") + "kg";
         }
 
         string pokaz(string query,SqlConnection thisConnection,string column)

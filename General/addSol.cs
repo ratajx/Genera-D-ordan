@@ -54,6 +54,16 @@ namespace General
 
         }
 
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(trackBar1, trackBar1.Value.ToString());
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(trackBar2, trackBar2.Value.ToString());
+        }
+
 
         
     }

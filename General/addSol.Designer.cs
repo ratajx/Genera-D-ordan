@@ -56,6 +56,7 @@
             this.bazyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bazyTableAdapter = new General.DB_9BA4F7_dzordanDataSetTableAdapters.BazyTableAdapter();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -140,7 +141,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 179);
+            this.label7.Location = new System.Drawing.Point(26, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 8;
@@ -149,7 +150,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 203);
+            this.label8.Location = new System.Drawing.Point(26, 175);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 9;
@@ -158,7 +159,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 234);
+            this.label9.Location = new System.Drawing.Point(26, 204);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 13);
             this.label9.TabIndex = 10;
@@ -167,7 +168,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 259);
+            this.label10.Location = new System.Drawing.Point(27, 231);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 13);
             this.label10.TabIndex = 11;
@@ -175,14 +176,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 9);
+            this.textBox1.Location = new System.Drawing.Point(111, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(89, 20);
             this.textBox1.TabIndex = 12;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(85, 35);
+            this.textBox2.Location = new System.Drawing.Point(111, 35);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(89, 20);
             this.textBox2.TabIndex = 13;
@@ -197,29 +198,40 @@
             // trackBar1
             // 
             this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(85, 87);
+            this.trackBar1.Location = new System.Drawing.Point(111, 87);
             this.trackBar1.Maximum = 140;
             this.trackBar1.Minimum = 50;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(167, 45);
             this.trackBar1.TabIndex = 15;
             this.trackBar1.Value = 50;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(85, 119);
+            this.trackBar2.LargeChange = 1;
+            this.trackBar2.Location = new System.Drawing.Point(111, 119);
+            this.trackBar2.Maximum = 220;
+            this.trackBar2.Minimum = 150;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(167, 45);
             this.trackBar2.TabIndex = 16;
+            this.trackBar2.Value = 150;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "0"});
-            this.comboBox1.Location = new System.Drawing.Point(98, 148);
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB-",
+            "AB+",
+            "0-",
+            "0+"});
+            this.comboBox1.Location = new System.Drawing.Point(111, 148);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(38, 21);
             this.comboBox1.TabIndex = 17;
@@ -230,9 +242,9 @@
             this.comboBox2.DataSource = this.rangiBindingSource;
             this.comboBox2.DisplayMember = "NazwaRangi";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(98, 176);
+            this.comboBox2.Location = new System.Drawing.Point(111, 258);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(42, 21);
+            this.comboBox2.Size = new System.Drawing.Size(132, 21);
             this.comboBox2.TabIndex = 18;
             this.comboBox2.ValueMember = "NazwaRangi";
             // 
@@ -255,18 +267,18 @@
             this.comboBox3.DataSource = this.bazyBindingSource;
             this.comboBox3.DisplayMember = "Miasto";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(98, 203);
+            this.comboBox3.Location = new System.Drawing.Point(111, 175);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(40, 21);
+            this.comboBox3.Size = new System.Drawing.Size(78, 21);
             this.comboBox3.TabIndex = 19;
             this.comboBox3.ValueMember = "IDBazy";
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(98, 230);
+            this.comboBox4.Location = new System.Drawing.Point(111, 204);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(35, 21);
+            this.comboBox4.Size = new System.Drawing.Size(78, 21);
             this.comboBox4.TabIndex = 20;
             // 
             // bazyBindingSource
@@ -284,9 +296,9 @@
             this.comboBox5.Items.AddRange(new object[] {
             "Kobieta",
             "Mężczyzna"});
-            this.comboBox5.Location = new System.Drawing.Point(96, 263);
+            this.comboBox5.Location = new System.Drawing.Point(111, 231);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(36, 21);
+            this.comboBox5.Size = new System.Drawing.Size(78, 21);
             this.comboBox5.TabIndex = 21;
             // 
             // addSol
@@ -358,5 +370,6 @@
         private System.Windows.Forms.BindingSource bazyBindingSource;
         private DB_9BA4F7_dzordanDataSetTableAdapters.BazyTableAdapter bazyTableAdapter;
         private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

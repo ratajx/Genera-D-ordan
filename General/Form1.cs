@@ -16,6 +16,7 @@ namespace General
     public partial class Form1 : Form
     {
         string[] tabRang;
+        int x = 0;
 
         public int policzRekordy(string nazwaTabeli)
         {
@@ -192,6 +193,17 @@ namespace General
         private void tabControl1_Click(object sender, EventArgs e)
         {
             ranga();
+        }
+
+        private void comboBox1_DropDownClosed(object sender, EventArgs e)
+        {
+            label9.Text = "dssd";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            x++;
+            label9.Text = Convert.ToString(x);
         }
 
      

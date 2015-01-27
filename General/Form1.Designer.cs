@@ -137,6 +137,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button12 = new System.Windows.Forms.Button();
+            this.dB_9BA4F7_dzordanDataSet1 = new General.DB_9BA4F7_dzordanDataSet1();
+            this.bazyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bazyTableAdapter1 = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -155,6 +158,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bazyBindingSource
@@ -943,7 +948,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.bazyBindingSource;
+            this.comboBox1.DataSource = this.bazyBindingSource1;
             this.comboBox1.DisplayMember = "Miasto";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(5, 120);
@@ -1234,6 +1239,20 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // dB_9BA4F7_dzordanDataSet1
+            // 
+            this.dB_9BA4F7_dzordanDataSet1.DataSetName = "DB_9BA4F7_dzordanDataSet1";
+            this.dB_9BA4F7_dzordanDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bazyBindingSource1
+            // 
+            this.bazyBindingSource1.DataMember = "Bazy";
+            this.bazyBindingSource1.DataSource = this.dB_9BA4F7_dzordanDataSet1;
+            // 
+            // bazyTableAdapter1
+            // 
+            this.bazyTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1271,6 +1290,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1388,6 +1409,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource manewryTabBindingSource;
         private System.Windows.Forms.Button button12;
+        private DB_9BA4F7_dzordanDataSet1 dB_9BA4F7_dzordanDataSet1;
+        private System.Windows.Forms.BindingSource bazyBindingSource1;
+        private DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter bazyTableAdapter1;
       //  private System.Windows.Forms.Button button1;
     }
 }

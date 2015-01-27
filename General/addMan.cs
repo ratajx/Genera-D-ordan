@@ -33,7 +33,25 @@ namespace General
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int IDb = comboBox2.SelectedIndex+1;
+            int IDs = comboBox3.SelectedIndex + 1;
+            String connectionString = "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
+
+            string query = "SELECT Imię, Nazwisko from Zolnierz where Zolnierz.IDSkładu = '" + IDs + "'";
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            dataGridView2.DataSource = table;
+ 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int IDb = comboBox2.SelectedIndex + 1;
             String connectionString = "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
 
             string query = "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny From PojazdySpis WHERE IDBazy='" + IDb + "'";
@@ -47,7 +65,6 @@ namespace General
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             dataGridView1.DataSource = table;
- 
         }
     }
 }

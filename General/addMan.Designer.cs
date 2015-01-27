@@ -49,12 +49,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.manewryKatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.manewryKatTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.ManewryKatTableAdapter();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pojazdyKatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manewryKatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,6 +110,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(144, 21);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // bazyBindingSource
             // 
@@ -184,7 +187,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(287, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 129);
             this.dataGridView1.TabIndex = 10;
             // 
             // manewryKatBindingSource
@@ -196,11 +199,20 @@
             // 
             this.manewryKatTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(287, 141);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(444, 150);
+            this.dataGridView2.TabIndex = 11;
+            // 
             // addMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 262);
+            this.ClientSize = new System.Drawing.Size(743, 490);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox3);
@@ -221,6 +233,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.skladBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manewryKatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +261,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource manewryKatBindingSource;
         private DB_9BA4F7_dzordanDataSet1TableAdapters.ManewryKatTableAdapter manewryKatTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

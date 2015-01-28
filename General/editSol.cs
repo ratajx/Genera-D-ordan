@@ -54,14 +54,12 @@ namespace General
                     }
                 }
                 MessageBox.Show("Zaktualizowano");
-                
-                login a = new login();
-                Form1 ff = new Form1(connString,a);
+
                 var pr = Application.OpenForms.OfType<Form1>().Single();
-                pr.flag = false;
-                object sen = new object();
-                DataGridViewCellEventArgs f = new DataGridViewCellEventArgs(0, 0);
-                pr.dataGridView1_CellContentClick(sen, f);
+                if (pr.Label9=="Baza " + comboBox3.Text)
+                    pr.Bas(false);
+                if (pr.Label9 == "Wszystkie bazy")
+                    pr.Bas(true);
                 
                 this.Close();
             }

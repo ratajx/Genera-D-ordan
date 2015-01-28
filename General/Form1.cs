@@ -499,9 +499,7 @@ namespace General
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (flag)
-            {
-                if (e.ColumnIndex == 12)
+              if (e.ColumnIndex == 12)
                 {
                     string stmt = @"
                     delete from Zolnierz
@@ -528,19 +526,7 @@ namespace General
                     DataGridViewRow r = dataGridView1.Rows[e.RowIndex];
                     editSol editSol = new editSol(connString, r);
                     editSol.Show();
-                }
-            }
-            else
-            {
-                if (label9.Text == "Wszystkie bazy")
-                    button6_Click(sender, e);
-                else
-                    button1_Click(sender, e);
-                flag = true;
-            }
-
-
-            
+                }       
         }
        
         public void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -553,7 +539,9 @@ namespace General
             }
             if (e.ColumnIndex == 6)
             {
-                
+                DataGridViewRow r = dataGridView2.Rows[e.RowIndex];
+                editVeh editVeh = new editVeh(connString,r);
+                editVeh.Show();
             }
             if (e.ColumnIndex == 7)
             {

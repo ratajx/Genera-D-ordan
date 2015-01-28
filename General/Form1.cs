@@ -23,12 +23,12 @@ namespace General
         public bool flag=true;
 
 
-        public int width()
+        public int width(DataGridView d)
         {
             int w = 0;
-            for(int i=0;i<dataGridView1.Columns.Count;i++)
-                if(dataGridView1.Columns[i].Visible==true)
-                    w+=dataGridView1.Columns[i].Width;
+            for(int i=0;i<d.Columns.Count;i++)
+                if(d.Columns[i].Visible==true)
+                    w+=d.Columns[i].Width;
 
             return w+61;
         }
@@ -148,19 +148,19 @@ namespace General
 
         }
 
-        void baza()
+        void baza(DataGridView d)
         {
             downloadBaz();
 
-            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            foreach (DataGridViewColumn c in d.Columns)
             {
                 c.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             }
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in d.Rows)
             {
                 row.Cells["Ba"].Value = tabBaz[(int)(row.Cells["IDBazy"].Value) - 1];
             }
-            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            foreach (DataGridViewColumn c in d.Columns)
             {
                 c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
@@ -204,10 +204,13 @@ namespace General
             dataGridView1.Columns.Add(buttonColumn);
         }
 
-        void wyswietlPojazdy()
+        void wyswietlPojazdy(bool pojazd)
         {
-            string query =
-                "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny, RokProdukcji,PojazdySpis.IDBazy FROM PojazdySpis JOIN Bazy ON PojazdySpis.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+            string query;
+            if(pojazd)
+               query= "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny, RokProdukcji,PojazdySpis.IDBazy FROM PojazdySpis JOIN Bazy ON PojazdySpis.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+            else
+                query = "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny, RokProdukcji,PojazdySpis.IDBazy FROM PojazdySpis";
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
 
@@ -217,6 +220,19 @@ namespace General
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             dataGridView2.DataSource = table;
+
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "";
+            buttonColumn.Name = "delet";
+            buttonColumn.Text = "Usuń";
+            buttonColumn.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.HeaderText = "";
+            buttonColumn1.Name = "edit";
+            buttonColumn1.Text = "Edytuj";
+            buttonColumn1.UseColumnTextForButtonValue = true;
+            dataGridView2.Columns.Add(buttonColumn1);
+            dataGridView2.Columns.Add(buttonColumn);
 
             dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
@@ -312,7 +328,7 @@ namespace General
         {
             ranga();
             if (label9.Text == "Wszystkie bazy")
-                baza();
+                baza(dataGridView1);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -332,7 +348,7 @@ namespace General
                 dataGridView1.Columns.Clear();
                 wyswietlZolnierzy(true);
                 ranga();
-                dataGridView1.Width = width();
+                dataGridView1.Width = width(dataGridView1);
             }
             else
                 MessageBox.Show("Wybierz bazę z panelu głównego");
@@ -340,25 +356,28 @@ namespace General
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.Columns.Count == 0)
+            if (label59.Text != "Wszystkie bazy")
             {
+                dataGridView2.Columns.Clear();
                 DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
                 buttonColumn.HeaderText = "Szczegóły";
                 buttonColumn.Name = "szcz";
                 buttonColumn.Text = "Wyświetl";
                 buttonColumn.UseColumnTextForButtonValue = true;
                 dataGridView2.Columns.Add(buttonColumn);
-                
+
+                wyswietlPojazdy(true);
+                dataGridView2.Columns[0].DisplayIndex = 5;
+                dataGridView2.Columns[5].Visible = false;
+                dataGridView2.Width = width(dataGridView2);
             }
-            wyswietlPojazdy();
-            dataGridView2.Columns[0].DisplayIndex = 5;
-            dataGridView2.Columns[5].Visible = false;
-                       
+            else
+                MessageBox.Show("Wybierz bazę z panelu głównego");
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            pojazd_sz pojazd = new pojazd_sz(dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString());
+            pojazd_sz pojazd = new pojazd_sz(dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString(),connString);
             pojazd.Text = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
             pojazd.Show();            
         }
@@ -371,8 +390,8 @@ namespace General
             ranga();
             dataGridView1.Columns.Add("Ba", "Baza");
             dataGridView1.Columns["Ba"].DisplayIndex = 10;
-            baza();
-            dataGridView1.Width = width();
+            baza(dataGridView1);
+            dataGridView1.Width = width(dataGridView1);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -443,6 +462,30 @@ namespace General
 
 
             
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            label59.Text = "Wszystkie bazy";
+            dataGridView2.Columns.Clear();
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+                buttonColumn.HeaderText = "Szczegóły";
+                buttonColumn.Name = "szcz";
+                buttonColumn.Text = "Wyświetl";
+                buttonColumn.UseColumnTextForButtonValue = true;
+             dataGridView2.Columns.Add(buttonColumn);
+
+            
+             
+             
+                        
+            wyswietlPojazdy(false); 
+            dataGridView2.Columns.Add("Ba", "Baza");
+            baza(dataGridView2);
+            dataGridView2.Columns["Ba"].DisplayIndex = 5;
+            dataGridView2.Columns[0].DisplayIndex = 6;
+            dataGridView2.Columns[5].Visible = false;
+            dataGridView2.Width = width(dataGridView2);
         }
     }
 }

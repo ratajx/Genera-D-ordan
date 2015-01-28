@@ -120,7 +120,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button13 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -1048,7 +1047,6 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button13);
-            this.tabPage3.Controls.Add(this.button10);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.button7);
@@ -1072,15 +1070,6 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(143, 278);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(88, 40);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Usuń pojazd";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(143, 225);
@@ -1099,6 +1088,7 @@
             this.button8.TabIndex = 3;
             this.button8.Text = "Wyświetl pojazdy wszystkich baz";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -1397,7 +1387,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label61;

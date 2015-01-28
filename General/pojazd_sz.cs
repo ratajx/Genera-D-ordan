@@ -14,10 +14,12 @@ namespace General
     public partial class pojazd_sz : Form
     {
         globalString connString;
-        public pojazd_sz(string nazwa)
+        public pojazd_sz(string nazwa,globalString conn)
         {
             InitializeComponent();
+            connString = conn;
             dane(nazwa);
+            
         }
         
         void dane(string nazwa)

@@ -13,16 +13,18 @@ namespace General
 {
     public partial class addVeh : Form
     {
-        public addVeh()
+        globalString connString;
+        public addVeh(globalString str)
         {
             InitializeComponent();
+            connString = str;
         }
 
         void dodaj()
         {
             int baza = comboBox2.SelectedIndex+1;
             string stmt = @"insert into PojazdySpis(NazwaPojazdu, NumerRejestracyjny, RokProdukcji, IDBazy, Wuzyciu) values ('"+ comboBox1.Text +"','"+textBox1.Text+"','"+ textBox2.Text+"','"+baza+"','false')";
-            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
             {
                 using (SqlCommand query = new SqlCommand(stmt, thisConnection))
                 {

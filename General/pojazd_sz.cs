@@ -13,7 +13,7 @@ namespace General
 {
     public partial class pojazd_sz : Form
     {
-        
+        globalString connString;
         public pojazd_sz(string nazwa)
         {
             InitializeComponent();
@@ -22,8 +22,7 @@ namespace General
         
         void dane(string nazwa)
         {
-            string connectionString ="Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
-            SqlConnection thisConnection = new SqlConnection(connectionString);
+            SqlConnection thisConnection = new SqlConnection(connString.Name);
             string query ="SELECT Nazwa FROM PojazdyKat JOIN PojazdyTyp ON PojazdyKat.IDKatPojazdu=PojazdyTyp.IDKatPojazdu WHERE PojazdyTyp.NazwaPojazdu='"+nazwa+"'";// WHERE PojazdyTyp.NazwaPojazdu='" + nazwa + "'";
 
 

@@ -13,9 +13,11 @@ namespace General
 {
     public partial class addSol : Form
     {
-        public addSol()
+        globalString connString;
+        public addSol(globalString str)
         {
             InitializeComponent();
+            connString = str;
         }
 
         void dodaj()
@@ -26,7 +28,7 @@ namespace General
             insert into Zolnierz
             (Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, Waga, Wzrost, IDBazy)
             values ('"+textBox1.Text+"','"+textBox2.Text+"','"+comboBox2.SelectedValue.ToString()+"','"+dateTimePicker1.Value.ToShortDateString()+"','"+comboBox1.Text+"','"+comboBox5.Text[0] +"','"+trackBar1.Value.ToString()+"','"+trackBar2.Value.ToString()+"','"+comboBox3.SelectedValue.ToString()+"')";
-            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
             {
                 using (SqlCommand query = new SqlCommand(stmt, thisConnection))
                 {

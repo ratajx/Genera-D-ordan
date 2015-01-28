@@ -22,7 +22,6 @@ namespace General
 
         public int policzRekordy(string nazwaTabeli)
         {
-                        
             string stmt = "SELECT COUNT (*) FROM " + nazwaTabeli;
             int count = 0;
 
@@ -172,6 +171,7 @@ namespace General
             DataTable table = new DataTable();
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
+            dataGridView1.Columns.Add("Ra", "Ranga");
             dataGridView1.DataSource = table;
 
             dataGridView1.Columns[4].Visible = false;
@@ -179,7 +179,19 @@ namespace General
             dataGridView1.Columns["Ra"].DisplayIndex = 1;
             dataGridView1.Columns[1].HeaderText = "ID";
             dataGridView1.Columns[5].HeaderText = "Data urodzenia";
-            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";            
+            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "";
+            buttonColumn.Name = "delet";
+            buttonColumn.Text = "Usuń";
+            buttonColumn.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.HeaderText = "";
+            buttonColumn1.Name = "edit";
+            buttonColumn1.Text = "Edytuj";
+            buttonColumn1.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(buttonColumn1);
+            dataGridView1.Columns.Add(buttonColumn);
         }
 
         void wyswietlPojazdy()
@@ -309,10 +321,9 @@ namespace General
             if (label9.Text != "Wszystkie bazy")
             {
                 dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("Ra", "Ranga");
                 wyswietlZolnierzy(true);
                 ranga();
-                dataGridView1.Width = 737;
+                dataGridView1.Width = 827;
             }
             else
                 MessageBox.Show("Wybierz bazę z panelu głównego");
@@ -347,23 +358,18 @@ namespace General
         {
             label9.Text = "Wszystkie bazy";
             dataGridView1.Columns.Clear();
-            dataGridView1.Columns.Add("Ra", "Ranga");
             wyswietlZolnierzy(false);
             ranga();
             dataGridView1.Columns.Add("Ba", "Baza");
+            dataGridView1.Columns["Ba"].DisplayIndex = 10;
             baza();
-            dataGridView1.Width += dataGridView1.Columns["Ba"].Width+10;
+            dataGridView1.Width = 894;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             addSol form = new addSol();
             form.Show();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -382,6 +388,39 @@ namespace General
         {
             addMod form = new addMod();
             form.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex == 12)
+            {
+                string stmt = @"
+            delete from Zolnierz
+            where IDZolnierza = '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'";
+
+                using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                {
+                    using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                    {
+                        thisConnection.Open();
+                        query.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Usunięto");
+            }
+            else
+            {
+                editSol editSol = new editSol();
+                editSol.Show();
+            }
+
+            if (label9.Text == "Wszystkie bazy")
+                button6_Click(sender, e);
+            else
+                button1_Click(sender, e);
+                    //connString.conectionString
         }
     }
 }

@@ -22,12 +22,14 @@ namespace General
 
         void dodaj()
         {
+            int IDb = comboBox3.SelectedIndex + 1;
+            int IDr = comboBox2.SelectedIndex + 1;
             if(textBox1.Text!="" && textBox2.Text!="")
             {
             string stmt = @"
             insert into Zolnierz
             (Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, Waga, Wzrost, IDBazy)
-            values ('"+textBox1.Text+"','"+textBox2.Text+"','"+comboBox2.SelectedValue.ToString()+"','"+dateTimePicker1.Value.ToShortDateString()+"','"+comboBox1.Text+"','"+comboBox5.Text[0] +"','"+trackBar1.Value.ToString()+"','"+trackBar2.Value.ToString()+"','"+comboBox3.SelectedValue.ToString()+"')";
+            values ('"+textBox1.Text+"','"+textBox2.Text+"','"+IDr+"','"+dateTimePicker1.Value.ToShortDateString()+"','"+comboBox1.Text+"','"+comboBox5.Text[0] +"','"+trackBar1.Value.ToString()+"','"+trackBar2.Value.ToString()+"','"+IDb+"')";
             using (SqlConnection thisConnection = new SqlConnection(connString.Name))
             {
                 using (SqlCommand query = new SqlCommand(stmt, thisConnection))
@@ -37,6 +39,32 @@ namespace General
                 }
             }
             MessageBox.Show(comboBox2.Text + " " + textBox1.Text + " " + textBox2.Text + " dodany do bazy danych");
+            ////////////////////////^^^dodawanie zolnierza
+            int ID; 
+            int IDKat = comboBox4.SelectedIndex+1;
+            string stmt2 = "SELECT MAX(IDZolnierza) FROM Zolnierz";
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand query = new SqlCommand(stmt2, thisConnection))
+                {
+                    thisConnection.Open();
+                    ID = (int)query.ExecuteScalar();
+                    thisConnection.Close();
+                }
+            }
+
+            string stmt3 = @"
+            insert into UprawnieniaTab
+            (IDKatUprawnienia, IDZolnierza, DataNabycia, DataWaznosci)
+            values('" + IDKat + "','" + ID + "','" + dateTimePicker3.Value.ToString("yyyy") + "','" + dateTimePicker2.Value.ToString("yyyy") + "')";
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand query = new SqlCommand(stmt3, thisConnection))
+                {
+                    thisConnection.Open();
+                    query.ExecuteNonQuery();
+                }
+            }
 
             var pr = Application.OpenForms.OfType<Form1>().Single();
             if (pr.Label9 == "Baza " + comboBox3.Text)
@@ -64,6 +92,8 @@ namespace General
 
         private void addSol_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet1.PojazdyKat' table. You can move, or remove it, as needed.
+            this.pojazdyKatTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.PojazdyKat);
             // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Bazy' table. You can move, or remove it, as needed.
             this.bazyTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet.Bazy);
             // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet.Rangi' table. You can move, or remove it, as needed.
@@ -80,6 +110,27 @@ namespace General
         {
             toolTip1.SetToolTip(trackBar2, trackBar2.Value.ToString());
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                groupBox2.Enabled = true;
+            }
+            else
+            {
+                groupBox2.Enabled = false;
+            }
+        }
+
+       
+
+
 
 
         

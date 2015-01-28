@@ -17,11 +17,21 @@ namespace General
     public partial class Form1 : Form
     {
 
-        string[] tabRang;
-        string[] tabBaz;
+        public string[] tabRang;
+        public string[] tabBaz;
         globalString connString;
+        public bool flag=true;
 
 
+        public int width()
+        {
+            int w = 0;
+            for(int i=0;i<dataGridView1.Columns.Count;i++)
+                if(dataGridView1.Columns[i].Visible==true)
+                    w+=dataGridView1.Columns[i].Width;
+
+            return w+61;
+        }
         public int policzRekordy(string nazwaTabeli)
         {
             string stmt = "SELECT COUNT (*) FROM " + nazwaTabeli;
@@ -58,7 +68,7 @@ namespace General
             return count;
         }
 
-        void downloadRang()
+        public void downloadRang()
         {
             string stmt = "SELECT COUNT (*) FROM Rangi" ;
             string stmt1 = "SELECT NazwaRangi FROM Rangi";
@@ -89,7 +99,7 @@ namespace General
 
         }
 
-        void downloadBaz()
+       public void downloadBaz()
         {
             string stmt = "SELECT COUNT (*) FROM Bazy";
             string stmt1 = "SELECT Miasto FROM Bazy";
@@ -321,7 +331,7 @@ namespace General
                 dataGridView1.Columns.Clear();
                 wyswietlZolnierzy(true);
                 ranga();
-                dataGridView1.Width = 827;
+                dataGridView1.Width = width();
             }
             else
                 MessageBox.Show("Wybierz bazę z panelu głównego");
@@ -361,7 +371,7 @@ namespace General
             dataGridView1.Columns.Add("Ba", "Baza");
             dataGridView1.Columns["Ba"].DisplayIndex = 10;
             baza();
-            dataGridView1.Width = 894;
+            dataGridView1.Width = width();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -388,37 +398,50 @@ namespace General
             form.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (e.ColumnIndex == 12)
+            if (flag)
             {
-                string stmt = @"
+                if (e.ColumnIndex == 12)
+                {
+                    string stmt = @"
             delete from Zolnierz
             where IDZolnierza = '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'";
 
-                using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
-                {
-                    using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                    using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
                     {
-                        thisConnection.Open();
-                        query.ExecuteNonQuery();
+                        using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                        {
+                            thisConnection.Open();
+                            query.ExecuteNonQuery();
+                        }
                     }
-                }
 
-                MessageBox.Show("Usunięto");
+                    MessageBox.Show("Usunięto");
+
+                    if (label9.Text == "Wszystkie bazy")
+                        button6_Click(sender, e);
+                    else
+                        button1_Click(sender, e);
+                }
+                else
+                {
+                    DataGridViewRow r = dataGridView1.Rows[e.RowIndex];
+                    editSol editSol = new editSol(connString, r);
+                    editSol.Show();
+                }
             }
             else
             {
-                editSol editSol = new editSol();
-                editSol.Show();
+                if (label9.Text == "Wszystkie bazy")
+                    button6_Click(sender, e);
+                else
+                    button1_Click(sender, e);
+                flag = true;
             }
 
-            if (label9.Text == "Wszystkie bazy")
-                button6_Click(sender, e);
-            else
-                button1_Click(sender, e);
-                    //connString.conectionString
+
+            
         }
     }
 }

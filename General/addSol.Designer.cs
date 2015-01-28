@@ -222,7 +222,7 @@
             "0+"});
             this.comboBox1.Location = new System.Drawing.Point(111, 148);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(38, 21);
+            this.comboBox1.Size = new System.Drawing.Size(44, 21);
             this.comboBox1.TabIndex = 17;
             this.comboBox1.Text = "A+";
             // 

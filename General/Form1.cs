@@ -22,6 +22,20 @@ namespace General
         globalString connString;
         public bool flag=true;
 
+        private void setWidth()
+        {
+            dataGridView1.Columns[1].Width = 35;
+            dataGridView1.Columns[2].Width = 78;
+            dataGridView1.Columns[3].Width = 85;
+            dataGridView1.Columns[5].Width = 70;
+            dataGridView1.Columns[6].Width = 38;
+            dataGridView1.Columns[7].Width = 32;
+            dataGridView1.Columns[8].Width = 38;
+            dataGridView1.Columns[9].Width = 42;
+            dataGridView1.Columns["Ba"].Width = 65;
+            dataGridView1.Columns[11].Width = 40;
+            dataGridView1.Columns[12].Width = 40;
+        }
 
         public int width(DataGridView d)
         {
@@ -141,10 +155,10 @@ namespace General
              row.Cells[0].Value = tabRang[(int)(row.Cells[4].Value) - 1];
            }
 
-           foreach (DataGridViewColumn c in dataGridView1.Columns)
-           {
-               c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-           }
+           //foreach (DataGridViewColumn c in dataGridView1.Columns)
+           //{
+           //    c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+           //}
 
         }
 
@@ -160,10 +174,10 @@ namespace General
             {
                 row.Cells["Ba"].Value = tabBaz[(int)(row.Cells["IDBazy"].Value) - 1];
             }
-            foreach (DataGridViewColumn c in d.Columns)
-            {
-                c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            }
+            //foreach (DataGridViewColumn c in d.Columns)
+            //{
+            //    c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //}
         }
 
         void wyswietlZolnierzy(bool baza)
@@ -189,7 +203,8 @@ namespace General
             dataGridView1.Columns["Ra"].DisplayIndex = 1;
             dataGridView1.Columns[1].HeaderText = "ID";
             dataGridView1.Columns[5].HeaderText = "Data urodzenia";
-            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";            
+            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";
+            
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "";
             buttonColumn.Name = "delet";
@@ -348,11 +363,14 @@ namespace General
                 dataGridView1.Columns.Clear();
                 wyswietlZolnierzy(true);
                 ranga();
+                setWidth();
                 dataGridView1.Width = width(dataGridView1);
             }
             else
                 MessageBox.Show("Wybierz bazę z panelu głównego");
         }
+
+        
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -391,6 +409,7 @@ namespace General
             dataGridView1.Columns.Add("Ba", "Baza");
             dataGridView1.Columns["Ba"].DisplayIndex = 10;
             baza(dataGridView1);
+            setWidth();
             dataGridView1.Width = width(dataGridView1);
         }
 

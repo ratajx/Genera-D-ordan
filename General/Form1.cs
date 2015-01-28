@@ -16,6 +16,11 @@ namespace General
 {
     public partial class Form1 : Form
     {
+        public static class globalFantz
+        {
+           public static string connectionString = "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
+        }
+
         string[] tabRang;
         string[] tabBaz;
 
@@ -373,6 +378,12 @@ namespace General
         private void button12_Click(object sender, EventArgs e)
         {
             addMan form = new addMan();
+            form.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            addMod form = new addMod();
             form.Show();
         }
     }

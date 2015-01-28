@@ -189,7 +189,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(945, 347);
+            this.tabControl1.Size = new System.Drawing.Size(763, 347);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -203,7 +203,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(937, 321);
+            this.tabPage1.Size = new System.Drawing.Size(755, 321);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
             // 
@@ -1230,7 +1230,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 371);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(950, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(769, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1248,7 +1248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 393);
+            this.ClientSize = new System.Drawing.Size(769, 393);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";

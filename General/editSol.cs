@@ -54,14 +54,15 @@ namespace General
                     }
                 }
                 MessageBox.Show("Zaktualizowano");
+                
                 login a = new login();
                 Form1 ff = new Form1(connString,a);
-
                 var pr = Application.OpenForms.OfType<Form1>().Single();
                 pr.flag = false;
                 object sen = new object();
                 DataGridViewCellEventArgs f = new DataGridViewCellEventArgs(0, 0);
                 pr.dataGridView1_CellContentClick(sen, f);
+                
                 this.Close();
             }
             else

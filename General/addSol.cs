@@ -37,7 +37,20 @@ namespace General
                 }
             }
             MessageBox.Show(comboBox2.Text + " " + textBox1.Text + " " + textBox2.Text + " dodany do bazy danych");
-            this.Close();
+
+            login a = new login();
+            Form1 ff = new Form1(connString, a);
+            var pr = Application.OpenForms.OfType<Form1>().Single();
+            pr.flag = false;
+            if ("Baza "+comboBox3.Text == ff.Label9 || ff.Label9 == "Wszystkie bazy")
+            {
+                object sen = new object();
+                DataGridViewCellEventArgs f = new DataGridViewCellEventArgs(0, 0);
+                pr.dataGridView1_CellContentClick(sen, f);
+            }
+            this.Close();    
+                
+                
             }
             else
               MessageBox.Show("Uzupełnij wszystkie dane!");

@@ -203,7 +203,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(755, 321);
+            this.tabPage1.Size = new System.Drawing.Size(757, 321);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
             // 
@@ -1003,7 +1003,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(143, 251);
+            this.button2.Location = new System.Drawing.Point(147, 225);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 40);
             this.button2.TabIndex = 3;
@@ -1055,7 +1055,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(755, 321);
+            this.tabPage3.Size = new System.Drawing.Size(757, 321);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pojazdy";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1121,6 +1121,7 @@
             this.dataGridView2.Size = new System.Drawing.Size(529, 165);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.Sorted += new System.EventHandler(this.dataGridView2_Sorted);
             // 
             // tabPage4
             // 

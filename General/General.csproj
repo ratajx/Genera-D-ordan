@@ -88,6 +88,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="globalString.cs" />
     <Compile Include="pojazd_sz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,9 +99,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="addMan.resx">
       <DependentUpon>addMan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="addMod.resx">
-      <DependentUpon>addMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addSol.resx">
       <DependentUpon>addSol.cs</DependentUpon>

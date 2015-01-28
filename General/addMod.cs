@@ -23,17 +23,22 @@ namespace General
 
         void dodaj()
         {
-            int kat = comboBox1.SelectedIndex + 1;
-            string stmt = @"insert into PojazdyTyp(NazwaPojazdu, IDKatPojazdu, Masa, Ładowność) values ('" + textBox1.Text + "','" + kat + "','" + textBox2.Text + "','" + textBox3.Text + "')";
-            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            if (textBox1.Text == " " || textBox2.Text == " " || textBox3.Text == " ")
             {
-                using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                int kat = comboBox1.SelectedIndex + 1;
+                string stmt = @"insert into PojazdyTyp(NazwaPojazdu, IDKatPojazdu, Masa, Ładowność) values ('" + textBox1.Text + "','" + kat + "','" + textBox2.Text + "','" + textBox3.Text + "')";
+                using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
                 {
-                    thisConnection.Open();
-                    query.ExecuteNonQuery();
+                    using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                    {
+                        thisConnection.Open();
+                        query.ExecuteNonQuery();
+                    }
                 }
+                this.Close();
             }
-            this.Close();
+            else
+                MessageBox.Show("Uzupełnij wszystkie dane!");
         }
 
 

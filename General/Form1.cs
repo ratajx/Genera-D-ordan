@@ -221,11 +221,12 @@ namespace General
             dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         
-        public Form1(globalString str)
+        public Form1(globalString str, Form login)
         {
             InitializeComponent();
             toolStripStatusLabel1.Text = "Status: OK.";
             connString = str;
+            login.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)

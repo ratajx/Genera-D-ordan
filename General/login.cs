@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace General
 {
@@ -17,14 +18,41 @@ namespace General
         {
             InitializeComponent();
         }
+        void test()
+        {
+            bool run = true;
+            using (SqlConnection thisConnection = new SqlConnection(s.Name))
+            {
+                try
+                {
+                    thisConnection.Open();
+                }
+                catch (Exception ex)
+                {
+                    run = false;
+                    MessageBox.Show("Wprowadzono błędne dane!", "Błąd logowania");
+                }
+                if (run)
+                {
+                    thisConnection.Close();
+                    Form1 form = new Form1(s, this);
+                    form.Show();
+                }
+
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             s.Name = "Data Source=" + textBox1.Text + ";Initial Catalog=" + textBox2.Text + ";User ID=" + textBox3.Text + ";Password=" + textBox4.Text;
+            test();
 
-            Form1 form = new Form1(s);
-            form.Show();
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -20,11 +20,12 @@ namespace General
 
         void dodaj()
         {
-
+            if(textBox1.Text==" "||textBox2.Text==" ")
+            {
             string stmt = @"
             insert into Zolnierz
-            (IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, Waga, Wzrost, IDBazy, IDSkładu, Wuzyciu)
-            values ('Tu Będzie Reszta Kodu xDDDDDD')";
+            (Imię, Nazwisko, IDRangi, DataUrodzenia, GrupaKrwi, Płec, Waga, Wzrost, IDBazy)
+            values ('"+textBox1.Text+"','"+textBox2.Text+"','"+comboBox2.SelectedValue.ToString()+"','"+dateTimePicker1.Value.ToShortDateString()+"','"+comboBox1.Text+"','"+comboBox5.Text[0] +"','"+trackBar1.Value.ToString()+"','"+trackBar2.Value.ToString()+"','"+comboBox3.SelectedValue.ToString()+"')";
             using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
             {
                 using (SqlCommand query = new SqlCommand(stmt, thisConnection))
@@ -33,6 +34,12 @@ namespace General
                     query.ExecuteNonQuery();
                 }
             }
+            MessageBox.Show(comboBox2.Text + " " + textBox1.Text + " " + textBox2.Text + " dodany do bazy danych");
+            this.Close();
+            }
+            else
+              MessageBox.Show("Uzupełnij wszystkie dane!");
+
         }
 
         private void button1_Click(object sender, EventArgs e)

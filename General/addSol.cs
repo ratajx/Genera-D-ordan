@@ -22,7 +22,7 @@ namespace General
 
         void dodaj()
         {
-            if(textBox1.Text==" "||textBox2.Text==" ")
+            if(textBox1.Text!="" && textBox2.Text!="")
             {
             string stmt = @"
             insert into Zolnierz

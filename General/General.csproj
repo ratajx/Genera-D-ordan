@@ -82,6 +82,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_9BA4F7_dzordanDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="editSol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editSol.Designer.cs">
+      <DependentUpon>editSol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addVeh.resx">
       <DependentUpon>addVeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editSol.resx">
+      <DependentUpon>editSol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

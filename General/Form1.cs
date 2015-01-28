@@ -17,14 +17,23 @@ namespace General
     public partial class Form1 : Form
     {
 
-        string[] tabRang;
-        string[] tabBaz;
+        public string[] tabRang;
+        public string[] tabBaz;
         globalString connString;
-        
+        public bool flag=true;
 
+
+        public int width()
+        {
+            int w = 0;
+            for(int i=0;i<dataGridView1.Columns.Count;i++)
+                if(dataGridView1.Columns[i].Visible==true)
+                    w+=dataGridView1.Columns[i].Width;
+
+            return w+61;
+        }
         public int policzRekordy(string nazwaTabeli)
         {
-
             string stmt = "SELECT COUNT (*) FROM " + nazwaTabeli;
             int count = 0;
 
@@ -59,7 +68,7 @@ namespace General
             return count;
         }
 
-        void downloadRang()
+        public void downloadRang()
         {
             string stmt = "SELECT COUNT (*) FROM Rangi" ;
             string stmt1 = "SELECT NazwaRangi FROM Rangi";
@@ -90,7 +99,7 @@ namespace General
 
         }
 
-        void downloadBaz()
+       public void downloadBaz()
         {
             string stmt = "SELECT COUNT (*) FROM Bazy";
             string stmt1 = "SELECT Miasto FROM Bazy";
@@ -172,6 +181,7 @@ namespace General
             DataTable table = new DataTable();
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
+            dataGridView1.Columns.Add("Ra", "Ranga");
             dataGridView1.DataSource = table;
 
             dataGridView1.Columns[4].Visible = false;
@@ -180,6 +190,18 @@ namespace General
             dataGridView1.Columns[1].HeaderText = "ID";
             dataGridView1.Columns[5].HeaderText = "Data urodzenia";
             dataGridView1.Columns[6].HeaderText = "Grupa Krwi";            
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "";
+            buttonColumn.Name = "delet";
+            buttonColumn.Text = "Usuń";
+            buttonColumn.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.HeaderText = "";
+            buttonColumn1.Name = "edit";
+            buttonColumn1.Text = "Edytuj";
+            buttonColumn1.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(buttonColumn1);
+            dataGridView1.Columns.Add(buttonColumn);
         }
 
         void wyswietlPojazdy()
@@ -308,10 +330,9 @@ namespace General
             if (label9.Text != "Wszystkie bazy")
             {
                 dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("Ra", "Ranga");
                 wyswietlZolnierzy(true);
                 ranga();
-                dataGridView1.Width = 737;
+                dataGridView1.Width = width();
             }
             else
                 MessageBox.Show("Wybierz bazę z panelu głównego");
@@ -346,23 +367,18 @@ namespace General
         {
             label9.Text = "Wszystkie bazy";
             dataGridView1.Columns.Clear();
-            dataGridView1.Columns.Add("Ra", "Ranga");
             wyswietlZolnierzy(false);
             ranga();
             dataGridView1.Columns.Add("Ba", "Baza");
+            dataGridView1.Columns["Ba"].DisplayIndex = 10;
             baza();
-            dataGridView1.Width += dataGridView1.Columns["Ba"].Width+10;
+            dataGridView1.Width = width();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             addSol form = new addSol(connString);
             form.Show();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -381,6 +397,52 @@ namespace General
         {
             addMod form = new addMod(connString);
             form.Show();
+        }
+
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (flag)
+            {
+                if (e.ColumnIndex == 12)
+                {
+                    string stmt = @"
+            delete from Zolnierz
+            where IDZolnierza = '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'";
+
+                    using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                    {
+                        using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                        {
+                            thisConnection.Open();
+                            query.ExecuteNonQuery();
+                        }
+                    }
+
+                    MessageBox.Show("Usunięto");
+
+                    if (label9.Text == "Wszystkie bazy")
+                        button6_Click(sender, e);
+                    else
+                        button1_Click(sender, e);
+                }
+                else
+                {
+                    DataGridViewRow r = dataGridView1.Rows[e.RowIndex];
+                    editSol editSol = new editSol(connString, r);
+                    editSol.Show();
+                }
+            }
+            else
+            {
+                if (label9.Text == "Wszystkie bazy")
+                    button6_Click(sender, e);
+                else
+                    button1_Click(sender, e);
+                flag = true;
+            }
+
+
+            
         }
     }
 }

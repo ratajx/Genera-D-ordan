@@ -54,6 +54,7 @@ namespace General
                     }
                 }
                 MessageBox.Show("Zaktualizowano");
+                login a = new login();
                 Form1 ff = new Form1(connString, a);
 
                 var pr = Application.OpenForms.OfType<Form1>().Single();

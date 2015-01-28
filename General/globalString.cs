@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace General
 {
-    class globalString
+    public class globalString
     {
-        public string conectionString = "xDDDDDDD";
+        private string name;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+
+        }
     }
 }

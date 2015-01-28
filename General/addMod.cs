@@ -15,10 +15,11 @@ namespace General
 {
     public partial class addMod : Form
     {
-
-        public addMod()
+        globalString connString;
+        public addMod(globalString str)
         {
             InitializeComponent();
+            connString = str;
         }
 
         void dodaj()
@@ -27,7 +28,7 @@ namespace General
             {
                 int kat = comboBox1.SelectedIndex + 1;
                 string stmt = @"insert into PojazdyTyp(NazwaPojazdu, IDKatPojazdu, Masa, Ładowność) values ('" + textBox1.Text + "','" + kat + "','" + textBox2.Text + "','" + textBox3.Text + "')";
-                using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                using (SqlConnection thisConnection = new SqlConnection(connString.Name))
                 {
                     using (SqlCommand query = new SqlCommand(stmt, thisConnection))
                     {

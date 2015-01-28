@@ -19,13 +19,15 @@ namespace General
 
         string[] tabRang;
         string[] tabBaz;
+        globalString connString;
+
 
         public int policzRekordy(string nazwaTabeli)
         {
             string stmt = "SELECT COUNT (*) FROM " + nazwaTabeli;
             int count = 0;
 
-            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
             {
                 using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                 {
@@ -44,7 +46,7 @@ namespace General
             string stmt = "SELECT COUNT (*) FROM "+nazwaTabeli+ " " + warunek;
             int count = 0;
 
-            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
             {
                 using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                 {
@@ -64,7 +66,7 @@ namespace General
             int i=0,count = 0;
             tabRang = null;
 
-            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
             {
                 using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                 {
@@ -95,7 +97,7 @@ namespace General
             int i = 0, count = 0;
             tabBaz = null;
 
-            using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
             {
                 using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                 {
@@ -156,15 +158,13 @@ namespace General
 
         void wyswietlZolnierzy(bool baza)
         {
-            String connectionString =
-                "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
             string query;
             if (baza)
                 query = "SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia,GrupaKrwi, Płec, Waga, Wzrost, Zolnierz.IDBazy From Zolnierz JOIN Bazy ON Zolnierz.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
             else
                 query = "SELECT IDZolnierza, Imię, Nazwisko, IDRangi, DataUrodzenia,GrupaKrwi, Płec, Waga, Wzrost, Zolnierz.IDBazy From Zolnierz";
 
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
 
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
@@ -179,7 +179,7 @@ namespace General
             dataGridView1.Columns["Ra"].DisplayIndex = 1;
             dataGridView1.Columns[1].HeaderText = "ID";
             dataGridView1.Columns[5].HeaderText = "Data urodzenia";
-            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";
+            dataGridView1.Columns[6].HeaderText = "Grupa Krwi";            
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "";
             buttonColumn.Name = "delet";
@@ -196,13 +196,10 @@ namespace General
 
         void wyswietlPojazdy()
         {
-            String connectionString =
-               "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
-
             string query =
                 "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny, RokProdukcji,PojazdySpis.IDBazy FROM PojazdySpis JOIN Bazy ON PojazdySpis.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
 
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
 
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
@@ -214,10 +211,11 @@ namespace General
             dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         
-        public Form1()
+        public Form1(globalString str)
         {
             InitializeComponent();
             toolStripStatusLabel1.Text = "Status: OK.";
+            connString = str;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -368,25 +366,25 @@ namespace General
 
         private void button2_Click(object sender, EventArgs e)
         {
-            addSol form = new addSol();
+            addSol form = new addSol(connString);
             form.Show();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            addVeh form = new addVeh();
+            addVeh form = new addVeh(connString);
             form.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            addMan form = new addMan();
+            addMan form = new addMan(connString);
             form.Show();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            addMod form = new addMod();
+            addMod form = new addMod(connString);
             form.Show();
         }
 

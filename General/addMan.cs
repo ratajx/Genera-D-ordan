@@ -13,9 +13,11 @@ namespace General
 {
     public partial class addMan : Form
     {
-        public addMan()
+        globalString connString;
+        public addMan(globalString str)
         {
             InitializeComponent();
+            connString = str;
         }
 
         private void addMan_Load(object sender, EventArgs e)
@@ -34,14 +36,9 @@ namespace General
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             int IDs = comboBox3.SelectedIndex + 1;
-            String connectionString = "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
-
             string query = "SELECT Imię, Nazwisko from Zolnierz where Zolnierz.IDSkładu = '" + IDs + "'";
-
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
-
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-
             DataTable table = new DataTable();
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
@@ -52,15 +49,9 @@ namespace General
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int IDb = comboBox2.SelectedIndex + 1;
-            String connectionString = "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
-
             string query = "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny From PojazdySpis join PojazdyTyp on PojazdyTyp.NazwaPojazdu = PojazdySpis.NazwaPojazdu join PojazdyKat on PojazdyKat.IDKatPojazdu = PojazdyTyp.IDKatPojazdu join UprawnieniaTab on UprawnieniaTab.IDKatUprawnienia = PojazdyKat.IDKatPojazdu join Zolnierz on UprawnieniaTab.IDZolnierza = Zolnierz.IDZolnierza WHERE Zolnierz.IDBazy='" + IDb + "'";
-
-
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
-
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-
             DataTable table = new DataTable();
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);

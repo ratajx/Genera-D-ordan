@@ -109,6 +109,8 @@
             this.iloscZolnierzyZUprLabel = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bazyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_9BA4F7_dzordanDataSet1 = new General.DB_9BA4F7_dzordanDataSet1();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
@@ -118,6 +120,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button13 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -125,6 +128,7 @@
             this.label59 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.iDManewryTabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,11 +140,7 @@
             this.label60 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.dB_9BA4F7_dzordanDataSet1 = new General.DB_9BA4F7_dzordanDataSet1();
-            this.bazyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bazyTableAdapter1 = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter();
-            this.button13 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -151,6 +151,8 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -159,8 +161,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bazyBindingSource
@@ -191,7 +191,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(945, 347);
+            this.tabControl1.Size = new System.Drawing.Size(763, 347);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -205,7 +205,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(937, 321);
+            this.tabPage1.Size = new System.Drawing.Size(755, 321);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Panel główny";
             // 
@@ -958,6 +958,16 @@
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // bazyBindingSource1
+            // 
+            this.bazyBindingSource1.DataMember = "Bazy";
+            this.bazyBindingSource1.DataSource = this.dB_9BA4F7_dzordanDataSet1;
+            // 
+            // dB_9BA4F7_dzordanDataSet1
+            // 
+            this.dB_9BA4F7_dzordanDataSet1.DataSetName = "DB_9BA4F7_dzordanDataSet1";
+            this.dB_9BA4F7_dzordanDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(6, 10);
@@ -1062,6 +1072,16 @@
             this.tabPage3.Text = "Pojazdy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(439, 225);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(97, 40);
+            this.button13.TabIndex = 6;
+            this.button13.Text = "Dodaj nowy model do bazy";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(143, 278);
@@ -1135,6 +1155,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(97, 211);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(86, 39);
+            this.button12.TabIndex = 3;
+            this.button12.Text = "Utwórz manewry";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
@@ -1221,7 +1251,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 371);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(950, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(769, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1231,45 +1261,15 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(97, 211);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(86, 39);
-            this.button12.TabIndex = 3;
-            this.button12.Text = "Utwórz manewry";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // dB_9BA4F7_dzordanDataSet1
-            // 
-            this.dB_9BA4F7_dzordanDataSet1.DataSetName = "DB_9BA4F7_dzordanDataSet1";
-            this.dB_9BA4F7_dzordanDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bazyBindingSource1
-            // 
-            this.bazyBindingSource1.DataMember = "Bazy";
-            this.bazyBindingSource1.DataSource = this.dB_9BA4F7_dzordanDataSet1;
-            // 
             // bazyTableAdapter1
             // 
             this.bazyTableAdapter1.ClearBeforeFill = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(439, 225);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(97, 40);
-            this.button13.TabIndex = 6;
-            this.button13.Text = "Dodaj nowy model do bazy";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 393);
+            this.ClientSize = new System.Drawing.Size(769, 393);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
@@ -1290,6 +1290,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1302,8 +1304,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

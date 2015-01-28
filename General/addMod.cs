@@ -24,7 +24,7 @@ namespace General
 
         void dodaj()
         {
-            if (textBox1.Text == " " || textBox2.Text == " " || textBox3.Text == " ")
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
             {
                 int kat = comboBox1.SelectedIndex + 1;
                 string stmt = @"insert into PojazdyTyp(NazwaPojazdu, IDKatPojazdu, Masa, Ładowność) values ('" + textBox1.Text + "','" + kat + "','" + textBox2.Text + "','" + textBox3.Text + "')";

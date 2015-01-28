@@ -140,6 +140,7 @@
             this.dB_9BA4F7_dzordanDataSet1 = new General.DB_9BA4F7_dzordanDataSet1();
             this.bazyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bazyTableAdapter1 = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter();
+            this.button13 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -1046,6 +1047,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button13);
             this.tabPage3.Controls.Add(this.button10);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.button8);
@@ -1253,6 +1255,16 @@
             // 
             this.bazyTableAdapter1.ClearBeforeFill = true;
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(439, 225);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(97, 40);
+            this.button13.TabIndex = 6;
+            this.button13.Text = "Dodaj nowy model do bazy";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1412,6 +1424,7 @@
         private DB_9BA4F7_dzordanDataSet1 dB_9BA4F7_dzordanDataSet1;
         private System.Windows.Forms.BindingSource bazyBindingSource1;
         private DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter bazyTableAdapter1;
+        private System.Windows.Forms.Button button13;
       //  private System.Windows.Forms.Button button1;
     }
 }

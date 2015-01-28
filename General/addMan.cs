@@ -54,7 +54,7 @@ namespace General
             int IDb = comboBox2.SelectedIndex + 1;
             String connectionString = "Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8";
 
-            string query = "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny From PojazdySpis WHERE IDBazy='" + IDb + "'";
+            string query = "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny From PojazdySpis join PojazdyTyp on PojazdyTyp.NazwaPojazdu = PojazdySpis.NazwaPojazdu join PojazdyKat on PojazdyKat.IDKatPojazdu = PojazdyTyp.IDKatPojazdu join UprawnieniaTab on UprawnieniaTab.IDKatUprawnienia = PojazdyKat.IDKatPojazdu join Zolnierz on UprawnieniaTab.IDZolnierza = Zolnierz.IDZolnierza WHERE Zolnierz.IDBazy='" + IDb + "'";
 
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);

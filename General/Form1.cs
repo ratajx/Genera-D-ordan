@@ -26,6 +26,7 @@ namespace General
 
         public int policzRekordy(string nazwaTabeli)
         {
+                        
             string stmt = "SELECT COUNT (*) FROM " + nazwaTabeli;
             int count = 0;
 

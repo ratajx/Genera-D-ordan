@@ -78,6 +78,12 @@
     <Compile Include="addVeh.Designer.cs">
       <DependentUpon>addVeh.cs</DependentUpon>
     </Compile>
+    <Compile Include="addVeh2Team.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addVeh2Team.Designer.cs">
+      <DependentUpon>addVeh2Team.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB_9BA4F7_dzordanDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addVeh.resx">
       <DependentUpon>addVeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addVeh2Team.resx">
+      <DependentUpon>addVeh2Team.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editMan.resx">
       <DependentUpon>editMan.cs</DependentUpon>

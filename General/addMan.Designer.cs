@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.manewryKatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_9BA4F7_dzordanDataSet1 = new General.DB_9BA4F7_dzordanDataSet1();
             this.pojazdyKatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pojazdyKatTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.PojazdyKatTableAdapter();
@@ -43,19 +44,18 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.skladBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             this.skladTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.SkladTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.manewryKatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.manewryKatTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.ManewryKatTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.manewryKatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pojazdyKatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manewryKatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,11 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(144, 21);
             this.comboBox1.TabIndex = 1;
+            // 
+            // manewryKatBindingSource
+            // 
+            this.manewryKatBindingSource.DataMember = "ManewryKat";
+            this.manewryKatBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
             // 
             // dB_9BA4F7_dzordanDataSet1
             // 
@@ -164,6 +169,11 @@
             this.comboBox3.TabIndex = 8;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
+            // skladBindingSource
+            // 
+            this.skladBindingSource.DataMember = "Sklad";
+            this.skladBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -172,11 +182,6 @@
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Skład";
-            // 
-            // skladBindingSource
-            // 
-            this.skladBindingSource.DataMember = "Sklad";
-            this.skladBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
             // 
             // skladTableAdapter
             // 
@@ -189,11 +194,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(444, 129);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // manewryKatBindingSource
-            // 
-            this.manewryKatBindingSource.DataMember = "ManewryKat";
-            this.manewryKatBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
             // 
             // manewryKatTableAdapter
             // 
@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 490);
+            this.ClientSize = new System.Drawing.Size(743, 302);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -227,12 +227,12 @@
             this.Name = "addMan";
             this.Text = "Zaplanuj Manewry";
             this.Load += new System.EventHandler(this.addMan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.manewryKatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pojazdyKatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manewryKatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

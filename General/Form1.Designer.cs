@@ -1136,7 +1136,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(97, 268);
+            this.button5.Location = new System.Drawing.Point(95, 280);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 35);
             this.button5.TabIndex = 4;
@@ -1146,7 +1146,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(207, 268);
+            this.button12.Location = new System.Drawing.Point(205, 280);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 35);
             this.button12.TabIndex = 3;
@@ -1156,7 +1156,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(16, 268);
+            this.button11.Location = new System.Drawing.Point(16, 280);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 35);
             this.button11.TabIndex = 2;
@@ -1172,7 +1172,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(16, 40);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(520, 222);
+            this.dataGridView3.Size = new System.Drawing.Size(520, 234);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             this.dataGridView3.Sorted += new System.EventHandler(this.dataGridView3_Sorted);

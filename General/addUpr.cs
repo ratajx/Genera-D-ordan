@@ -43,7 +43,7 @@ namespace General
             {
                 int IDkat = comboBox1.SelectedIndex + 1;
             string stmt = @"insert into UprawnieniaTab(IDKatUprawnienia, IDZolnierza, DataNabycia, DataWaznosci) 
-        values ('" + cIDkat + "','" + IDzol + "','" + textBox1.Text + "','" + textBox1.Text + "')";
+        values ('" + IDkat + "','" + IDzol + "','" + textBox1.Text + "','" + textBox1.Text + "')";
             using (SqlConnection thisConnection = new SqlConnection(conn))
             {
                 using (SqlCommand query = new SqlCommand(stmt, thisConnection))

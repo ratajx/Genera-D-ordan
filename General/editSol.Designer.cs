@@ -61,6 +61,7 @@
             this.zolnierzBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zolnierzTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.ZolnierzTableAdapter();
             this.label9 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rangiBindingSource)).BeginInit();
@@ -335,11 +336,22 @@
             this.label9.Text = "label9";
             this.label9.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(254, 237);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 23);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "Dodaj uprawnienia";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // editSol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 298);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox5);
@@ -412,5 +424,6 @@
         private System.Windows.Forms.BindingSource zolnierzBindingSource;
         private DB_9BA4F7_dzordanDataSet1TableAdapters.ZolnierzTableAdapter zolnierzTableAdapter;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button3;
     }
 }

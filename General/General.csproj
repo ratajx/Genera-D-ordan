@@ -66,6 +66,12 @@
     <Compile Include="addSol.Designer.cs">
       <DependentUpon>addSol.cs</DependentUpon>
     </Compile>
+    <Compile Include="addUpr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addUpr.Designer.cs">
+      <DependentUpon>addUpr.cs</DependentUpon>
+    </Compile>
     <Compile Include="addVeh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addSol.resx">
       <DependentUpon>addSol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addUpr.resx">
+      <DependentUpon>addUpr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addVeh.resx">
       <DependentUpon>addVeh.cs</DependentUpon>

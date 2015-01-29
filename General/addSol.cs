@@ -66,6 +66,11 @@ namespace General
                 }
             }
 
+
+
+            ////////////////////////^^^dodawanie uprawnien
+            login a = new login();
+            Form1 ff = new Form1(connString, a);
             var pr = Application.OpenForms.OfType<Form1>().Single();
             if (pr.Label9 == "Baza " + comboBox3.Text)
                 pr.Bas(false);

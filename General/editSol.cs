@@ -25,6 +25,7 @@ namespace General
             InitializeComponent();
             connString = str;
             row = r;
+            label9.Text = row.Cells[1].Value.ToString();
             textBox1.Text=row.Cells[2].Value.ToString();
             textBox2.Text = row.Cells[3].Value.ToString();
             dateTimePicker1.Value = Convert.ToDateTime(row.Cells[5].Value.ToString());
@@ -35,6 +36,33 @@ namespace General
                 comboBox5.Text = "Mężczyzna";
             else
                 comboBox5.Text = "Kobieta";
+
+            string query1 = @"SELECT PojazdyKat.Nazwa, IDUprawnieniaTab, DataNabycia, DataWaznosci From UprawnieniaTab 
+                            join PojazdyKat on PojazdyKat.IDKatPojazdu = UprawnieniaTab.IDKatUprawnienia 
+                            join Zolnierz on Zolnierz.IDZolnierza = UprawnieniaTab.IDZolnierza
+                            where Zolnierz.IDZolnierza ="+ row.Cells[1].Value.ToString() +"";
+
+            using (var connection = new SqlConnection(connString.Name))
+            using (var command = new SqlCommand(query1, connection))
+            using (var adapter = new SqlDataAdapter(command))
+            {
+                connection.Open();
+                var myTable = new DataTable();
+                adapter.Fill(myTable);
+                dataGridView1.DataSource = myTable;
+            }
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "";
+            buttonColumn.Name = "delet";
+            buttonColumn.Text = "Usuń";
+            buttonColumn.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.HeaderText = "";
+            buttonColumn1.Name = "edit";
+            buttonColumn1.Text = "Edytuj";
+            buttonColumn1.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(buttonColumn1);
+            dataGridView1.Columns.Add(buttonColumn);
         }
 
         void uaktualnij()
@@ -66,9 +94,6 @@ namespace General
             }
             else
                 MessageBox.Show("Uzupełnij wszystkie dane!");
-            
-            
-
 
         }
 
@@ -84,6 +109,10 @@ namespace General
 
         private void editSol_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet1.Zolnierz' table. You can move, or remove it, as needed.
+            this.zolnierzTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.Zolnierz);
+            // TODO: This line of code loads data into the 'dB_9BA4F7_dzordanDataSet1.UprawnieniaTab' table. You can move, or remove it, as needed.
+            this.uprawnieniaTabTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.UprawnieniaTab);
             var pr = Application.OpenForms.OfType<Form1>().Single();
             this.rangiTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.Rangi);
             this.bazyTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.Bazy);
@@ -99,6 +128,36 @@ namespace General
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(trackBar2, trackBar2.Value.ToString());
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(e.ColumnIndex);
+            if (e.ColumnIndex == 1)
+            {
+                string stmt = @"
+                    delete from UprawnieniaTab
+                    where IDZolnierza = '" + label9.Text+ "'";
+
+                using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+                {
+                    using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                    {
+                        thisConnection.Open();
+                        query.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Usunięto");
+                dataGridView1.Refresh();
+
+            }
+            if (e.ColumnIndex == 0)
+            {
+                DataGridViewRow r = dataGridView1.Rows[e.RowIndex];
+                editUpr editUpr = new editUpr(connString, r);
+                editUpr.Show();
+            }       
         }
     }
 }

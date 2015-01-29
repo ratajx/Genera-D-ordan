@@ -19,19 +19,27 @@ namespace General
 
         public string[] tabRang;
         public string[] tabBaz;
+        public string[] tabMan;
+        public string[] tabSk;
+
         globalString connString;
-        public bool flag=true;
 
         public string Label9
         {
-            get
-            {
-                return this.label9.Text;
-            }
-            set
-            {
-                this.label9.Text = value;
-            }
+            get{return this.label9.Text;}
+            set{this.label9.Text = value;}
+        }
+
+        public string Label59
+        {
+            get { return this.label59.Text; }
+            set { this.label59.Text = value; }
+        }
+
+        public string Label60
+        {
+            get { return this.label60.Text; }
+            set { this.label60.Text = value; }
         }
 
         public void baseDetails(bool all)
@@ -161,6 +169,37 @@ namespace General
             }
         }
 
+        public void Man(bool all)
+        {
+            if (all)
+            {
+                label60.Text = "Wszystkie bazy";
+                dataGridView3.Columns.Clear();
+                wyswietlManewry(true);
+                manewr();
+                dataGridView3.Columns.Add("Ba", "Baza");
+                dataGridView3.Columns["Ba"].DisplayIndex = 7;
+                baza(dataGridView3);
+                sklad();
+                setWidthMan(true);
+                dataGridView3.Width = width(dataGridView3)-18;
+            }
+            else
+            {
+                if (label60.Text != "Wszystkie bazy")
+                {
+                    dataGridView3.Columns.Clear();
+                    wyswietlManewry(false);
+                    manewr();
+                    sklad();
+                    setWidthMan(false);
+                    dataGridView3.Width = width(dataGridView3)-18;
+                }
+                else
+                    MessageBox.Show("Wybierz bazę z panelu głównego");
+            }
+        }
+
         private void setWidthSol(bool baza)
         {
             dataGridView1.Columns[1].Width = 35;
@@ -175,6 +214,21 @@ namespace General
             dataGridView1.Columns["Ba"].Width = 65;
             dataGridView1.Columns[11].Width = 40;
             dataGridView1.Columns[12].Width = 40;
+        }
+
+        private void setWidthMan(bool baza)
+        {
+            dataGridView3.Columns[0].Width = 30;
+            dataGridView3.Columns["Kat"].Width = 80;
+            dataGridView3.Columns["Sk"].Width = 100;
+            dataGridView3.Columns[3].Width = 75;
+            dataGridView3.Columns[4].Width = 75;
+            dataGridView3.Columns[5].Width = 55;
+            if (baza)
+                dataGridView3.Columns["Ba"].Width = 65;
+            dataGridView3.Columns[8].Width = 45;
+            dataGridView3.Columns[9].Width = 40;
+            dataGridView3.Columns[10].Width = 40;
         }
 
         public int width(DataGridView d)
@@ -254,7 +308,7 @@ namespace General
 
         }
 
-       public void downloadBaz()
+        public void downloadBaz()
         {
             string stmt = "SELECT COUNT (*) FROM Bazy";
             string stmt1 = "SELECT Miasto FROM Bazy";
@@ -284,6 +338,66 @@ namespace General
             }
         }
 
+        public void downloadMan()
+       {
+           string stmt = "SELECT COUNT (*) FROM ManewryKat";
+           string stmt1 = "SELECT Nazwa FROM ManewryKat";
+           SqlDataReader rdr = null;
+           int i = 0, count = 0;
+           tabMan = null;
+
+           using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+           {
+               using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+               {
+                   thisConnection.Open();
+
+                   count = (int)cmdCount.ExecuteScalar();
+                   cmdCount.CommandText = stmt1;
+
+                   rdr = cmdCount.ExecuteReader();
+
+                   tabMan = new string[count];
+                   while (rdr.Read())
+                   {
+                       tabMan[i] = (string)rdr["Nazwa"];
+                       i++;
+                   }
+                   thisConnection.Close();
+               }
+           }          
+       }
+
+        public void downloadSk()
+        {
+            string stmt = "SELECT COUNT (*) FROM Sklad";
+            string stmt1 = "SELECT Nazwa FROM Sklad";
+            SqlDataReader rdr = null;
+            int i = 0, count = 0;
+            tabSk = null;
+
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+
+                    count = (int)cmdCount.ExecuteScalar();
+                    cmdCount.CommandText = stmt1;
+
+                    rdr = cmdCount.ExecuteReader();
+
+                    tabSk = new string[count];
+                    while (rdr.Read())
+                    {
+                        tabSk[i] = (string)rdr["Nazwa"];
+                        i++;
+                    }
+                    thisConnection.Close();
+                }
+            }
+        }
+
         void ranga()
         {
             downloadRang();
@@ -295,12 +409,6 @@ namespace General
            {
              row.Cells[0].Value = tabRang[(int)(row.Cells[4].Value) - 1];
            }
-
-           //foreach (DataGridViewColumn c in dataGridView1.Columns)
-           //{
-           //    c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-           //}
-
         }
 
         void baza(DataGridView d)
@@ -315,10 +423,32 @@ namespace General
             {
                 row.Cells["Ba"].Value = tabBaz[(int)(row.Cells["IDBazy"].Value) - 1];
             }
-            //foreach (DataGridViewColumn c in d.Columns)
-            //{
-            //    c.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //}
+        }
+
+        void manewr()
+        {
+            downloadMan();
+            foreach (DataGridViewColumn c in dataGridView3.Columns)
+            {
+                c.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            }
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                row.Cells["Kat"].Value = tabMan[(int)(row.Cells[1].Value) - 1];
+            }
+        }
+
+        void sklad()
+        {
+            downloadSk();
+            foreach (DataGridViewColumn c in dataGridView3.Columns)
+            {
+                c.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            }
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                row.Cells["Sk"].Value = tabSk[(int)(row.Cells[5].Value) - 1];
+            }
         }
 
         void wyswietlZolnierzy(bool baza)
@@ -401,7 +531,56 @@ namespace General
 
             dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-        
+
+        void wyswietlManewry(bool manewr)
+        {
+            string query;
+            if (manewr) 
+                query = "SELECT IDManewryTab,IDManewryKat,IDBazy,DataOd,DataDo,IDSkładu From ManewryTab";
+            else
+                query = "SELECT IDManewryTab,IDManewryKat,ManewryTab.IDBazy,DataOd,DataDo,IDSkładu From ManewryTab JOIN Bazy ON ManewryTab.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            dataAdapter.Fill(table);
+            dataGridView3.DataSource = table;
+
+            dataGridView3.Columns[0].HeaderText = "ID";
+            dataGridView3.Columns[1].Visible = false;
+            dataGridView3.Columns[2].Visible = false;
+            dataGridView3.Columns[5].Visible = false;
+
+            dataGridView3.Columns.Add("Kat", "Kategoria");
+            dataGridView3.Columns["Kat"].DisplayIndex = 2;
+
+            dataGridView3.Columns.Add("Sk", "Skład");
+            dataGridView3.Columns["Sk"].DisplayIndex = 1;
+
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Skład";
+            buttonColumn.Name = "szcz";
+            buttonColumn.Text = "Wyświetl";
+            buttonColumn.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.HeaderText = "";
+            buttonColumn1.Name = "delet";
+            buttonColumn1.Text = "Usuń";
+            buttonColumn1.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
+            buttonColumn2.HeaderText = "";
+            buttonColumn2.Name = "edit";
+            buttonColumn2.Text = "Edytuj";
+            buttonColumn2.UseColumnTextForButtonValue = true;
+            dataGridView3.Columns.Add(buttonColumn);
+            dataGridView3.Columns.Add(buttonColumn2);
+            dataGridView3.Columns.Add(buttonColumn1);
+
+        }
+
         public Form1(globalString str, Form login)
         {
             InitializeComponent();
@@ -427,6 +606,13 @@ namespace General
         {
             if (label59.Text == "Wszystkie bazy")
                 baza(dataGridView2);
+        }
+       
+        private void dataGridView3_Sorted(object sender, EventArgs e)
+        {
+            manewr();
+            if (label60.Text == "Wszystkie bazy")
+                baza(dataGridView3);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -496,8 +682,18 @@ namespace General
             addMan form = new addMan(connString);
             form.Show();
         }
+ 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Man(false);
+        }
+        
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Man(true);
+        }
 
-        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
               if (e.ColumnIndex == 12)
                 {
@@ -529,7 +725,7 @@ namespace General
                 }       
         }
        
-        public void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 5)
             {
@@ -567,6 +763,44 @@ namespace General
             }      
 
         }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+                sklad sklad = new sklad(connString,dataGridView3.Rows[e.RowIndex].Cells[5].Value.ToString());
+                sklad.Show();
+            }
+            if (e.ColumnIndex == 9)
+            {
+                DataGridViewRow r = dataGridView3.Rows[e.RowIndex];
+                editMan edit = new editMan(connString,r);
+                edit.Show();
+            }
+            if (e.ColumnIndex == 10)
+            {
+                string stmt = @"
+                delete from ManewryTab
+                where IDManewryTab = '" + dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString() + "'";
+
+                using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                {
+                    using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                    {
+                        thisConnection.Open();
+                        query.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Usunięto");
+
+                if (label60.Text == "Wszystkie bazy")
+                    Man(true);
+                else
+                    Man(false);
+            }      
+        }
+
 
     }
 }

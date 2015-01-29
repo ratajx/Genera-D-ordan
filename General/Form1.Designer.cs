@@ -126,16 +126,12 @@
             this.label59 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.iDManewryTabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDManewryKatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDBazyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataOdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manewryTabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label60 = new System.Windows.Forms.Label();
+            this.manewryTabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.bazyTableAdapter1 = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter();
@@ -968,9 +964,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 10);
+            this.button3.Location = new System.Drawing.Point(6, 30);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 49);
+            this.button3.Size = new System.Drawing.Size(132, 24);
             this.button3.TabIndex = 3;
             this.button3.Text = "Pokaz ogólne";
             this.button3.UseVisualStyleBackColor = true;
@@ -1125,6 +1121,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.button12);
             this.tabPage4.Controls.Add(this.button11);
             this.tabPage4.Controls.Add(this.dataGridView3);
@@ -1132,16 +1129,26 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(755, 321);
+            this.tabPage4.Size = new System.Drawing.Size(757, 321);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Manewry";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(16, 268);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 35);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Wyświetl manewry wszystkich baz";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(97, 211);
+            this.button12.Location = new System.Drawing.Point(97, 227);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(86, 39);
+            this.button12.Size = new System.Drawing.Size(75, 35);
             this.button12.TabIndex = 3;
             this.button12.Text = "Utwórz manewry";
             this.button12.UseVisualStyleBackColor = true;
@@ -1149,71 +1156,26 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(16, 211);
+            this.button11.Location = new System.Drawing.Point(16, 227);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 39);
+            this.button11.Size = new System.Drawing.Size(75, 35);
             this.button11.TabIndex = 2;
             this.button11.Text = "Wyświetl manewry";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDManewryTabDataGridViewTextBoxColumn,
-            this.iDManewryKatDataGridViewTextBoxColumn,
-            this.iDBazyDataGridViewTextBoxColumn,
-            this.dataOdDataGridViewTextBoxColumn,
-            this.dataDoDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.manewryTabBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(16, 40);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(520, 165);
             this.dataGridView3.TabIndex = 1;
-            // 
-            // iDManewryTabDataGridViewTextBoxColumn
-            // 
-            this.iDManewryTabDataGridViewTextBoxColumn.DataPropertyName = "IDManewryTab";
-            this.iDManewryTabDataGridViewTextBoxColumn.HeaderText = "IDManewryTab";
-            this.iDManewryTabDataGridViewTextBoxColumn.Name = "iDManewryTabDataGridViewTextBoxColumn";
-            this.iDManewryTabDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDManewryKatDataGridViewTextBoxColumn
-            // 
-            this.iDManewryKatDataGridViewTextBoxColumn.DataPropertyName = "IDManewryKat";
-            this.iDManewryKatDataGridViewTextBoxColumn.HeaderText = "IDManewryKat";
-            this.iDManewryKatDataGridViewTextBoxColumn.Name = "iDManewryKatDataGridViewTextBoxColumn";
-            this.iDManewryKatDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDBazyDataGridViewTextBoxColumn
-            // 
-            this.iDBazyDataGridViewTextBoxColumn.DataPropertyName = "IDBazy";
-            this.iDBazyDataGridViewTextBoxColumn.HeaderText = "IDBazy";
-            this.iDBazyDataGridViewTextBoxColumn.Name = "iDBazyDataGridViewTextBoxColumn";
-            this.iDBazyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataOdDataGridViewTextBoxColumn
-            // 
-            this.dataOdDataGridViewTextBoxColumn.DataPropertyName = "DataOd";
-            this.dataOdDataGridViewTextBoxColumn.HeaderText = "DataOd";
-            this.dataOdDataGridViewTextBoxColumn.Name = "dataOdDataGridViewTextBoxColumn";
-            this.dataOdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataDoDataGridViewTextBoxColumn
-            // 
-            this.dataDoDataGridViewTextBoxColumn.DataPropertyName = "DataDo";
-            this.dataDoDataGridViewTextBoxColumn.HeaderText = "DataDo";
-            this.dataDoDataGridViewTextBoxColumn.Name = "dataDoDataGridViewTextBoxColumn";
-            this.dataDoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // manewryTabBindingSource
-            // 
-            this.manewryTabBindingSource.DataMember = "ManewryTab";
-            this.manewryTabBindingSource.DataSource = this.dB9BA4F7dzordanDataSetBindingSource;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            this.dataGridView3.Sorted += new System.EventHandler(this.dataGridView3_Sorted);
             // 
             // label60
             // 
@@ -1224,6 +1186,11 @@
             this.label60.Size = new System.Drawing.Size(188, 29);
             this.label60.TabIndex = 0;
             this.label60.Text = "Baza Jaworzno";
+            // 
+            // manewryTabBindingSource
+            // 
+            this.manewryTabBindingSource.DataMember = "ManewryTab";
+            this.manewryTabBindingSource.DataSource = this.dB9BA4F7dzordanDataSetBindingSource;
             // 
             // statusStrip1
             // 
@@ -1392,17 +1359,13 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDManewryTabDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDManewryKatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDBazyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataOdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource manewryTabBindingSource;
         private System.Windows.Forms.Button button12;
         private DB_9BA4F7_dzordanDataSet1 dB_9BA4F7_dzordanDataSet1;
         private System.Windows.Forms.BindingSource bazyBindingSource1;
         private DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter bazyTableAdapter1;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button5;
       //  private System.Windows.Forms.Button button1;
     }
 }

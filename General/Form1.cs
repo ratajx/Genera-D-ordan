@@ -853,6 +853,28 @@ namespace General
             }      
         }
 
+        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About form = new About();
+            form.Show();
+        }
+
+        private void zakończToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void oProgramieToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            About form = new About();
+            form.Show();
+        }
+
 
     }
 }

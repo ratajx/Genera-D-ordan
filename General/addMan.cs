@@ -192,5 +192,22 @@ namespace General
         {
             dodajMan();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            addVeh2Team form = new addVeh2Team(connString);
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -135,6 +135,11 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.bazyTableAdapter1 = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oProgramieToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.zakończToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB9BA4F7dzordanDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet)).BeginInit();
@@ -155,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bazyBindingSource
@@ -891,9 +897,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(18, 53);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 13);
+            this.label7.Size = new System.Drawing.Size(125, 13);
             this.label7.TabIndex = 4;
-            this.label7.Text = "-posiadających uprawnienia";
+            this.label7.Text = "-posiadanych uprawnień:";
             // 
             // label4
             // 
@@ -989,7 +995,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(16, 277);
+            this.button6.Location = new System.Drawing.Point(129, 275);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 40);
             this.button6.TabIndex = 5;
@@ -999,7 +1005,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(147, 225);
+            this.button2.Location = new System.Drawing.Point(242, 275);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 40);
             this.button2.TabIndex = 3;
@@ -1019,7 +1025,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 225);
+            this.button1.Location = new System.Drawing.Point(16, 275);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 40);
             this.button1.TabIndex = 1;
@@ -1035,7 +1041,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(16, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(725, 165);
+            this.dataGridView1.Size = new System.Drawing.Size(725, 229);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
@@ -1058,7 +1064,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(439, 225);
+            this.button13.Location = new System.Drawing.Point(336, 277);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(97, 40);
             this.button13.TabIndex = 6;
@@ -1068,7 +1074,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(143, 225);
+            this.button9.Location = new System.Drawing.Point(242, 277);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(88, 40);
             this.button9.TabIndex = 4;
@@ -1088,7 +1094,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(16, 225);
+            this.button7.Location = new System.Drawing.Point(129, 277);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(107, 40);
             this.button7.TabIndex = 2;
@@ -1114,7 +1120,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(16, 40);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(529, 165);
+            this.dataGridView2.Size = new System.Drawing.Size(529, 231);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.Sorted += new System.EventHandler(this.dataGridView2_Sorted);
@@ -1136,7 +1142,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(16, 268);
+            this.button5.Location = new System.Drawing.Point(95, 280);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 35);
             this.button5.TabIndex = 4;
@@ -1146,7 +1152,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(97, 227);
+            this.button12.Location = new System.Drawing.Point(205, 280);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 35);
             this.button12.TabIndex = 3;
@@ -1156,7 +1162,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(16, 227);
+            this.button11.Location = new System.Drawing.Point(16, 280);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 35);
             this.button11.TabIndex = 2;
@@ -1172,7 +1178,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(16, 40);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(520, 165);
+            this.dataGridView3.Size = new System.Drawing.Size(520, 234);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             this.dataGridView3.Sorted += new System.EventHandler(this.dataGridView3_Sorted);
@@ -1212,13 +1218,54 @@
             // 
             this.bazyTableAdapter1.ClearBeforeFill = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plikToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(769, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // plikToolStripMenuItem
+            // 
+            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oProgramieToolStripMenuItem1,
+            this.toolStripSeparator1,
+            this.zakończToolStripMenuItem});
+            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
+            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.plikToolStripMenuItem.Text = "Plik";
+            // 
+            // oProgramieToolStripMenuItem1
+            // 
+            this.oProgramieToolStripMenuItem1.Name = "oProgramieToolStripMenuItem1";
+            this.oProgramieToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.oProgramieToolStripMenuItem1.Text = "O programie";
+            this.oProgramieToolStripMenuItem1.Click += new System.EventHandler(this.oProgramieToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // zakończToolStripMenuItem
+            // 
+            this.zakończToolStripMenuItem.Name = "zakończToolStripMenuItem";
+            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zakończToolStripMenuItem.Text = "Zakończ";
+            this.zakończToolStripMenuItem.Click += new System.EventHandler(this.zakończToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 393);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Generał Dżordan";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1251,6 +1298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.manewryTabBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1366,6 +1415,11 @@
         private DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter bazyTableAdapter1;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oProgramieToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem zakończToolStripMenuItem;
       //  private System.Windows.Forms.Button button1;
     }
 }

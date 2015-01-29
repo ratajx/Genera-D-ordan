@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{118FC2D8-A408-407E-BFC6-71977A49E1D2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>General</RootNamespace>
     <AssemblyName>General</AssemblyName>
@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="addMan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="addVeh.Designer.cs">
       <DependentUpon>addVeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addVeh2Team.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addVeh2Team.Designer.cs">
+      <DependentUpon>addVeh2Team.cs</DependentUpon>
     </Compile>
     <Compile Include="DB_9BA4F7_dzordanDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -139,6 +151,9 @@
     <Compile Include="sklad.Designer.cs">
       <DependentUpon>sklad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addMan.resx">
       <DependentUpon>addMan.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addVeh.resx">
       <DependentUpon>addVeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addVeh2Team.resx">
+      <DependentUpon>addVeh2Team.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editMan.resx">
       <DependentUpon>editMan.cs</DependentUpon>

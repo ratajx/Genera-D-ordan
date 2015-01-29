@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pojazdyKatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_9BA4F7_dzordanDataSet1 = new General.DB_9BA4F7_dzordanDataSet1();
             this.pojazdyTypBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pojazdyTypTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.PojazdyTypTableAdapter();
-            this.pojazdyKatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pojazdyKatTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.PojazdyKatTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -42,20 +42,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pojazdyKatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pojazdyTypBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pojazdyKatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.pojazdyKatBindingSource;
             this.comboBox1.DisplayMember = "Nazwa";
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(79, 8);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
+            // 
+            // pojazdyKatBindingSource
+            // 
+            this.pojazdyKatBindingSource.DataMember = "PojazdyKat";
+            this.pojazdyKatBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
             // 
             // dB_9BA4F7_dzordanDataSet1
             // 
@@ -70,11 +76,6 @@
             // pojazdyTypTableAdapter
             // 
             this.pojazdyTypTableAdapter.ClearBeforeFill = true;
-            // 
-            // pojazdyKatBindingSource
-            // 
-            this.pojazdyKatBindingSource.DataMember = "PojazdyKat";
-            this.pojazdyKatBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
             // 
             // pojazdyKatTableAdapter
             // 
@@ -157,9 +158,9 @@
             this.Name = "editUpr";
             this.Text = "Edytuj uprawnienia";
             this.Load += new System.EventHandler(this.editUpr_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pojazdyKatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pojazdyTypBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pojazdyKatBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

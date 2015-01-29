@@ -52,7 +52,7 @@ namespace General
             {
                 string update = @"
              update UprawnieniaTab 
-             set IDKatUprawnienia='" + comboBox1.SelectedIndex + "', DataNabycia='" + textBox1.Text + "', DataWaznosci='" + textBox2.Text + "'";
+             set DataNabycia='" + textBox1.Text + "', DataWaznosci='" + textBox2.Text + "'";
 
                 using (SqlConnection thisConnection = new SqlConnection(connString.Name))
                 {

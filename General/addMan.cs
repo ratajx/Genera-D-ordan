@@ -53,7 +53,7 @@ namespace General
                     thisConnection.Close();
                 }
             }
-            if (IDU != "NULL")
+            if (IDU != "")
                 MessageBox.Show("Skład uczestniczy w niezakonczononych manewrach! Dodanie go do listy spowoduje usunięcie informacji o bieżących manewrach!","Ostrzeżenie!!!");
             
         }
@@ -175,6 +175,18 @@ namespace General
                         thisConnection.Close();
                     }
                 }
+                string stmt5 = @"
+               UPDATE Zolnierz
+               SET Wuzyciu ='1' FROM Zolnierz JOIN Sklad ON Zolnierz.IDSkładu=Sklad.IDSkladu WHERE Sklad.Nazwa='" + dataGridView1.Rows[j].Cells[0].Value.ToString() + "'";
+                using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+                {
+                    using (SqlCommand cmd = new SqlCommand(stmt5, thisConnection))
+                    {
+                        thisConnection.Open();
+                        cmd.ExecuteNonQuery();
+                        thisConnection.Close();
+                    }
+                }
             }
         }
 
@@ -186,28 +198,45 @@ namespace General
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             dodajMan();
+            MessageBox.Show("Manewry zostały dodane");
+            dataGridView1.Columns.Clear();
+            dataGridView2.Columns.Clear();
         }
+        //private void button5_Click(object sender, EventArgs e)
+        //{
+
+        //}
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            string stmt3 = "SELECT IDUdzialu FROM Sklad WHERE IDSkladu='" + (comboBox3.SelectedIndex+1).ToString() + "'";
+            SqlDataReader rdr = null;
+            string IDU;
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(stmt3, thisConnection))
+                {
+                    thisConnection.Open();
+                    rdr = cmdCount.ExecuteReader();
+                    rdr.Read();
+                    IDU = Convert.ToString(rdr["IDUdzialu"]);
+                    thisConnection.Close();
+                }
+                sklad n = new sklad(connString, (comboBox3.SelectedIndex + 1).ToString(), IDU);
+                n.Show();
+            }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
-
             addVeh2Team form = new addVeh2Team(connString);
             form.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

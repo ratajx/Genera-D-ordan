@@ -34,7 +34,7 @@ namespace General
         {
              string update = @"
              update ManewryTab
-             set IDManewryKat='" + comboBox3.SelectedValue.ToString() + "',IDBazy='" + comboBox2.SelectedValue.ToString() + "', DataOd='" + dateTimePicker1.Value.ToShortDateString() + "', DataDo='" + dateTimePicker2.Value.ToShortDateString() + "', IDSkładu='" + comboBox1.SelectedValue.ToString() + "' where IDManewryTab = '" + row.Cells[0].Value.ToString() + "'";
+             set IDManewryKat='" + comboBox3.SelectedValue.ToString() + "',IDBazy='" + comboBox2.SelectedValue.ToString() + "', DataOd='" + dateTimePicker1.Value.ToShortDateString() + "', DataDo='" + dateTimePicker2.Value.ToShortDateString() +"' where IDManewryTab = '" + row.Cells[0].Value.ToString() + "'";
 
                 using (SqlConnection thisConnection = new SqlConnection(connString.Name))
                 {
@@ -75,9 +75,15 @@ namespace General
             this.skladTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.Sklad);
             this.bazyTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.Bazy);
             this.manewryKatTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.ManewryKat);
-            comboBox1.SelectedIndex = comboBox1.FindStringExact(row.Cells[1].Value.ToString());
+            //comboBox1.SelectedIndex = comboBox1.FindStringExact(row.Cells[1].Value.ToString());
             comboBox2.SelectedIndex = comboBox2.FindStringExact(pr.tabBaz[Convert.ToInt32(row.Cells[3].Value.ToString()) - 1]);
             comboBox3.SelectedIndex = Convert.ToInt32(row.Cells[2].Value.ToString()) - 1;
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

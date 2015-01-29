@@ -538,9 +538,9 @@ namespace General
         {
             string query;
             if (manewr)
-                query = "SELECT ManewryTab.IDManewryTab,Sklad.Nazwa,IDManewryKat,IDBazy,DataOd,DataDo,Sklad.IdSkladu From ManewryTab JOIN Udzial ON ManewryTab.IDManewryTab=Udzial.IDManewryTab JOIN Sklad ON Udzial.IDUdzial=Sklad.IDUdzialu ";
+                query = "SELECT ManewryTab.IDManewryTab,Sklad.Nazwa,IDManewryKat,IDBazy,DataOd,DataDo,Sklad.IDSkladu,Udzial.IDUdzial From ManewryTab JOIN Udzial ON ManewryTab.IDManewryTab=Udzial.IDManewryTab JOIN Sklad ON Udzial.IDUdzial=Sklad.IDUdzialu ";
             else
-                query = "SELECT ManewryTab.IDManewryTab,Sklad.Nazwa,IDManewryKat,ManewryTab.IDBazy,DataOd,DataDo,Sklad.IdSkladu From ManewryTab JOIN Udzial ON ManewryTab.IDManewryTab=Udzial.IDManewryTab JOIN Sklad ON Udzial.IDUdzial=Sklad.IDUdzialu JOIN Bazy ON ManewryTab.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+                query = "SELECT ManewryTab.IDManewryTab,Sklad.Nazwa,IDManewryKat,ManewryTab.IDBazy,DataOd,DataDo,Sklad.IDSkladu,Udzial.IDUdzial From ManewryTab JOIN Udzial ON ManewryTab.IDManewryTab=Udzial.IDManewryTab JOIN Sklad ON Udzial.IDUdzial=Sklad.IDUdzialu JOIN Bazy ON ManewryTab.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
             
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
 
@@ -555,6 +555,7 @@ namespace General
             dataGridView3.Columns[2].Visible = false;
             dataGridView3.Columns[3].Visible = false;
             dataGridView3.Columns[6].Visible = false;
+            dataGridView3.Columns[7].Visible = false;
             //dataGridView3.Columns[5].Visible = false;
 
             dataGridView3.Columns.Add("Kat", "Kategoria");
@@ -769,19 +770,20 @@ namespace General
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
             {
-                sklad sklad = new sklad(connString,dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString());
+
+                sklad sklad = new sklad(connString, dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString(), dataGridView3.Rows[e.RowIndex].Cells[7].Value.ToString());
                 sklad.Text = dataGridView3.Rows[e.RowIndex].Cells[1].Value.ToString();
                 sklad.Show();
             }
-            if (e.ColumnIndex == 9)
+            if (e.ColumnIndex == 10)
             {
                 DataGridViewRow r = dataGridView3.Rows[e.RowIndex];
                 editMan edit = new editMan(connString,r);
                 edit.Show();
             }
-            if (e.ColumnIndex == 10)
+            if (e.ColumnIndex == 11)
             {
                 int count;
                 string st = "SELECT COUNT (*) FROM Sklad JOIN Udzial ON Sklad.IDUdzialu=Udzial.IDUdzial";
@@ -809,6 +811,18 @@ namespace General
                             query.ExecuteNonQuery();
                         }
                     }
+                    string st1 = @"
+                UPDATE Zolnierz
+                SET Wuzyciu = '0' FROM Zolnierz WHERE IDSkładu='" + dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString() + "'";
+
+                    using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                    {
+                        using (SqlCommand query = new SqlCommand(st1, thisConnection))
+                        {
+                            thisConnection.Open();
+                            query.ExecuteNonQuery();
+                        }
+                    }
                 }
                 else
                 {
@@ -821,7 +835,10 @@ namespace General
                     string stmt3 = @"
                     delete from ManewryTab
                     where ManewryTab.IDManewryTab = '" + dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString() + "'";
-                    
+                    string st1 = @"
+                    UPDATE Zolnierz
+                    SET Wuzyciu = '0' FROM Zolnierz WHERE IDSkładu='" + dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString() + "'";
+
                     using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
                     {
                         using (SqlCommand query = new SqlCommand(stmt, thisConnection))
@@ -842,6 +859,11 @@ namespace General
                             query.ExecuteNonQuery();
                             thisConnection.Close();
                         }
+                        using (SqlCommand query = new SqlCommand(st1, thisConnection))
+                            {
+                                thisConnection.Open();
+                                query.ExecuteNonQuery();
+                            }
                     }
                 }
                 MessageBox.Show("Usunięto");

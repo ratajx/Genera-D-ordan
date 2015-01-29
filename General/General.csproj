@@ -72,6 +72,12 @@
     <Compile Include="addSol.Designer.cs">
       <DependentUpon>addSol.cs</DependentUpon>
     </Compile>
+    <Compile Include="addSolToSk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addSolToSk.Designer.cs">
+      <DependentUpon>addSolToSk.cs</DependentUpon>
+    </Compile>
     <Compile Include="addUpr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addSol.resx">
       <DependentUpon>addSol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addSolToSk.resx">
+      <DependentUpon>addSolToSk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addUpr.resx">
       <DependentUpon>addUpr.cs</DependentUpon>

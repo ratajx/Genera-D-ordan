@@ -219,9 +219,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(128, 213);
+            this.button1.Location = new System.Drawing.Point(87, 222);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 35);
+            this.button1.Size = new System.Drawing.Size(119, 29);
             this.button1.TabIndex = 12;
             this.button1.Text = "Dodaj skład";
             this.button1.UseVisualStyleBackColor = true;
@@ -249,21 +249,23 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(128, 263);
+            this.button4.Location = new System.Drawing.Point(87, 269);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 35);
+            this.button4.Size = new System.Drawing.Size(119, 29);
             this.button4.TabIndex = 15;
             this.button4.Text = "Edytuj skład";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(128, 175);
+            this.button5.Location = new System.Drawing.Point(87, 175);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(69, 29);
+            this.button5.Size = new System.Drawing.Size(119, 29);
             this.button5.TabIndex = 16;
-            this.button5.Text = "button5";
+            this.button5.Text = "Zarządzaj pojazdami";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // addMan
             // 

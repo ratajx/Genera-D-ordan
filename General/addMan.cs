@@ -14,10 +14,14 @@ namespace General
     public partial class addMan : Form
     {
         globalString connString;
+        int i = -1;
+        bool flag = false;
         public addMan(globalString str)
         {
             InitializeComponent();
             connString = str;
+            dataGridView1.Columns.Add("Sk", "Skład");
+            dataGridView1.Columns[0].Width = 150;
         }
 
         private void addMan_Load(object sender, EventArgs e)
@@ -33,6 +37,27 @@ namespace General
 
         }
 
+        public void naMan()
+        {
+            string st = "SELECT IDUdzialu FROM Sklad WHERE Nazwa='" + comboBox3.Text + "'";
+            SqlDataReader rdr = null;
+            string IDU;
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(st, thisConnection))
+                {
+                    thisConnection.Open();
+                    rdr = cmdCount.ExecuteReader();
+                    rdr.Read();
+                    IDU = Convert.ToString(rdr["IDUdzialu"]);
+                    thisConnection.Close();
+                }
+            }
+            if (IDU != "NULL")
+                MessageBox.Show("Skład uczestniczy w niezakonczononych manewrach! Dodanie go do listy spowoduje usunięcie informacji o bieżących manewrach!","Ostrzeżenie!!!");
+            
+        }
+
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             int IDs = comboBox3.SelectedIndex + 1;
@@ -43,19 +68,129 @@ namespace General
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             dataGridView2.DataSource = table;
+
+            naMan();
  
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        public void dodajSk()
         {
-            int IDb = comboBox2.SelectedIndex + 1;
-            string query = "SELECT IDPojazdu, NazwaPojazdu, NumerRejestracyjny From PojazdySpis join PojazdyTyp on PojazdyTyp.NazwaPojazdu = PojazdySpis.NazwaPojazdu join PojazdyKat on PojazdyKat.IDKatPojazdu = PojazdyTyp.IDKatPojazdu join UprawnieniaTab on UprawnieniaTab.IDKatUprawnienia = PojazdyKat.IDKatPojazdu join Zolnierz on UprawnieniaTab.IDZolnierza = Zolnierz.IDZolnierza WHERE Zolnierz.IDBazy='" + IDb + "'";
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-            DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-            dataAdapter.Fill(table);
-            dataGridView1.DataSource = table;
+           int count = dataGridView1.RowCount;
+            if (i > -1)
+            {
+                while (comboBox3.Text != dataGridView1.Rows[i].Cells[0].Value.ToString())
+                {
+                    i++;
+                    if (i == count)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            else { flag = true; i = 0; }
+            if (flag)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                DataGridViewCell cell = new DataGridViewTextBoxCell();
+                cell.Value = comboBox3.Text;
+                row.Cells.Add(cell);
+                dataGridView1.Rows.Add(row);
+                flag = false;
+                i = 0;
+            }
+            else
+                MessageBox.Show("Skład jest już na liście!");
+        }
+
+        public void dodajMan()
+        {
+            string stmt = @"
+            insert into ManewryTab
+            (IDManewryKat, IDBazy, DataOd, DataDo,IDSkładu)
+            values ('" + (comboBox1.SelectedIndex+1) + "','" + (comboBox2.SelectedIndex+1) + "','" + dateTimePicker1.Value.ToShortDateString() + "','" + dateTimePicker2.Value.ToShortDateString() + "','1')";
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+                    query.ExecuteNonQuery();
+                    thisConnection.Close();
+                }
+            }
+
+            string last;
+
+            string stmt1 = "SELECT TOP 1 IDManewryTab FROM ManewryTab ORDER BY IDManewryTab DESC";
+            SqlDataReader rdr = null;
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(stmt1, thisConnection))
+                {
+                    thisConnection.Open();
+                    rdr = cmdCount.ExecuteReader();
+                    rdr.Read();
+                    last=Convert.ToString(rdr["IDManewryTab"]);
+                    thisConnection.Close();
+                }
+            }          
+            string stmt2 = @"
+            insert into Udzial
+            (IDManewryTab)
+            values ('"+last+"')";
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand query = new SqlCommand(stmt2, thisConnection))
+                {
+                    thisConnection.Open();
+                    query.ExecuteNonQuery();
+                }
+            }
+
+            string stmt3 = "SELECT TOP 1 IDUdzial FROM Udzial ORDER BY IDUdzial DESC";
+            rdr = null;
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand cmdCount = new SqlCommand(stmt3, thisConnection))
+                {
+                    thisConnection.Open();
+                    rdr = cmdCount.ExecuteReader();
+                    rdr.Read();
+                    last = Convert.ToString(rdr["IDUdzial"]);
+                    thisConnection.Close();
+                }
+            }      
+            int count = dataGridView1.RowCount;
+            for (int j = 0; j < count; j++)
+            {
+               string stmt4 = @"
+               UPDATE Sklad
+               SET IDUdzialu ='" + last + "'  WHERE Nazwa='" + dataGridView1.Rows[j].Cells[0].Value.ToString() + "'";
+                using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+                {
+                    using (SqlCommand cmd = new SqlCommand(stmt4, thisConnection))
+                    {
+                        thisConnection.Open();
+                        cmd.ExecuteNonQuery();
+                        thisConnection.Close();
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dodajSk();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dodajMan();
         }
     }
 }

@@ -119,7 +119,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(144, 21);
             this.comboBox2.TabIndex = 3;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // bazyBindingSource
             // 
@@ -167,7 +166,7 @@
             this.comboBox3.DataSource = this.skladBindingSource;
             this.comboBox3.DisplayMember = "Nazwa";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(128, 142);
+            this.comboBox3.Location = new System.Drawing.Point(74, 148);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(144, 21);
             this.comboBox3.TabIndex = 8;
@@ -181,7 +180,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 150);
+            this.label5.Location = new System.Drawing.Point(12, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 9;
@@ -193,10 +192,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(287, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(252, 129);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(189, 129);
             this.dataGridView1.TabIndex = 10;
             // 
             // manewryKatTableAdapter
@@ -205,42 +207,48 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(287, 141);
+            this.dataGridView2.Location = new System.Drawing.Point(224, 148);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(252, 150);
             this.dataGridView2.TabIndex = 11;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 206);
+            this.button1.Location = new System.Drawing.Point(128, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 35);
             this.button1.TabIndex = 12;
             this.button1.Text = "Dodaj skład";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(461, 318);
+            this.button2.Location = new System.Drawing.Point(363, 303);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(78, 35);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Anuluj";
+            this.button2.Text = "Zamknij";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(357, 318);
+            this.button3.Location = new System.Drawing.Point(259, 303);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(78, 35);
             this.button3.TabIndex = 14;
             this.button3.Text = "Dodaj manewry";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(203, 256);
+            this.button4.Location = new System.Drawing.Point(128, 263);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(78, 35);
             this.button4.TabIndex = 15;
@@ -251,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 356);
+            this.ClientSize = new System.Drawing.Size(489, 345);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

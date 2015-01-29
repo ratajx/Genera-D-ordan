@@ -180,7 +180,7 @@ namespace General
                 dataGridView3.Columns.Add("Ba", "Baza");
                 dataGridView3.Columns["Ba"].DisplayIndex = 7;
                 baza(dataGridView3);
-                sklad();
+               // sklad();
                 setWidthMan(true);
                 dataGridView3.Width = width(dataGridView3)-18;
             }
@@ -191,7 +191,7 @@ namespace General
                     dataGridView3.Columns.Clear();
                     wyswietlManewry(false);
                     manewr();
-                    sklad();
+                    //sklad();
                     setWidthMan(false);
                     dataGridView3.Width = width(dataGridView3)-18;
                 }
@@ -219,16 +219,18 @@ namespace General
         private void setWidthMan(bool baza)
         {
             dataGridView3.Columns[0].Width = 30;
+            dataGridView3.Columns[1].Width = 100;
             dataGridView3.Columns["Kat"].Width = 80;
-            dataGridView3.Columns["Sk"].Width = 100;
-            dataGridView3.Columns[3].Width = 75;
+            //dataGridView3.Columns["Sk"].Width = 100;
             dataGridView3.Columns[4].Width = 75;
-            dataGridView3.Columns[5].Width = 55;
+            dataGridView3.Columns[5].Width = 75;
+            //dataGridView3.Columns[6].Width = 75;
+            //dataGridView3.Columns[7].Width = 55;
             if (baza)
-                dataGridView3.Columns["Ba"].Width = 65;
+                dataGridView3.Columns[11].Width =50;
             dataGridView3.Columns[8].Width = 45;
             dataGridView3.Columns[9].Width = 40;
-            dataGridView3.Columns[10].Width = 40;
+            dataGridView3.Columns[10].Width = 45;
         }
 
         public int width(DataGridView d)
@@ -434,7 +436,7 @@ namespace General
             }
             foreach (DataGridViewRow row in dataGridView3.Rows)
             {
-                row.Cells["Kat"].Value = tabMan[(int)(row.Cells[1].Value) - 1];
+                row.Cells["Kat"].Value = tabMan[(int)(row.Cells[2].Value) - 1];
             }
         }
 
@@ -535,11 +537,11 @@ namespace General
         void wyswietlManewry(bool manewr)
         {
             string query;
-            if (manewr) 
-                query = "SELECT IDManewryTab,IDManewryKat,IDBazy,DataOd,DataDo,IDSkładu From ManewryTab";
+            if (manewr)
+                query = "SELECT ManewryTab.IDManewryTab,Sklad.Nazwa,IDManewryKat,IDBazy,DataOd,DataDo,Sklad.IdSkladu From ManewryTab JOIN Udzial ON ManewryTab.IDManewryTab=Udzial.IDManewryTab JOIN Sklad ON Udzial.IDUdzial=Sklad.IDUdzialu ";
             else
-                query = "SELECT IDManewryTab,IDManewryKat,ManewryTab.IDBazy,DataOd,DataDo,IDSkładu From ManewryTab JOIN Bazy ON ManewryTab.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
-
+                query = "SELECT ManewryTab.IDManewryTab,Sklad.Nazwa,IDManewryKat,ManewryTab.IDBazy,DataOd,DataDo,Sklad.IdSkladu From ManewryTab JOIN Udzial ON ManewryTab.IDManewryTab=Udzial.IDManewryTab JOIN Sklad ON Udzial.IDUdzial=Sklad.IDUdzialu JOIN Bazy ON ManewryTab.IDBazy=Bazy.IDBazy WHERE Bazy.Miasto='" + comboBox1.Text + "'";
+            
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString.Name);
 
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -550,15 +552,16 @@ namespace General
             dataGridView3.DataSource = table;
 
             dataGridView3.Columns[0].HeaderText = "ID";
-            dataGridView3.Columns[1].Visible = false;
             dataGridView3.Columns[2].Visible = false;
-            dataGridView3.Columns[5].Visible = false;
+            dataGridView3.Columns[3].Visible = false;
+            dataGridView3.Columns[6].Visible = false;
+            //dataGridView3.Columns[5].Visible = false;
 
             dataGridView3.Columns.Add("Kat", "Kategoria");
             dataGridView3.Columns["Kat"].DisplayIndex = 2;
 
-            dataGridView3.Columns.Add("Sk", "Skład");
-            dataGridView3.Columns["Sk"].DisplayIndex = 1;
+            //dataGridView3.Columns.Add("Sk", "Skład");
+            //dataGridView3.Columns["Sk"].DisplayIndex = 1;
 
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Skład";
@@ -768,7 +771,8 @@ namespace General
         {
             if (e.ColumnIndex == 8)
             {
-                sklad sklad = new sklad(connString,dataGridView3.Rows[e.RowIndex].Cells[5].Value.ToString());
+                sklad sklad = new sklad(connString,dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString());
+                sklad.Text = dataGridView3.Rows[e.RowIndex].Cells[1].Value.ToString();
                 sklad.Show();
             }
             if (e.ColumnIndex == 9)
@@ -779,19 +783,67 @@ namespace General
             }
             if (e.ColumnIndex == 10)
             {
-                string stmt = @"
-                delete from ManewryTab
-                where IDManewryTab = '" + dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString() + "'";
+                int count;
+                string st = "SELECT COUNT (*) FROM Sklad JOIN Udzial ON Sklad.IDUdzialu=Udzial.IDUdzial";
 
-                using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                using (SqlConnection thisConnection = new SqlConnection(connString.Name))
                 {
-                    using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                    using (SqlCommand cmdCount = new SqlCommand(st, thisConnection))
                     {
                         thisConnection.Open();
-                        query.ExecuteNonQuery();
+                        count = (int)cmdCount.ExecuteScalar();
                     }
                 }
 
+                if (count > 1)
+                {
+                    string stmt = @"
+                UPDATE Sklad
+                SET IDUdzialu = NULL WHERE IDSkladu='" + dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString() + "'";
+
+                    using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                    {
+                        using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                        {
+                            thisConnection.Open();
+                            query.ExecuteNonQuery();
+                        }
+                    }
+                }
+                else
+                {
+                    string stmt = @"
+                    UPDATE Sklad
+                    SET IDUdzialu = NULL WHERE IDSkladu='" + dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString() + "'";
+                    string stmt2 = @"
+                    delete from Udzial
+                    where Udzial.IDManewryTab = '" + dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString() + "'";
+                    string stmt3 = @"
+                    delete from ManewryTab
+                    where ManewryTab.IDManewryTab = '" + dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString() + "'";
+                    
+                    using (SqlConnection thisConnection = new SqlConnection("Data Source=SQL5012.myASP.NET;Initial Catalog=DB_9BA4F7_dzordan;User ID=DB_9BA4F7_dzordan_admin;Password=dupadupa8"))
+                    {
+                        using (SqlCommand query = new SqlCommand(stmt, thisConnection))
+                        {
+                            thisConnection.Open();
+                            query.ExecuteNonQuery();
+                            thisConnection.Close();
+                        }
+                        using (SqlCommand query = new SqlCommand(stmt2, thisConnection))
+                        {
+                            thisConnection.Open();
+                            query.ExecuteNonQuery();
+                            thisConnection.Close();
+                        }
+                        using (SqlCommand query = new SqlCommand(stmt3, thisConnection))
+                        {
+                            thisConnection.Open();
+                            query.ExecuteNonQuery();
+                            thisConnection.Close();
+                        }
+                    }
+                }
                 MessageBox.Show("Usunięto");
 
                 if (label60.Text == "Wszystkie bazy")

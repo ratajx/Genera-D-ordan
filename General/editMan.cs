@@ -25,9 +25,8 @@ namespace General
             InitializeComponent();
             connString = str;
             
-
-            dateTimePicker1.Value = Convert.ToDateTime(row.Cells[3].Value.ToString());
-            dateTimePicker2.Value = Convert.ToDateTime(row.Cells[4].Value.ToString());
+            dateTimePicker1.Value = Convert.ToDateTime(row.Cells["DataOd"].Value.ToString());
+            dateTimePicker2.Value = Convert.ToDateTime(row.Cells["DataDo"].Value.ToString());
                    
         }
 
@@ -76,9 +75,9 @@ namespace General
             this.skladTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.Sklad);
             this.bazyTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.Bazy);
             this.manewryKatTableAdapter.Fill(this.dB_9BA4F7_dzordanDataSet1.ManewryKat);
-            comboBox1.SelectedIndex =Convert.ToInt32(row.Cells[5].Value.ToString())-1;
-            comboBox2.SelectedIndex = comboBox2.FindStringExact(pr.tabBaz[Convert.ToInt32(row.Cells[2].Value.ToString()) - 1]);
-            comboBox3.SelectedIndex = Convert.ToInt32(row.Cells[1].Value.ToString()) - 1;
+            comboBox1.SelectedIndex = comboBox1.FindStringExact(row.Cells[1].Value.ToString());
+            comboBox2.SelectedIndex = comboBox2.FindStringExact(pr.tabBaz[Convert.ToInt32(row.Cells[3].Value.ToString()) - 1]);
+            comboBox3.SelectedIndex = Convert.ToInt32(row.Cells[2].Value.ToString()) - 1;
         }
     }
 }

@@ -228,9 +228,9 @@ namespace General
             //dataGridView3.Columns[7].Width = 55;
             if (baza)
                 dataGridView3.Columns[11].Width =50;
-            dataGridView3.Columns[8].Width = 45;
-            dataGridView3.Columns[9].Width = 40;
-            dataGridView3.Columns[10].Width = 45;
+            dataGridView3.Columns[9].Width = 45;
+            dataGridView3.Columns[10].Width = 40;
+            dataGridView3.Columns[11].Width = 45;
         }
 
         public int width(DataGridView d)

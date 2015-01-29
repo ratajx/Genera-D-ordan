@@ -201,5 +201,33 @@ namespace General
         {
 
         }
+
+        public void dodaj(DataGridViewCellEventArgs e)
+        {
+            string update = @"
+             update Zolnierz
+             set IDSkładu='" + id + "' where IDZolnierza = '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'";
+
+            using (SqlConnection thisConnection = new SqlConnection(connString.Name))
+            {
+                using (SqlCommand query = new SqlCommand(update, thisConnection))
+                {
+                    thisConnection.Open();
+                    query.ExecuteNonQuery();
+                    thisConnection.Close();
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //label1.Text = e.ColumnIndex.ToString();
+            //if(e.ColumnIndex==0)
+            //{
+                dodaj(e);
+                MessageBox.Show("Żołnierz dodany do bazy");
+                Zolnierz();
+            //}
+        }
     }
 }

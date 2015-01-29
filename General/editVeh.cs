@@ -46,10 +46,11 @@ namespace General
                 MessageBox.Show("Zaktualizowano");
 
                 var pr = Application.OpenForms.OfType<Form1>().Single();
-                if (pr.Label9 == "Baza " + comboBox2.Text)
-                    pr.Veh(false);
-                if (pr.Label9 == "Wszystkie bazy")
+                                    
+                if (pr.Label59 == "Wszystkie bazy")
                     pr.Veh(true);
+                else
+                    pr.Veh(false);
 
                 this.Close();
             }

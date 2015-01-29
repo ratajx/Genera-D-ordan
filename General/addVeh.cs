@@ -34,9 +34,9 @@ namespace General
             }
 
             var pr = Application.OpenForms.OfType<Form1>().Single();
-            if (pr.Label9 == "Baza " + comboBox2.Text)
+            if (pr.Label59 == "Baza " + comboBox2.Text)
                 pr.Veh(false);
-            if (pr.Label9 == "Wszystkie bazy")
+            if (pr.Label59 == "Wszystkie bazy")
                 pr.Veh(true);
             this.Close();
         }

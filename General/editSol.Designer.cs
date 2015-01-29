@@ -55,16 +55,25 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bazyTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter();
             this.rangiTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.RangiTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.uprawnieniaTabBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uprawnieniaTabTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.UprawnieniaTabTableAdapter();
+            this.zolnierzBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zolnierzTableAdapter = new General.DB_9BA4F7_dzordanDataSet1TableAdapters.ZolnierzTableAdapter();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bazyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_9BA4F7_dzordanDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rangiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uprawnieniaTabBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 275);
+            this.button1.Location = new System.Drawing.Point(557, 266);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 22);
             this.button1.TabIndex = 0;
@@ -74,7 +83,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(147, 275);
+            this.button2.Location = new System.Drawing.Point(640, 266);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 22);
             this.button2.TabIndex = 1;
@@ -284,11 +293,55 @@
             // 
             this.rangiTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(254, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.Size = new System.Drawing.Size(461, 248);
+            this.dataGridView1.TabIndex = 36;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // uprawnieniaTabBindingSource
+            // 
+            this.uprawnieniaTabBindingSource.DataMember = "UprawnieniaTab";
+            this.uprawnieniaTabBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
+            // 
+            // uprawnieniaTabTableAdapter
+            // 
+            this.uprawnieniaTabTableAdapter.ClearBeforeFill = true;
+            // 
+            // zolnierzBindingSource
+            // 
+            this.zolnierzBindingSource.DataMember = "Zolnierz";
+            this.zolnierzBindingSource.DataSource = this.dB_9BA4F7_dzordanDataSet1;
+            // 
+            // zolnierzTableAdapter
+            // 
+            this.zolnierzTableAdapter.ClearBeforeFill = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(179, 276);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "label9";
+            this.label9.Visible = false;
+            // 
             // editSol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 309);
+            this.ClientSize = new System.Drawing.Size(727, 298);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -317,6 +370,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.rangiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uprawnieniaTabBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zolnierzBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +406,11 @@
         private DB_9BA4F7_dzordanDataSet1TableAdapters.BazyTableAdapter bazyTableAdapter;
         private System.Windows.Forms.BindingSource rangiBindingSource;
         private DB_9BA4F7_dzordanDataSet1TableAdapters.RangiTableAdapter rangiTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource uprawnieniaTabBindingSource;
+        private DB_9BA4F7_dzordanDataSet1TableAdapters.UprawnieniaTabTableAdapter uprawnieniaTabTableAdapter;
+        private System.Windows.Forms.BindingSource zolnierzBindingSource;
+        private DB_9BA4F7_dzordanDataSet1TableAdapters.ZolnierzTableAdapter zolnierzTableAdapter;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -54,6 +54,7 @@ namespace General
                 iloscPojazdowLabel.Text = Convert.ToString(policzRekordy("PojazdySpis"));
                 iloscPojazdowUzytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "WHERE Wuzyciu = 'false'"));
                 iloscPojazdowNiezytychLabel.Text = Convert.ToString(policzRekordyWarunek("PojazdySpis", "WHERE Wuzyciu = 'true'"));
+                iloscManewrowLabel.Text = Convert.ToString(policzRekordy("ManewryTab"));
 
                 label33.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Zolnierz.IDRangi = '" + 1 + "'"));
                 label34.Text = Convert.ToString(policzRekordyWarunek("Zolnierz", "JOIN Bazy ON Zolnierz.IDBazy = Bazy.IDBazy WHERE Zolnierz.IDRangi = '" + 2 + "'"));

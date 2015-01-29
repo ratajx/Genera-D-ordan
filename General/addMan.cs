@@ -69,5 +69,10 @@ namespace General
             addVeh2Team form = new addVeh2Team(connString);
             form.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

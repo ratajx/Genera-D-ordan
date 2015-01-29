@@ -48,9 +48,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(159, 153);
+            this.button1.Location = new System.Drawing.Point(218, 153);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 41);
+            this.button1.Size = new System.Drawing.Size(89, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Zamknij";
             this.button1.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(64, 153);
+            this.button2.Location = new System.Drawing.Point(123, 153);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 41);
+            this.button2.Size = new System.Drawing.Size(89, 37);
             this.button2.TabIndex = 2;
             this.button2.Text = "Dodaj żołnierza do składu";
             this.button2.UseVisualStyleBackColor = true;

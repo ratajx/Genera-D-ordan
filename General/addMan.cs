@@ -203,10 +203,15 @@ namespace General
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if(dataGridView1.RowCount>0)
+            {
             dodajMan();
             MessageBox.Show("Manewry zostały dodane");
             dataGridView1.Columns.Clear();
             dataGridView2.Columns.Clear();
+            }
+            else 
+                MessageBox.Show("Żadne składy nie zostały dodane do listy");
         }
         //private void button5_Click(object sender, EventArgs e)
         //{
